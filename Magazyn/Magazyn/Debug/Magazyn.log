@@ -1,6 +1,33 @@
 ﻿  Base.cpp
+Base.cpp : fatal error C1041: cannot open program database 'E:\projekt_cpp_magazyn\projekt\Magazyn\Magazyn\Magazyn\Debug\vc140.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
   Login.cpp
-  Generating Code...
-  Base.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
-  Magazyn.vcxproj -> E:\projekt_cpp_magazyn\projekt\Magazyn\Magazyn\Debug\Magazyn.exe
-  Magazyn.vcxproj -> E:\projekt_cpp_magazyn\projekt\Magazyn\Magazyn\Debug\Magazyn.pdb (Partial PDB)
+e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1098): error C2039: 'dataGridViewClients_CellContentClick': is not a member of 'Magazyn::Magazin'
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(18): note: see declaration of 'Magazyn::Magazin'
+e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1098): error C2065: 'dataGridViewClients_CellContentClick': undeclared identifier
+e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1098): error C3924: error in argument #2 of delegate constructor call 'System::Windows::Forms::DataGridViewCellEventHandler':
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1098): note: pointer to member function expected
+e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1142): error C2664: 'void System::Windows::Forms::DataGridView::CellContentClick::add(System::Windows::Forms::DataGridViewCellEventHandler ^)': cannot convert argument 1 from 'System::EventHandler ^' to 'System::Windows::Forms::DataGridViewCellEventHandler ^'
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1142): note: No user-defined-conversion operator available, or
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1142): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1333): error C2664: 'void System::Windows::Forms::Control::Click::add(System::EventHandler ^)': cannot convert argument 1 from 'System::Windows::Forms::DataGridViewCellEventHandler ^' to 'System::EventHandler ^'
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1333): note: No user-defined-conversion operator available, or
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1333): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1385): error C2664: 'void System::Windows::Forms::DataGridView::CellClick::add(System::Windows::Forms::DataGridViewCellEventHandler ^)': cannot convert argument 1 from 'System::EventHandler ^' to 'System::Windows::Forms::DataGridViewCellEventHandler ^'
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1385): note: No user-defined-conversion operator available, or
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1385): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1680): error C2664: 'void System::Windows::Forms::Control::Click::add(System::EventHandler ^)': cannot convert argument 1 from 'System::Windows::Forms::DataGridViewCellEventHandler ^' to 'System::EventHandler ^'
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1680): note: No user-defined-conversion operator available, or
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1680): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1878): error C2664: 'void System::Windows::Forms::DataGridView::CellClick::add(System::Windows::Forms::DataGridViewCellEventHandler ^)': cannot convert argument 1 from 'System::EventHandler ^' to 'System::Windows::Forms::DataGridViewCellEventHandler ^'
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1878): note: No user-defined-conversion operator available, or
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(1878): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(2350): error C2664: 'void System::Windows::Forms::Control::Click::add(System::EventHandler ^)': cannot convert argument 1 from 'System::Windows::Forms::FormClosingEventHandler ^' to 'System::EventHandler ^'
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(2350): note: No user-defined-conversion operator available, or
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(2350): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(2351): error C2664: 'void System::Windows::Forms::Form::FormClosing::add(System::Windows::Forms::FormClosingEventHandler ^)': cannot convert argument 1 from 'System::EventHandler ^' to 'System::Windows::Forms::FormClosingEventHandler ^'
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(2351): note: No user-defined-conversion operator available, or
+  e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Magazin.h(2351): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+e:\projekt_cpp_magazyn\projekt\magazyn\magazyn\magazyn\Login.h(85): fatal error C1903: unable to recover from previous error(s); stopping compilation
+  INTERNAL COMPILER ERROR in 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe'
+      Please choose the Technical Support command on the Visual C++
+      Help menu, or open the Technical Support help file for more information

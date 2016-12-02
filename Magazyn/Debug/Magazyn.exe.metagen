@@ -25,10 +25,18 @@ Class dbDriverSpace.dbDriver: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Interfaces:
     System.IDisposable
+  Fields:
+    MySql.Data.MySqlClient.MySqlDataReader result : Public
+    MySql.Data.MySqlClient.MySqlDataAdapter resultMany : Public
   Methods:
     getStatus(): PrivateScope, Public, HideBySig
     getError(): PrivateScope, Public, HideBySig
-    select(String): PrivateScope, Public, HideBySig
+    closeConnection(): PrivateScope, Public, HideBySig
+    selectOne(String): PrivateScope, Public, HideBySig
+    selectMany(String): PrivateScope, Public, HideBySig
+    update(String): PrivateScope, Public, HideBySig
+    insert(String): PrivateScope, Public, HideBySig
+    deleteFromSql(String): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class Magazyn.Magazin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

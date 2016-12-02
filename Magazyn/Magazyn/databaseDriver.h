@@ -34,7 +34,7 @@ namespace dbDriverSpace {
 				username = "root";
 				password = "root";
 				database = "magazyn";
-				String^ config = L"datasource=" + datasource + ";port=" + port + ";username=" + username + ";password=" + password + ";database=" + database;
+				String^ config = L"datasource=" + datasource + ";port=" + port + ";username=" + username + ";password=" + password + ";database=" + database + ";CharSet=utf8";
 				connect = gcnew MySqlConnection(config);
 			}
 

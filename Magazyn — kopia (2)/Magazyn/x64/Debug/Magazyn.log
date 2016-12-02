@@ -1,6 +1,0 @@
-﻿  Base.cpp
-  Login.cpp
-  Generating Code...
-  Base.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
-  Magazyn.vcxproj -> E:\projekt_cpp_magazyn\projekt\Magazyn\Magazyn\x64\Debug\Magazyn.exe
-  Magazyn.vcxproj -> E:\projekt_cpp_magazyn\projekt\Magazyn\Magazyn\x64\Debug\Magazyn.pdb (Partial PDB)
