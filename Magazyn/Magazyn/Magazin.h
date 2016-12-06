@@ -22,9 +22,6 @@ namespace Magazyn {
 		{
 			InitializeComponent();
 			this->userId = userIdFromLogin;
-			//
-			//TODO: Add the constructor code here
-			//
 		}
 
 	protected:
@@ -53,11 +50,13 @@ namespace Magazyn {
 		int rowIdProviders;
 		int rowIdItems;
 		bool userType;
+		int rowIdSales;
+		int rowIdDelivery;
 		int relEmployersToCommonData;
 		int relClientsToCommonData;
 		int relProvidersToCommonData;
 	private: System::Windows::Forms::TabPage^  tabPage3;
-	private: System::Windows::Forms::TabPage^  tabPage4;
+
 	private: System::Windows::Forms::TabPage^  tabPage5;
 	private: System::Windows::Forms::TabPage^  tabPage6;
 	private: System::Windows::Forms::TabPage^  tabPage7;
@@ -66,25 +65,15 @@ namespace Magazyn {
 	private: System::Windows::Forms::Button^  btnSearchEmployers;
 	private: System::Windows::Forms::TextBox^  txtBoxSearchEmployers;
 	private: System::Windows::Forms::Label^  labelLastLogoutVal;
-
-
 	private: System::Windows::Forms::Label^  labelLastLoginVal;
-
 	private: System::Windows::Forms::Button^  btnSaveEmployer;
 	private: System::Windows::Forms::TextBox^  textBoxEmployerOtherInfo;
-
 	private: System::Windows::Forms::TextBox^  textBoxEmployerPhone;
-
 	private: System::Windows::Forms::TextBox^  textBoxEmployerEmail;
-
 	private: System::Windows::Forms::TextBox^  textBoxEmployerAddress;
-
 	private: System::Windows::Forms::TextBox^  textBoxEmployerSurname;
-
 	private: System::Windows::Forms::TextBox^  textBoxEmployerName;
-
 	private: System::Windows::Forms::TextBox^  textBoxEmployerLogin;
-
 	private: System::Windows::Forms::Label^  labelEmployerLastlogout;
 	private: System::Windows::Forms::Label^  labelEmployerLastlogin;
 	private: System::Windows::Forms::Label^  labelEmployerInfo;
@@ -98,7 +87,6 @@ namespace Magazyn {
 	private: System::Windows::Forms::Label^  labelEmployerId;
 	private: System::Windows::Forms::Button^  buttonEmployerDelete;
 	private: System::Windows::Forms::CheckBox^  checkBoxIsAdmin;
-
 	private: System::Windows::Forms::Label^  labelIsAdmin;
 	private: System::Windows::Forms::TextBox^  textBoxEmployerPassword;
 	private: System::Windows::Forms::Label^  labelEmployerPassword;
@@ -117,7 +105,6 @@ namespace Magazyn {
 	private: System::Windows::Forms::TextBox^  textBoxASOldPassword;
 	private: System::Windows::Forms::Label^  labelASOldPassword;
 	private: System::Windows::Forms::CheckBox^  checkBoxASIsAdmin;
-
 	private: System::Windows::Forms::Label^  labelASIsAdmin;
 	private: System::Windows::Forms::Label^  labelASLastlogoutVal;
 	private: System::Windows::Forms::Label^  labelASLastloginVal;
@@ -137,19 +124,13 @@ namespace Magazyn {
 	private: System::Windows::Forms::Label^  labelASID;
 
 private: System::Windows::Forms::Button^  buttonSearchClients;
-
-
 private: System::Windows::Forms::Button^  buttonClearFormClient;
-
 private: System::Windows::Forms::Button^  buttonDeleteClient;
-
 private: System::Windows::Forms::Button^  buttonSaveClient;
-
 private: System::Windows::Forms::TextBox^  textBoxClientOtherInfo;
 private: System::Windows::Forms::TextBox^  textBoxClientPhone;
 private: System::Windows::Forms::TextBox^  textBoxClientEmail;
 private: System::Windows::Forms::TextBox^  textBoxClientAddress;
-
 private: System::Windows::Forms::TextBox^  textBoxClientREGON;
 private: System::Windows::Forms::TextBox^  textBoxClientNIP;
 private: System::Windows::Forms::TextBox^  textBoxClientName;
@@ -161,167 +142,128 @@ private: System::Windows::Forms::Label^  label6;
 private: System::Windows::Forms::Label^  labelClientNIP;
 private: System::Windows::Forms::Label^  label8;
 private: System::Windows::Forms::Label^  labelClientID;
-
 private: System::Windows::Forms::Label^  labelIdClient;
 private: System::Windows::Forms::TextBox^  textBoxSearchClients;
 private: System::Windows::Forms::Button^  buttonShowClients;
 private: System::Windows::Forms::DataGridView^  dataGridViewClients;
 private: System::Windows::Forms::Button^  buttonSearchProviders;
-
 private: System::Windows::Forms::Button^  buttonClearProviderForm;
 private: System::Windows::Forms::Button^  buttonProviderDelete;
 private: System::Windows::Forms::Button^  buttonProviderSave;
-
-
-
-
-
 private: System::Windows::Forms::TextBox^  textBoxProviderOtherInfo;
-
 private: System::Windows::Forms::TextBox^  textBoxProviderPhone;
-
 private: System::Windows::Forms::TextBox^  textBoxProviderEmail;
-
 private: System::Windows::Forms::TextBox^  textBoxProviderAddress;
-
 private: System::Windows::Forms::TextBox^  textBoxProviderREGON;
-
 private: System::Windows::Forms::TextBox^  textBoxProviderNIP;
-
 private: System::Windows::Forms::TextBox^  textBoxProviderName;
 private: System::Windows::Forms::Label^  labelProviderOtherInfo;
-
-
 private: System::Windows::Forms::Label^  labelProviderPhone;
-
 private: System::Windows::Forms::Label^  labelProviderEmail;
-
 private: System::Windows::Forms::Label^  labelProviderAddress;
-
 private: System::Windows::Forms::Label^  labelProviderREGON;
-
 private: System::Windows::Forms::Label^  labelProviderNIP;
-
 private: System::Windows::Forms::Label^  labelProviderName;
-
 private: System::Windows::Forms::Label^  labelProviderIDVal;
-
 private: System::Windows::Forms::Label^  labelProviderID;
-
 private: System::Windows::Forms::TextBox^  textBoxSearchProviders;
-
 private: System::Windows::Forms::Button^  buttonShowProviders;
 private: System::Windows::Forms::DataGridView^  dataGridViewProviders;
 private: System::Windows::Forms::Button^  buttonItemsSearch;
-
 private: System::Windows::Forms::Button^  buttonItemClearForm;
 private: System::Windows::Forms::Button^  buttonItemDelete;
 private: System::Windows::Forms::Button^  buttonItemSave;
-
-
-
-
 private: System::Windows::Forms::TextBox^  textBoxItemModel;
-
-
-
-
-
-
 private: System::Windows::Forms::TextBox^  textBoxItemName;
-
-
-
-
 private: System::Windows::Forms::Label^  labelItemPrice;
-
 private: System::Windows::Forms::Label^  labelItemQuantity;
-
 private: System::Windows::Forms::Label^  labelItemModel;
-
 private: System::Windows::Forms::Label^  labelItemName;
 private: System::Windows::Forms::Label^  labelItemIDVal;
-
-
 private: System::Windows::Forms::Label^  labelItemID;
-
 private: System::Windows::Forms::TextBox^  textBoxItemsSearch;
 private: System::Windows::Forms::Button^  buttonItemsShow;
 private: System::Windows::Forms::DataGridView^  dataGridViewItems;
 private: System::Windows::Forms::Label^  labelItemQuantityVal;
 private: System::Windows::Forms::DataGridView^  dataGridViewParams;
 private: System::Windows::Forms::DataGridView^  dataGridViewProducers;
-
-
 private: System::Windows::Forms::MaskedTextBox^  TextBoxItemPrice;
 private: System::Windows::Forms::Button^  buttonItemParamAdd;
-
-
-
 private: System::Windows::Forms::Label^  labelItemParam;
 private: System::Windows::Forms::TextBox^  textBoxItemParamVal;
-
-
 private: System::Windows::Forms::ComboBox^  comboBoxItemParam;
 private: System::Windows::Forms::Label^  labelItemProducer;
 private: System::Windows::Forms::Button^  buttonItemProducerAdd;
-
-
-
 private: System::Windows::Forms::ComboBox^  comboBoxItemProducer;
 private: System::Windows::Forms::Button^  buttonItemProducerHelp;
-
 private: System::Windows::Forms::Button^  buttonItemParamHelp;
-
 private: System::Windows::Forms::Button^  buttonItemHelp;
 private: System::Windows::Forms::Button^  buttonItemProducerDelete;
-
 private: System::Windows::Forms::Button^  buttonItemParamDelete;
-
-
 private: System::Windows::Forms::MaskedTextBox^  maskedTextBoxSellQuantity;
-
 private: System::Windows::Forms::Label^  labelSellQuantity;
-
 private: System::Windows::Forms::ComboBox^  comboBoxSellItem;
-
 private: System::Windows::Forms::Label^  labelSellItem;
-
-
 private: System::Windows::Forms::ComboBox^  comboBoxSellClient;
-
 private: System::Windows::Forms::Label^  labelSellClient;
-
 private: System::Windows::Forms::Label^  labelSellIDVal;
-
-
-
-
-
 private: System::Windows::Forms::Label^  labelSellID;
-private: System::Windows::Forms::DataGridView^  dataGridViewSalesClients;
-
+private: System::Windows::Forms::DataGridView^  dataGridViewSalesEmployers;
 
 private: System::Windows::Forms::DataGridView^  dataGridViewSalesItems;
 
 
-
-private: System::Windows::Forms::Button^  button2;
-private: System::Windows::Forms::TextBox^  textBox1;
 private: System::Windows::Forms::Button^  buttonSellsShow;
 private: System::Windows::Forms::DataGridView^  dataGridViewSales;
+private: System::Windows::Forms::DataGridView^  dataGridViewSalesClients;
 
-
-
-private: System::Windows::Forms::Button^  buttonTransactionFormClear;
-private: System::Windows::Forms::Button^  buttonTransactionDelete;
-private: System::Windows::Forms::Button^  buttonTransactionSave;
-private: System::Windows::Forms::DataGridView^  dataGridViewSalesEmployers;
 
 private: System::Windows::Forms::TabPage^  tabPage9;
 private: System::Windows::Forms::Button^  buttonSalesHelp;
-private: System::Windows::Forms::Button^  button3;
+private: System::Windows::Forms::Button^  buttonSalesClose;
+private: System::Windows::Forms::Button^  buttonSalesAddItem;
+private: System::Windows::Forms::Button^  buttonSalesClearForm;
+private: System::Windows::Forms::Button^  buttonSalesDelete;
+private: System::Windows::Forms::Button^  buttonSalesSave;
+private: System::Windows::Forms::Button^  buttonSalesDeleteItem;
+private: System::Windows::Forms::Button^  buttonDeliveryDeleteItem;
+private: System::Windows::Forms::Button^  buttonDeliveryHelp;
 
+
+private: System::Windows::Forms::Button^  buttonDeliveryClose;
+
+private: System::Windows::Forms::Button^  buttonDeliveryAddItem;
+private: System::Windows::Forms::Button^  buttonDeliveryClearForm;
+private: System::Windows::Forms::Button^  buttonDeliveryDelete;
+private: System::Windows::Forms::Button^  buttonDeliverySave;
+
+
+
+
+private: System::Windows::Forms::DataGridView^  dataGridViewDeliveryProviders;
+private: System::Windows::Forms::MaskedTextBox^  maskedTextBoxDeliveryQuantity;
+
+
+private: System::Windows::Forms::Label^  labelDeliveryQuantity;
+
+private: System::Windows::Forms::ComboBox^  comboBoxDeliveryItem;
+
+private: System::Windows::Forms::Label^  labelDeliveryItem;
+
+private: System::Windows::Forms::ComboBox^  comboBoxDeliveryProvider;
+
+private: System::Windows::Forms::Label^  labelDeliveryProvider;
+
+private: System::Windows::Forms::Label^  labelDeliveryIDVal;
+
+private: System::Windows::Forms::Label^  labelDeliveryID;
+
+private: System::Windows::Forms::DataGridView^  dataGridViewDeliveryEmployers;
+
+private: System::Windows::Forms::DataGridView^  dataGridViewDeliveryItems;
+
+private: System::Windows::Forms::Button^  buttonDeliveryShow;
+private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 
 
@@ -453,12 +395,14 @@ private: System::Windows::Forms::Button^  button3;
 			this->buttonItemsShow = (gcnew System::Windows::Forms::Button());
 			this->dataGridViewItems = (gcnew System::Windows::Forms::DataGridView());
 			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
+			this->buttonSalesDeleteItem = (gcnew System::Windows::Forms::Button());
 			this->buttonSalesHelp = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->dataGridViewSalesEmployers = (gcnew System::Windows::Forms::DataGridView());
-			this->buttonTransactionFormClear = (gcnew System::Windows::Forms::Button());
-			this->buttonTransactionDelete = (gcnew System::Windows::Forms::Button());
-			this->buttonTransactionSave = (gcnew System::Windows::Forms::Button());
+			this->buttonSalesClose = (gcnew System::Windows::Forms::Button());
+			this->buttonSalesAddItem = (gcnew System::Windows::Forms::Button());
+			this->buttonSalesClearForm = (gcnew System::Windows::Forms::Button());
+			this->buttonSalesDelete = (gcnew System::Windows::Forms::Button());
+			this->buttonSalesSave = (gcnew System::Windows::Forms::Button());
+			this->dataGridViewSalesClients = (gcnew System::Windows::Forms::DataGridView());
 			this->maskedTextBoxSellQuantity = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->labelSellQuantity = (gcnew System::Windows::Forms::Label());
 			this->comboBoxSellItem = (gcnew System::Windows::Forms::ComboBox());
@@ -467,14 +411,31 @@ private: System::Windows::Forms::Button^  button3;
 			this->labelSellClient = (gcnew System::Windows::Forms::Label());
 			this->labelSellIDVal = (gcnew System::Windows::Forms::Label());
 			this->labelSellID = (gcnew System::Windows::Forms::Label());
-			this->dataGridViewSalesClients = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewSalesEmployers = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridViewSalesItems = (gcnew System::Windows::Forms::DataGridView());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->buttonSellsShow = (gcnew System::Windows::Forms::Button());
 			this->dataGridViewSales = (gcnew System::Windows::Forms::DataGridView());
 			this->tabPage9 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->buttonDeliveryDeleteItem = (gcnew System::Windows::Forms::Button());
+			this->buttonDeliveryHelp = (gcnew System::Windows::Forms::Button());
+			this->buttonDeliveryClose = (gcnew System::Windows::Forms::Button());
+			this->buttonDeliveryAddItem = (gcnew System::Windows::Forms::Button());
+			this->buttonDeliveryClearForm = (gcnew System::Windows::Forms::Button());
+			this->buttonDeliveryDelete = (gcnew System::Windows::Forms::Button());
+			this->buttonDeliverySave = (gcnew System::Windows::Forms::Button());
+			this->dataGridViewDeliveryProviders = (gcnew System::Windows::Forms::DataGridView());
+			this->maskedTextBoxDeliveryQuantity = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->labelDeliveryQuantity = (gcnew System::Windows::Forms::Label());
+			this->comboBoxDeliveryItem = (gcnew System::Windows::Forms::ComboBox());
+			this->labelDeliveryItem = (gcnew System::Windows::Forms::Label());
+			this->comboBoxDeliveryProvider = (gcnew System::Windows::Forms::ComboBox());
+			this->labelDeliveryProvider = (gcnew System::Windows::Forms::Label());
+			this->labelDeliveryIDVal = (gcnew System::Windows::Forms::Label());
+			this->labelDeliveryID = (gcnew System::Windows::Forms::Label());
+			this->dataGridViewDeliveryEmployers = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewDeliveryItems = (gcnew System::Windows::Forms::DataGridView());
+			this->buttonDeliveryShow = (gcnew System::Windows::Forms::Button());
+			this->dataGridViewDelivery = (gcnew System::Windows::Forms::DataGridView());
 			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage8 = (gcnew System::Windows::Forms::TabPage());
 			this->labelASOtherInfoVal = (gcnew System::Windows::Forms::Label());
@@ -522,10 +483,15 @@ private: System::Windows::Forms::Button^  button3;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewProducers))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewItems))->BeginInit();
 			this->tabPage6->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewSalesEmployers))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewSalesClients))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewSalesEmployers))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewSalesItems))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewSales))->BeginInit();
+			this->tabPage9->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDeliveryProviders))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDeliveryEmployers))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDeliveryItems))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDelivery))->BeginInit();
 			this->tabPage8->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -537,7 +503,6 @@ private: System::Windows::Forms::Button^  button3;
 			this->tabControl1->Controls->Add(this->tabPage5);
 			this->tabControl1->Controls->Add(this->tabPage6);
 			this->tabControl1->Controls->Add(this->tabPage9);
-			this->tabControl1->Controls->Add(this->tabPage4);
 			this->tabControl1->Controls->Add(this->tabPage7);
 			this->tabControl1->Controls->Add(this->tabPage8);
 			this->tabControl1->Location = System::Drawing::Point(13, 61);
@@ -591,6 +556,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonClearForm
 			// 
+			this->buttonClearForm->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonClearForm->Location = System::Drawing::Point(590, 512);
 			this->buttonClearForm->Name = L"buttonClearForm";
 			this->buttonClearForm->Size = System::Drawing::Size(146, 29);
@@ -601,24 +567,27 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// textBoxEmployerPassword
 			// 
+			this->textBoxEmployerPassword->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxEmployerPassword->Location = System::Drawing::Point(670, 474);
 			this->textBoxEmployerPassword->Name = L"textBoxEmployerPassword";
 			this->textBoxEmployerPassword->PasswordChar = '*';
-			this->textBoxEmployerPassword->Size = System::Drawing::Size(293, 26);
+			this->textBoxEmployerPassword->Size = System::Drawing::Size(293, 23);
 			this->textBoxEmployerPassword->TabIndex = 29;
 			// 
 			// labelEmployerPassword
 			// 
 			this->labelEmployerPassword->AutoSize = true;
-			this->labelEmployerPassword->Location = System::Drawing::Point(612, 477);
+			this->labelEmployerPassword->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelEmployerPassword->Location = System::Drawing::Point(616, 477);
 			this->labelEmployerPassword->Name = L"labelEmployerPassword";
-			this->labelEmployerPassword->Size = System::Drawing::Size(52, 18);
+			this->labelEmployerPassword->Size = System::Drawing::Size(47, 16);
 			this->labelEmployerPassword->TabIndex = 28;
 			this->labelEmployerPassword->Text = L"Has³o:";
 			// 
 			// checkBoxIsAdmin
 			// 
 			this->checkBoxIsAdmin->AutoSize = true;
+			this->checkBoxIsAdmin->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->checkBoxIsAdmin->Location = System::Drawing::Point(678, 440);
 			this->checkBoxIsAdmin->Name = L"checkBoxIsAdmin";
 			this->checkBoxIsAdmin->Size = System::Drawing::Size(15, 14);
@@ -628,14 +597,16 @@ private: System::Windows::Forms::Button^  button3;
 			// labelIsAdmin
 			// 
 			this->labelIsAdmin->AutoSize = true;
-			this->labelIsAdmin->Location = System::Drawing::Point(505, 438);
+			this->labelIsAdmin->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelIsAdmin->Location = System::Drawing::Point(517, 438);
 			this->labelIsAdmin->Name = L"labelIsAdmin";
-			this->labelIsAdmin->Size = System::Drawing::Size(161, 18);
+			this->labelIsAdmin->Size = System::Drawing::Size(145, 16);
 			this->labelIsAdmin->TabIndex = 26;
 			this->labelIsAdmin->Text = L"Prawa administratora:";
 			// 
 			// buttonEmployerDelete
 			// 
+			this->buttonEmployerDelete->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonEmployerDelete->Location = System::Drawing::Point(742, 512);
 			this->buttonEmployerDelete->Name = L"buttonEmployerDelete";
 			this->buttonEmployerDelete->Size = System::Drawing::Size(107, 29);
@@ -647,23 +618,26 @@ private: System::Windows::Forms::Button^  button3;
 			// labelLastLogoutVal
 			// 
 			this->labelLastLogoutVal->AutoSize = true;
+			this->labelLastLogoutVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelLastLogoutVal->Location = System::Drawing::Point(672, 404);
 			this->labelLastLogoutVal->Name = L"labelLastLogoutVal";
-			this->labelLastLogoutVal->Size = System::Drawing::Size(163, 18);
+			this->labelLastLogoutVal->Size = System::Drawing::Size(16, 16);
 			this->labelLastLogoutVal->TabIndex = 24;
-			this->labelLastLogoutVal->Text = L"Ostatnie wylogowanie:";
+			this->labelLastLogoutVal->Text = L"#";
 			// 
 			// labelLastLoginVal
 			// 
 			this->labelLastLoginVal->AutoSize = true;
+			this->labelLastLoginVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelLastLoginVal->Location = System::Drawing::Point(672, 373);
 			this->labelLastLoginVal->Name = L"labelLastLoginVal";
-			this->labelLastLoginVal->Size = System::Drawing::Size(161, 18);
+			this->labelLastLoginVal->Size = System::Drawing::Size(16, 16);
 			this->labelLastLoginVal->TabIndex = 23;
-			this->labelLastLoginVal->Text = L"Ostatnie zalogowanie:";
+			this->labelLastLoginVal->Text = L"#";
 			// 
 			// btnSaveEmployer
 			// 
+			this->btnSaveEmployer->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->btnSaveEmployer->Location = System::Drawing::Point(856, 512);
 			this->btnSaveEmployer->Name = L"btnSaveEmployer";
 			this->btnSaveEmployer->Size = System::Drawing::Size(107, 29);
@@ -674,6 +648,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// textBoxEmployerOtherInfo
 			// 
+			this->textBoxEmployerOtherInfo->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxEmployerOtherInfo->Location = System::Drawing::Point(670, 286);
 			this->textBoxEmployerOtherInfo->Multiline = true;
 			this->textBoxEmployerOtherInfo->Name = L"textBoxEmployerOtherInfo";
@@ -682,147 +657,165 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// textBoxEmployerPhone
 			// 
+			this->textBoxEmployerPhone->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxEmployerPhone->Location = System::Drawing::Point(670, 254);
 			this->textBoxEmployerPhone->Name = L"textBoxEmployerPhone";
-			this->textBoxEmployerPhone->Size = System::Drawing::Size(293, 26);
+			this->textBoxEmployerPhone->Size = System::Drawing::Size(293, 23);
 			this->textBoxEmployerPhone->TabIndex = 20;
 			// 
 			// textBoxEmployerEmail
 			// 
+			this->textBoxEmployerEmail->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxEmployerEmail->Location = System::Drawing::Point(670, 222);
 			this->textBoxEmployerEmail->Name = L"textBoxEmployerEmail";
-			this->textBoxEmployerEmail->Size = System::Drawing::Size(293, 26);
+			this->textBoxEmployerEmail->Size = System::Drawing::Size(293, 23);
 			this->textBoxEmployerEmail->TabIndex = 19;
 			// 
 			// textBoxEmployerAddress
 			// 
+			this->textBoxEmployerAddress->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxEmployerAddress->Location = System::Drawing::Point(670, 190);
 			this->textBoxEmployerAddress->Name = L"textBoxEmployerAddress";
-			this->textBoxEmployerAddress->Size = System::Drawing::Size(293, 26);
+			this->textBoxEmployerAddress->Size = System::Drawing::Size(293, 23);
 			this->textBoxEmployerAddress->TabIndex = 18;
 			// 
 			// textBoxEmployerSurname
 			// 
+			this->textBoxEmployerSurname->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxEmployerSurname->Location = System::Drawing::Point(670, 158);
 			this->textBoxEmployerSurname->Name = L"textBoxEmployerSurname";
-			this->textBoxEmployerSurname->Size = System::Drawing::Size(293, 26);
+			this->textBoxEmployerSurname->Size = System::Drawing::Size(293, 23);
 			this->textBoxEmployerSurname->TabIndex = 17;
 			// 
 			// textBoxEmployerName
 			// 
+			this->textBoxEmployerName->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxEmployerName->Location = System::Drawing::Point(670, 123);
 			this->textBoxEmployerName->Name = L"textBoxEmployerName";
-			this->textBoxEmployerName->Size = System::Drawing::Size(293, 26);
+			this->textBoxEmployerName->Size = System::Drawing::Size(293, 23);
 			this->textBoxEmployerName->TabIndex = 16;
 			// 
 			// textBoxEmployerLogin
 			// 
+			this->textBoxEmployerLogin->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxEmployerLogin->Location = System::Drawing::Point(670, 91);
 			this->textBoxEmployerLogin->Name = L"textBoxEmployerLogin";
-			this->textBoxEmployerLogin->Size = System::Drawing::Size(293, 26);
+			this->textBoxEmployerLogin->Size = System::Drawing::Size(293, 23);
 			this->textBoxEmployerLogin->TabIndex = 15;
 			// 
 			// labelEmployerLastlogout
 			// 
 			this->labelEmployerLastlogout->AutoSize = true;
-			this->labelEmployerLastlogout->Location = System::Drawing::Point(503, 404);
+			this->labelEmployerLastlogout->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelEmployerLastlogout->Location = System::Drawing::Point(515, 404);
 			this->labelEmployerLastlogout->Name = L"labelEmployerLastlogout";
-			this->labelEmployerLastlogout->Size = System::Drawing::Size(163, 18);
+			this->labelEmployerLastlogout->Size = System::Drawing::Size(148, 16);
 			this->labelEmployerLastlogout->TabIndex = 14;
 			this->labelEmployerLastlogout->Text = L"Ostatnie wylogowanie:";
 			// 
 			// labelEmployerLastlogin
 			// 
 			this->labelEmployerLastlogin->AutoSize = true;
-			this->labelEmployerLastlogin->Location = System::Drawing::Point(505, 373);
+			this->labelEmployerLastlogin->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelEmployerLastlogin->Location = System::Drawing::Point(516, 373);
 			this->labelEmployerLastlogin->Name = L"labelEmployerLastlogin";
-			this->labelEmployerLastlogin->Size = System::Drawing::Size(161, 18);
+			this->labelEmployerLastlogin->Size = System::Drawing::Size(146, 16);
 			this->labelEmployerLastlogin->TabIndex = 13;
 			this->labelEmployerLastlogin->Text = L"Ostatnie zalogowanie:";
 			// 
 			// labelEmployerInfo
 			// 
 			this->labelEmployerInfo->AutoSize = true;
-			this->labelEmployerInfo->Location = System::Drawing::Point(550, 290);
+			this->labelEmployerInfo->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelEmployerInfo->Location = System::Drawing::Point(554, 289);
 			this->labelEmployerInfo->Name = L"labelEmployerInfo";
-			this->labelEmployerInfo->Size = System::Drawing::Size(116, 18);
+			this->labelEmployerInfo->Size = System::Drawing::Size(108, 16);
 			this->labelEmployerInfo->TabIndex = 12;
 			this->labelEmployerInfo->Text = L"Inne informacje:";
 			// 
 			// labelEmployerPhone
 			// 
 			this->labelEmployerPhone->AutoSize = true;
-			this->labelEmployerPhone->Location = System::Drawing::Point(605, 259);
+			this->labelEmployerPhone->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelEmployerPhone->Location = System::Drawing::Point(605, 257);
 			this->labelEmployerPhone->Name = L"labelEmployerPhone";
-			this->labelEmployerPhone->Size = System::Drawing::Size(61, 18);
+			this->labelEmployerPhone->Size = System::Drawing::Size(58, 16);
 			this->labelEmployerPhone->TabIndex = 11;
 			this->labelEmployerPhone->Text = L"Telefon:";
 			// 
 			// labelEmployerEmail
 			// 
 			this->labelEmployerEmail->AutoSize = true;
-			this->labelEmployerEmail->Location = System::Drawing::Point(614, 226);
+			this->labelEmployerEmail->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelEmployerEmail->Location = System::Drawing::Point(616, 225);
 			this->labelEmployerEmail->Name = L"labelEmployerEmail";
-			this->labelEmployerEmail->Size = System::Drawing::Size(52, 18);
+			this->labelEmployerEmail->Size = System::Drawing::Size(46, 16);
 			this->labelEmployerEmail->TabIndex = 10;
 			this->labelEmployerEmail->Text = L"Email:";
 			// 
 			// labelEmployerAddress
 			// 
 			this->labelEmployerAddress->AutoSize = true;
-			this->labelEmployerAddress->Location = System::Drawing::Point(612, 193);
+			this->labelEmployerAddress->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelEmployerAddress->Location = System::Drawing::Point(614, 193);
 			this->labelEmployerAddress->Name = L"labelEmployerAddress";
-			this->labelEmployerAddress->Size = System::Drawing::Size(54, 18);
+			this->labelEmployerAddress->Size = System::Drawing::Size(49, 16);
 			this->labelEmployerAddress->TabIndex = 9;
 			this->labelEmployerAddress->Text = L"Adres:";
 			// 
 			// labelEmployerSurname
 			// 
 			this->labelEmployerSurname->AutoSize = true;
-			this->labelEmployerSurname->Location = System::Drawing::Point(587, 162);
+			this->labelEmployerSurname->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelEmployerSurname->Location = System::Drawing::Point(593, 161);
 			this->labelEmployerSurname->Name = L"labelEmployerSurname";
-			this->labelEmployerSurname->Size = System::Drawing::Size(79, 18);
+			this->labelEmployerSurname->Size = System::Drawing::Size(69, 16);
 			this->labelEmployerSurname->TabIndex = 8;
 			this->labelEmployerSurname->Text = L"Nazwisko:";
 			// 
 			// labelEmployerName
 			// 
 			this->labelEmployerName->AutoSize = true;
-			this->labelEmployerName->Location = System::Drawing::Point(625, 127);
+			this->labelEmployerName->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelEmployerName->Location = System::Drawing::Point(623, 126);
 			this->labelEmployerName->Name = L"labelEmployerName";
-			this->labelEmployerName->Size = System::Drawing::Size(41, 18);
+			this->labelEmployerName->Size = System::Drawing::Size(37, 16);
 			this->labelEmployerName->TabIndex = 7;
 			this->labelEmployerName->Text = L"Imiê:";
 			// 
 			// labelEmployerLogin
 			// 
 			this->labelEmployerLogin->AutoSize = true;
-			this->labelEmployerLogin->Location = System::Drawing::Point(615, 95);
+			this->labelEmployerLogin->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelEmployerLogin->Location = System::Drawing::Point(616, 94);
 			this->labelEmployerLogin->Name = L"labelEmployerLogin";
-			this->labelEmployerLogin->Size = System::Drawing::Size(51, 18);
+			this->labelEmployerLogin->Size = System::Drawing::Size(47, 16);
 			this->labelEmployerLogin->TabIndex = 6;
 			this->labelEmployerLogin->Text = L"Login:";
 			// 
 			// labelEmplID
 			// 
 			this->labelEmplID->AutoSize = true;
+			this->labelEmplID->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelEmplID->Location = System::Drawing::Point(672, 57);
 			this->labelEmplID->Name = L"labelEmplID";
-			this->labelEmplID->Size = System::Drawing::Size(17, 18);
+			this->labelEmplID->Size = System::Drawing::Size(16, 16);
 			this->labelEmplID->TabIndex = 5;
 			this->labelEmplID->Text = L"#";
 			// 
 			// labelEmployerId
 			// 
 			this->labelEmployerId->AutoSize = true;
-			this->labelEmployerId->Location = System::Drawing::Point(487, 57);
+			this->labelEmployerId->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelEmployerId->Location = System::Drawing::Point(498, 57);
 			this->labelEmployerId->Name = L"labelEmployerId";
-			this->labelEmployerId->Size = System::Drawing::Size(179, 18);
+			this->labelEmployerId->Size = System::Drawing::Size(164, 16);
 			this->labelEmployerId->TabIndex = 4;
 			this->labelEmployerId->Text = L"Identyfikator pracownika:";
 			// 
 			// btnSearchEmployers
 			// 
+			this->btnSearchEmployers->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->btnSearchEmployers->Location = System::Drawing::Point(843, 17);
 			this->btnSearchEmployers->Name = L"btnSearchEmployers";
 			this->btnSearchEmployers->Size = System::Drawing::Size(120, 26);
@@ -833,13 +826,15 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// txtBoxSearchEmployers
 			// 
+			this->txtBoxSearchEmployers->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->txtBoxSearchEmployers->Location = System::Drawing::Point(582, 18);
 			this->txtBoxSearchEmployers->Name = L"txtBoxSearchEmployers";
-			this->txtBoxSearchEmployers->Size = System::Drawing::Size(251, 26);
+			this->txtBoxSearchEmployers->Size = System::Drawing::Size(251, 23);
 			this->txtBoxSearchEmployers->TabIndex = 2;
 			// 
 			// btnShowEmployers
 			// 
+			this->btnShowEmployers->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->btnShowEmployers->Location = System::Drawing::Point(21, 9);
 			this->btnShowEmployers->Name = L"btnShowEmployers";
 			this->btnShowEmployers->Size = System::Drawing::Size(219, 34);
@@ -897,6 +892,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonSearchClients
 			// 
+			this->buttonSearchClients->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonSearchClients->Location = System::Drawing::Point(840, 14);
 			this->buttonSearchClients->Name = L"buttonSearchClients";
 			this->buttonSearchClients->Size = System::Drawing::Size(120, 26);
@@ -907,6 +903,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonClearFormClient
 			// 
+			this->buttonClearFormClient->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonClearFormClient->Location = System::Drawing::Point(585, 476);
 			this->buttonClearFormClient->Name = L"buttonClearFormClient";
 			this->buttonClearFormClient->Size = System::Drawing::Size(146, 29);
@@ -917,6 +914,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonDeleteClient
 			// 
+			this->buttonDeleteClient->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonDeleteClient->Location = System::Drawing::Point(737, 476);
 			this->buttonDeleteClient->Name = L"buttonDeleteClient";
 			this->buttonDeleteClient->Size = System::Drawing::Size(107, 29);
@@ -927,6 +925,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonSaveClient
 			// 
+			this->buttonSaveClient->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonSaveClient->Location = System::Drawing::Point(851, 476);
 			this->buttonSaveClient->Name = L"buttonSaveClient";
 			this->buttonSaveClient->Size = System::Drawing::Size(107, 29);
@@ -937,6 +936,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// textBoxClientOtherInfo
 			// 
+			this->textBoxClientOtherInfo->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxClientOtherInfo->Location = System::Drawing::Point(667, 284);
 			this->textBoxClientOtherInfo->Multiline = true;
 			this->textBoxClientOtherInfo->Name = L"textBoxClientOtherInfo";
@@ -945,136 +945,153 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// textBoxClientPhone
 			// 
+			this->textBoxClientPhone->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxClientPhone->Location = System::Drawing::Point(667, 252);
 			this->textBoxClientPhone->Name = L"textBoxClientPhone";
-			this->textBoxClientPhone->Size = System::Drawing::Size(293, 26);
+			this->textBoxClientPhone->Size = System::Drawing::Size(293, 23);
 			this->textBoxClientPhone->TabIndex = 49;
 			// 
 			// textBoxClientEmail
 			// 
+			this->textBoxClientEmail->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxClientEmail->Location = System::Drawing::Point(667, 220);
 			this->textBoxClientEmail->Name = L"textBoxClientEmail";
-			this->textBoxClientEmail->Size = System::Drawing::Size(293, 26);
+			this->textBoxClientEmail->Size = System::Drawing::Size(293, 23);
 			this->textBoxClientEmail->TabIndex = 48;
 			// 
 			// textBoxClientAddress
 			// 
+			this->textBoxClientAddress->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxClientAddress->Location = System::Drawing::Point(667, 188);
 			this->textBoxClientAddress->Name = L"textBoxClientAddress";
-			this->textBoxClientAddress->Size = System::Drawing::Size(293, 26);
+			this->textBoxClientAddress->Size = System::Drawing::Size(293, 23);
 			this->textBoxClientAddress->TabIndex = 47;
 			// 
 			// textBoxClientREGON
 			// 
+			this->textBoxClientREGON->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxClientREGON->Location = System::Drawing::Point(667, 156);
 			this->textBoxClientREGON->Name = L"textBoxClientREGON";
-			this->textBoxClientREGON->Size = System::Drawing::Size(293, 26);
+			this->textBoxClientREGON->Size = System::Drawing::Size(293, 23);
 			this->textBoxClientREGON->TabIndex = 46;
 			// 
 			// textBoxClientNIP
 			// 
+			this->textBoxClientNIP->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxClientNIP->Location = System::Drawing::Point(667, 121);
 			this->textBoxClientNIP->Name = L"textBoxClientNIP";
-			this->textBoxClientNIP->Size = System::Drawing::Size(293, 26);
+			this->textBoxClientNIP->Size = System::Drawing::Size(293, 23);
 			this->textBoxClientNIP->TabIndex = 45;
 			// 
 			// textBoxClientName
 			// 
+			this->textBoxClientName->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxClientName->Location = System::Drawing::Point(667, 89);
 			this->textBoxClientName->Name = L"textBoxClientName";
-			this->textBoxClientName->Size = System::Drawing::Size(293, 26);
+			this->textBoxClientName->Size = System::Drawing::Size(293, 23);
 			this->textBoxClientName->TabIndex = 44;
 			// 
 			// labelClientOtherInfo
 			// 
 			this->labelClientOtherInfo->AutoSize = true;
-			this->labelClientOtherInfo->Location = System::Drawing::Point(547, 288);
+			this->labelClientOtherInfo->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelClientOtherInfo->Location = System::Drawing::Point(550, 287);
 			this->labelClientOtherInfo->Name = L"labelClientOtherInfo";
-			this->labelClientOtherInfo->Size = System::Drawing::Size(116, 18);
+			this->labelClientOtherInfo->Size = System::Drawing::Size(108, 16);
 			this->labelClientOtherInfo->TabIndex = 43;
 			this->labelClientOtherInfo->Text = L"Inne informacje:";
 			// 
 			// labelClientPhone
 			// 
 			this->labelClientPhone->AutoSize = true;
-			this->labelClientPhone->Location = System::Drawing::Point(602, 257);
+			this->labelClientPhone->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelClientPhone->Location = System::Drawing::Point(600, 255);
 			this->labelClientPhone->Name = L"labelClientPhone";
-			this->labelClientPhone->Size = System::Drawing::Size(61, 18);
+			this->labelClientPhone->Size = System::Drawing::Size(58, 16);
 			this->labelClientPhone->TabIndex = 42;
 			this->labelClientPhone->Text = L"Telefon:";
 			// 
 			// labelClientEmail
 			// 
 			this->labelClientEmail->AutoSize = true;
-			this->labelClientEmail->Location = System::Drawing::Point(611, 224);
+			this->labelClientEmail->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelClientEmail->Location = System::Drawing::Point(612, 223);
 			this->labelClientEmail->Name = L"labelClientEmail";
-			this->labelClientEmail->Size = System::Drawing::Size(52, 18);
+			this->labelClientEmail->Size = System::Drawing::Size(46, 16);
 			this->labelClientEmail->TabIndex = 41;
 			this->labelClientEmail->Text = L"Email:";
 			// 
 			// labelClientAddress
 			// 
 			this->labelClientAddress->AutoSize = true;
+			this->labelClientAddress->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelClientAddress->Location = System::Drawing::Point(609, 191);
 			this->labelClientAddress->Name = L"labelClientAddress";
-			this->labelClientAddress->Size = System::Drawing::Size(54, 18);
+			this->labelClientAddress->Size = System::Drawing::Size(49, 16);
 			this->labelClientAddress->TabIndex = 40;
 			this->labelClientAddress->Text = L"Adres:";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(590, 159);
+			this->label6->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->label6->Location = System::Drawing::Point(596, 156);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(69, 18);
+			this->label6->Size = System::Drawing::Size(62, 16);
 			this->label6->TabIndex = 39;
 			this->label6->Text = L"REGON:";
 			// 
 			// labelClientNIP
 			// 
 			this->labelClientNIP->AutoSize = true;
-			this->labelClientNIP->Location = System::Drawing::Point(622, 125);
+			this->labelClientNIP->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelClientNIP->Location = System::Drawing::Point(625, 124);
 			this->labelClientNIP->Name = L"labelClientNIP";
-			this->labelClientNIP->Size = System::Drawing::Size(37, 18);
+			this->labelClientNIP->Size = System::Drawing::Size(33, 16);
 			this->labelClientNIP->TabIndex = 38;
 			this->labelClientNIP->Text = L"NIP:";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(604, 92);
+			this->label8->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->label8->Location = System::Drawing::Point(606, 92);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(59, 18);
+			this->label8->Size = System::Drawing::Size(52, 16);
 			this->label8->TabIndex = 37;
 			this->label8->Text = L"Nazwa:";
 			// 
 			// labelClientID
 			// 
 			this->labelClientID->AutoSize = true;
+			this->labelClientID->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelClientID->Location = System::Drawing::Point(669, 55);
 			this->labelClientID->Name = L"labelClientID";
-			this->labelClientID->Size = System::Drawing::Size(17, 18);
+			this->labelClientID->Size = System::Drawing::Size(16, 16);
 			this->labelClientID->TabIndex = 36;
 			this->labelClientID->Text = L"#";
 			// 
 			// labelIdClient
 			// 
 			this->labelIdClient->AutoSize = true;
+			this->labelIdClient->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelIdClient->Location = System::Drawing::Point(519, 55);
 			this->labelIdClient->Name = L"labelIdClient";
-			this->labelIdClient->Size = System::Drawing::Size(144, 18);
+			this->labelIdClient->Size = System::Drawing::Size(134, 16);
 			this->labelIdClient->TabIndex = 35;
 			this->labelIdClient->Text = L"Identyfikator klienta:";
 			// 
 			// textBoxSearchClients
 			// 
+			this->textBoxSearchClients->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxSearchClients->Location = System::Drawing::Point(583, 15);
 			this->textBoxSearchClients->Name = L"textBoxSearchClients";
-			this->textBoxSearchClients->Size = System::Drawing::Size(251, 26);
+			this->textBoxSearchClients->Size = System::Drawing::Size(251, 23);
 			this->textBoxSearchClients->TabIndex = 34;
 			// 
 			// buttonShowClients
 			// 
+			this->buttonShowClients->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonShowClients->Location = System::Drawing::Point(27, 7);
 			this->buttonShowClients->Name = L"buttonShowClients";
 			this->buttonShowClients->Size = System::Drawing::Size(219, 34);
@@ -1132,6 +1149,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonSearchProviders
 			// 
+			this->buttonSearchProviders->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonSearchProviders->Location = System::Drawing::Point(849, 14);
 			this->buttonSearchProviders->Name = L"buttonSearchProviders";
 			this->buttonSearchProviders->Size = System::Drawing::Size(120, 26);
@@ -1142,6 +1160,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonClearProviderForm
 			// 
+			this->buttonClearProviderForm->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonClearProviderForm->Location = System::Drawing::Point(596, 476);
 			this->buttonClearProviderForm->Name = L"buttonClearProviderForm";
 			this->buttonClearProviderForm->Size = System::Drawing::Size(146, 29);
@@ -1152,6 +1171,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonProviderDelete
 			// 
+			this->buttonProviderDelete->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonProviderDelete->Location = System::Drawing::Point(748, 476);
 			this->buttonProviderDelete->Name = L"buttonProviderDelete";
 			this->buttonProviderDelete->Size = System::Drawing::Size(107, 29);
@@ -1162,6 +1182,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonProviderSave
 			// 
+			this->buttonProviderSave->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonProviderSave->Location = System::Drawing::Point(862, 476);
 			this->buttonProviderSave->Name = L"buttonProviderSave";
 			this->buttonProviderSave->Size = System::Drawing::Size(107, 29);
@@ -1172,6 +1193,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// textBoxProviderOtherInfo
 			// 
+			this->textBoxProviderOtherInfo->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxProviderOtherInfo->Location = System::Drawing::Point(676, 283);
 			this->textBoxProviderOtherInfo->Multiline = true;
 			this->textBoxProviderOtherInfo->Name = L"textBoxProviderOtherInfo";
@@ -1180,136 +1202,153 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// textBoxProviderPhone
 			// 
+			this->textBoxProviderPhone->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxProviderPhone->Location = System::Drawing::Point(676, 251);
 			this->textBoxProviderPhone->Name = L"textBoxProviderPhone";
-			this->textBoxProviderPhone->Size = System::Drawing::Size(293, 26);
+			this->textBoxProviderPhone->Size = System::Drawing::Size(293, 23);
 			this->textBoxProviderPhone->TabIndex = 73;
 			// 
 			// textBoxProviderEmail
 			// 
+			this->textBoxProviderEmail->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxProviderEmail->Location = System::Drawing::Point(676, 219);
 			this->textBoxProviderEmail->Name = L"textBoxProviderEmail";
-			this->textBoxProviderEmail->Size = System::Drawing::Size(293, 26);
+			this->textBoxProviderEmail->Size = System::Drawing::Size(293, 23);
 			this->textBoxProviderEmail->TabIndex = 72;
 			// 
 			// textBoxProviderAddress
 			// 
+			this->textBoxProviderAddress->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxProviderAddress->Location = System::Drawing::Point(676, 187);
 			this->textBoxProviderAddress->Name = L"textBoxProviderAddress";
-			this->textBoxProviderAddress->Size = System::Drawing::Size(293, 26);
+			this->textBoxProviderAddress->Size = System::Drawing::Size(293, 23);
 			this->textBoxProviderAddress->TabIndex = 71;
 			// 
 			// textBoxProviderREGON
 			// 
+			this->textBoxProviderREGON->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxProviderREGON->Location = System::Drawing::Point(676, 155);
 			this->textBoxProviderREGON->Name = L"textBoxProviderREGON";
-			this->textBoxProviderREGON->Size = System::Drawing::Size(293, 26);
+			this->textBoxProviderREGON->Size = System::Drawing::Size(293, 23);
 			this->textBoxProviderREGON->TabIndex = 70;
 			// 
 			// textBoxProviderNIP
 			// 
+			this->textBoxProviderNIP->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxProviderNIP->Location = System::Drawing::Point(676, 120);
 			this->textBoxProviderNIP->Name = L"textBoxProviderNIP";
-			this->textBoxProviderNIP->Size = System::Drawing::Size(293, 26);
+			this->textBoxProviderNIP->Size = System::Drawing::Size(293, 23);
 			this->textBoxProviderNIP->TabIndex = 69;
 			// 
 			// textBoxProviderName
 			// 
+			this->textBoxProviderName->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxProviderName->Location = System::Drawing::Point(676, 88);
 			this->textBoxProviderName->Name = L"textBoxProviderName";
-			this->textBoxProviderName->Size = System::Drawing::Size(293, 26);
+			this->textBoxProviderName->Size = System::Drawing::Size(293, 23);
 			this->textBoxProviderName->TabIndex = 68;
 			// 
 			// labelProviderOtherInfo
 			// 
 			this->labelProviderOtherInfo->AutoSize = true;
-			this->labelProviderOtherInfo->Location = System::Drawing::Point(556, 287);
+			this->labelProviderOtherInfo->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelProviderOtherInfo->Location = System::Drawing::Point(561, 286);
 			this->labelProviderOtherInfo->Name = L"labelProviderOtherInfo";
-			this->labelProviderOtherInfo->Size = System::Drawing::Size(116, 18);
+			this->labelProviderOtherInfo->Size = System::Drawing::Size(108, 16);
 			this->labelProviderOtherInfo->TabIndex = 67;
 			this->labelProviderOtherInfo->Text = L"Inne informacje:";
 			// 
 			// labelProviderPhone
 			// 
 			this->labelProviderPhone->AutoSize = true;
-			this->labelProviderPhone->Location = System::Drawing::Point(611, 256);
+			this->labelProviderPhone->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelProviderPhone->Location = System::Drawing::Point(611, 254);
 			this->labelProviderPhone->Name = L"labelProviderPhone";
-			this->labelProviderPhone->Size = System::Drawing::Size(61, 18);
+			this->labelProviderPhone->Size = System::Drawing::Size(58, 16);
 			this->labelProviderPhone->TabIndex = 66;
 			this->labelProviderPhone->Text = L"Telefon:";
 			// 
 			// labelProviderEmail
 			// 
 			this->labelProviderEmail->AutoSize = true;
-			this->labelProviderEmail->Location = System::Drawing::Point(620, 223);
+			this->labelProviderEmail->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelProviderEmail->Location = System::Drawing::Point(623, 222);
 			this->labelProviderEmail->Name = L"labelProviderEmail";
-			this->labelProviderEmail->Size = System::Drawing::Size(52, 18);
+			this->labelProviderEmail->Size = System::Drawing::Size(46, 16);
 			this->labelProviderEmail->TabIndex = 65;
 			this->labelProviderEmail->Text = L"Email:";
 			// 
 			// labelProviderAddress
 			// 
 			this->labelProviderAddress->AutoSize = true;
-			this->labelProviderAddress->Location = System::Drawing::Point(618, 190);
+			this->labelProviderAddress->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelProviderAddress->Location = System::Drawing::Point(620, 190);
 			this->labelProviderAddress->Name = L"labelProviderAddress";
-			this->labelProviderAddress->Size = System::Drawing::Size(54, 18);
+			this->labelProviderAddress->Size = System::Drawing::Size(49, 16);
 			this->labelProviderAddress->TabIndex = 64;
 			this->labelProviderAddress->Text = L"Adres:";
 			// 
 			// labelProviderREGON
 			// 
 			this->labelProviderREGON->AutoSize = true;
-			this->labelProviderREGON->Location = System::Drawing::Point(599, 158);
+			this->labelProviderREGON->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelProviderREGON->Location = System::Drawing::Point(607, 158);
 			this->labelProviderREGON->Name = L"labelProviderREGON";
-			this->labelProviderREGON->Size = System::Drawing::Size(69, 18);
+			this->labelProviderREGON->Size = System::Drawing::Size(62, 16);
 			this->labelProviderREGON->TabIndex = 63;
 			this->labelProviderREGON->Text = L"REGON:";
 			// 
 			// labelProviderNIP
 			// 
 			this->labelProviderNIP->AutoSize = true;
-			this->labelProviderNIP->Location = System::Drawing::Point(631, 124);
+			this->labelProviderNIP->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelProviderNIP->Location = System::Drawing::Point(636, 123);
 			this->labelProviderNIP->Name = L"labelProviderNIP";
-			this->labelProviderNIP->Size = System::Drawing::Size(37, 18);
+			this->labelProviderNIP->Size = System::Drawing::Size(33, 16);
 			this->labelProviderNIP->TabIndex = 62;
 			this->labelProviderNIP->Text = L"NIP:";
 			// 
 			// labelProviderName
 			// 
 			this->labelProviderName->AutoSize = true;
-			this->labelProviderName->Location = System::Drawing::Point(613, 91);
+			this->labelProviderName->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelProviderName->Location = System::Drawing::Point(617, 91);
 			this->labelProviderName->Name = L"labelProviderName";
-			this->labelProviderName->Size = System::Drawing::Size(59, 18);
+			this->labelProviderName->Size = System::Drawing::Size(52, 16);
 			this->labelProviderName->TabIndex = 61;
 			this->labelProviderName->Text = L"Nazwa:";
 			// 
 			// labelProviderIDVal
 			// 
 			this->labelProviderIDVal->AutoSize = true;
+			this->labelProviderIDVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelProviderIDVal->Location = System::Drawing::Point(678, 54);
 			this->labelProviderIDVal->Name = L"labelProviderIDVal";
-			this->labelProviderIDVal->Size = System::Drawing::Size(17, 18);
+			this->labelProviderIDVal->Size = System::Drawing::Size(16, 16);
 			this->labelProviderIDVal->TabIndex = 60;
 			this->labelProviderIDVal->Text = L"#";
 			// 
 			// labelProviderID
 			// 
 			this->labelProviderID->AutoSize = true;
-			this->labelProviderID->Location = System::Drawing::Point(528, 54);
+			this->labelProviderID->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelProviderID->Location = System::Drawing::Point(535, 54);
 			this->labelProviderID->Name = L"labelProviderID";
-			this->labelProviderID->Size = System::Drawing::Size(144, 18);
+			this->labelProviderID->Size = System::Drawing::Size(134, 16);
 			this->labelProviderID->TabIndex = 59;
 			this->labelProviderID->Text = L"Identyfikator klienta:";
 			// 
 			// textBoxSearchProviders
 			// 
+			this->textBoxSearchProviders->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxSearchProviders->Location = System::Drawing::Point(592, 15);
 			this->textBoxSearchProviders->Name = L"textBoxSearchProviders";
-			this->textBoxSearchProviders->Size = System::Drawing::Size(251, 26);
+			this->textBoxSearchProviders->Size = System::Drawing::Size(251, 23);
 			this->textBoxSearchProviders->TabIndex = 58;
 			// 
 			// buttonShowProviders
 			// 
+			this->buttonShowProviders->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonShowProviders->Location = System::Drawing::Point(20, 7);
 			this->buttonShowProviders->Name = L"buttonShowProviders";
 			this->buttonShowProviders->Size = System::Drawing::Size(219, 34);
@@ -1375,6 +1414,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonItemHelp
 			// 
+			this->buttonItemHelp->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemHelp->Location = System::Drawing::Point(318, 9);
 			this->buttonItemHelp->Name = L"buttonItemHelp";
 			this->buttonItemHelp->Size = System::Drawing::Size(240, 30);
@@ -1385,6 +1425,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonItemProducerDelete
 			// 
+			this->buttonItemProducerDelete->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemProducerDelete->Location = System::Drawing::Point(859, 272);
 			this->buttonItemProducerDelete->Name = L"buttonItemProducerDelete";
 			this->buttonItemProducerDelete->Size = System::Drawing::Size(21, 29);
@@ -1396,6 +1437,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonItemParamDelete
 			// 
+			this->buttonItemParamDelete->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemParamDelete->Location = System::Drawing::Point(954, 229);
 			this->buttonItemParamDelete->Name = L"buttonItemParamDelete";
 			this->buttonItemParamDelete->Size = System::Drawing::Size(21, 29);
@@ -1407,6 +1449,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonItemProducerHelp
 			// 
+			this->buttonItemProducerHelp->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemProducerHelp->Location = System::Drawing::Point(556, 271);
 			this->buttonItemProducerHelp->Name = L"buttonItemProducerHelp";
 			this->buttonItemProducerHelp->Size = System::Drawing::Size(21, 29);
@@ -1418,6 +1461,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonItemParamHelp
 			// 
+			this->buttonItemParamHelp->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemParamHelp->Location = System::Drawing::Point(438, 228);
 			this->buttonItemParamHelp->Name = L"buttonItemParamHelp";
 			this->buttonItemParamHelp->Size = System::Drawing::Size(21, 29);
@@ -1430,15 +1474,17 @@ private: System::Windows::Forms::Button^  button3;
 			// labelItemProducer
 			// 
 			this->labelItemProducer->AutoSize = true;
+			this->labelItemProducer->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelItemProducer->Location = System::Drawing::Point(579, 277);
 			this->labelItemProducer->Name = L"labelItemProducer";
-			this->labelItemProducer->Size = System::Drawing::Size(83, 18);
+			this->labelItemProducer->Size = System::Drawing::Size(77, 16);
 			this->labelItemProducer->TabIndex = 114;
 			this->labelItemProducer->Text = L"Producent:";
 			this->labelItemProducer->Visible = false;
 			// 
 			// buttonItemProducerAdd
 			// 
+			this->buttonItemProducerAdd->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemProducerAdd->Location = System::Drawing::Point(791, 272);
 			this->buttonItemProducerAdd->Name = L"buttonItemProducerAdd";
 			this->buttonItemProducerAdd->Size = System::Drawing::Size(62, 29);
@@ -1450,15 +1496,17 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// comboBoxItemProducer
 			// 
+			this->comboBoxItemProducer->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->comboBoxItemProducer->FormattingEnabled = true;
 			this->comboBoxItemProducer->Location = System::Drawing::Point(664, 273);
 			this->comboBoxItemProducer->Name = L"comboBoxItemProducer";
-			this->comboBoxItemProducer->Size = System::Drawing::Size(121, 26);
+			this->comboBoxItemProducer->Size = System::Drawing::Size(121, 24);
 			this->comboBoxItemProducer->TabIndex = 112;
 			this->comboBoxItemProducer->Visible = false;
 			// 
 			// buttonItemParamAdd
 			// 
+			this->buttonItemParamAdd->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemParamAdd->Location = System::Drawing::Point(889, 229);
 			this->buttonItemParamAdd->Name = L"buttonItemParamAdd";
 			this->buttonItemParamAdd->Size = System::Drawing::Size(62, 29);
@@ -1471,27 +1519,30 @@ private: System::Windows::Forms::Button^  button3;
 			// labelItemParam
 			// 
 			this->labelItemParam->AutoSize = true;
+			this->labelItemParam->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelItemParam->Location = System::Drawing::Point(463, 234);
 			this->labelItemParam->Name = L"labelItemParam";
-			this->labelItemParam->Size = System::Drawing::Size(77, 18);
+			this->labelItemParam->Size = System::Drawing::Size(70, 16);
 			this->labelItemParam->TabIndex = 110;
 			this->labelItemParam->Text = L"Parametr:";
 			this->labelItemParam->Visible = false;
 			// 
 			// textBoxItemParamVal
 			// 
+			this->textBoxItemParamVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxItemParamVal->Location = System::Drawing::Point(664, 231);
 			this->textBoxItemParamVal->Name = L"textBoxItemParamVal";
-			this->textBoxItemParamVal->Size = System::Drawing::Size(221, 26);
+			this->textBoxItemParamVal->Size = System::Drawing::Size(221, 23);
 			this->textBoxItemParamVal->TabIndex = 109;
 			this->textBoxItemParamVal->Visible = false;
 			// 
 			// comboBoxItemParam
 			// 
+			this->comboBoxItemParam->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->comboBoxItemParam->FormattingEnabled = true;
 			this->comboBoxItemParam->Location = System::Drawing::Point(540, 231);
 			this->comboBoxItemParam->Name = L"comboBoxItemParam";
-			this->comboBoxItemParam->Size = System::Drawing::Size(121, 26);
+			this->comboBoxItemParam->Size = System::Drawing::Size(121, 24);
 			this->comboBoxItemParam->TabIndex = 108;
 			this->comboBoxItemParam->Text = L"Dodaj nowy";
 			this->comboBoxItemParam->Visible = false;
@@ -1523,23 +1574,26 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// TextBoxItemPrice
 			// 
+			this->TextBoxItemPrice->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->TextBoxItemPrice->Location = System::Drawing::Point(664, 189);
 			this->TextBoxItemPrice->Mask = L"####0.00";
 			this->TextBoxItemPrice->Name = L"TextBoxItemPrice";
-			this->TextBoxItemPrice->Size = System::Drawing::Size(92, 26);
+			this->TextBoxItemPrice->Size = System::Drawing::Size(92, 23);
 			this->TextBoxItemPrice->TabIndex = 104;
 			// 
 			// labelItemQuantityVal
 			// 
 			this->labelItemQuantityVal->AutoSize = true;
+			this->labelItemQuantityVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelItemQuantityVal->Location = System::Drawing::Point(666, 160);
 			this->labelItemQuantityVal->Name = L"labelItemQuantityVal";
-			this->labelItemQuantityVal->Size = System::Drawing::Size(17, 18);
+			this->labelItemQuantityVal->Size = System::Drawing::Size(16, 16);
 			this->labelItemQuantityVal->TabIndex = 103;
 			this->labelItemQuantityVal->Text = L"#";
 			// 
 			// buttonItemsSearch
 			// 
+			this->buttonItemsSearch->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemsSearch->Location = System::Drawing::Point(845, 15);
 			this->buttonItemsSearch->Name = L"buttonItemsSearch";
 			this->buttonItemsSearch->Size = System::Drawing::Size(120, 26);
@@ -1551,6 +1605,7 @@ private: System::Windows::Forms::Button^  button3;
 			// buttonItemClearForm
 			// 
 			this->buttonItemClearForm->Enabled = false;
+			this->buttonItemClearForm->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemClearForm->Location = System::Drawing::Point(592, 352);
 			this->buttonItemClearForm->Name = L"buttonItemClearForm";
 			this->buttonItemClearForm->Size = System::Drawing::Size(146, 29);
@@ -1562,6 +1617,7 @@ private: System::Windows::Forms::Button^  button3;
 			// buttonItemDelete
 			// 
 			this->buttonItemDelete->Enabled = false;
+			this->buttonItemDelete->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemDelete->Location = System::Drawing::Point(744, 352);
 			this->buttonItemDelete->Name = L"buttonItemDelete";
 			this->buttonItemDelete->Size = System::Drawing::Size(107, 29);
@@ -1572,6 +1628,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// buttonItemSave
 			// 
+			this->buttonItemSave->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemSave->Location = System::Drawing::Point(861, 352);
 			this->buttonItemSave->Name = L"buttonItemSave";
 			this->buttonItemSave->Size = System::Drawing::Size(107, 29);
@@ -1582,81 +1639,91 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// textBoxItemModel
 			// 
+			this->textBoxItemModel->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxItemModel->Location = System::Drawing::Point(664, 122);
 			this->textBoxItemModel->Name = L"textBoxItemModel";
-			this->textBoxItemModel->Size = System::Drawing::Size(293, 26);
+			this->textBoxItemModel->Size = System::Drawing::Size(293, 23);
 			this->textBoxItemModel->TabIndex = 92;
 			// 
 			// textBoxItemName
 			// 
+			this->textBoxItemName->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxItemName->Location = System::Drawing::Point(664, 90);
 			this->textBoxItemName->Name = L"textBoxItemName";
-			this->textBoxItemName->Size = System::Drawing::Size(293, 26);
+			this->textBoxItemName->Size = System::Drawing::Size(293, 23);
 			this->textBoxItemName->TabIndex = 91;
 			// 
 			// labelItemPrice
 			// 
 			this->labelItemPrice->AutoSize = true;
-			this->labelItemPrice->Location = System::Drawing::Point(606, 192);
+			this->labelItemPrice->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelItemPrice->Location = System::Drawing::Point(607, 192);
 			this->labelItemPrice->Name = L"labelItemPrice";
-			this->labelItemPrice->Size = System::Drawing::Size(50, 18);
+			this->labelItemPrice->Size = System::Drawing::Size(46, 16);
 			this->labelItemPrice->TabIndex = 87;
 			this->labelItemPrice->Text = L"Cena:";
 			// 
 			// labelItemQuantity
 			// 
 			this->labelItemQuantity->AutoSize = true;
+			this->labelItemQuantity->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelItemQuantity->Location = System::Drawing::Point(615, 160);
 			this->labelItemQuantity->Name = L"labelItemQuantity";
-			this->labelItemQuantity->Size = System::Drawing::Size(43, 18);
+			this->labelItemQuantity->Size = System::Drawing::Size(40, 16);
 			this->labelItemQuantity->TabIndex = 86;
 			this->labelItemQuantity->Text = L"Iloœæ:";
 			// 
 			// labelItemModel
 			// 
 			this->labelItemModel->AutoSize = true;
+			this->labelItemModel->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelItemModel->Location = System::Drawing::Point(603, 125);
 			this->labelItemModel->Name = L"labelItemModel";
-			this->labelItemModel->Size = System::Drawing::Size(55, 18);
+			this->labelItemModel->Size = System::Drawing::Size(50, 16);
 			this->labelItemModel->TabIndex = 85;
 			this->labelItemModel->Text = L"Model:";
 			// 
 			// labelItemName
 			// 
 			this->labelItemName->AutoSize = true;
+			this->labelItemName->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelItemName->Location = System::Drawing::Point(601, 93);
 			this->labelItemName->Name = L"labelItemName";
-			this->labelItemName->Size = System::Drawing::Size(59, 18);
+			this->labelItemName->Size = System::Drawing::Size(52, 16);
 			this->labelItemName->TabIndex = 84;
 			this->labelItemName->Text = L"Nazwa:";
 			// 
 			// labelItemIDVal
 			// 
 			this->labelItemIDVal->AutoSize = true;
+			this->labelItemIDVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelItemIDVal->Location = System::Drawing::Point(666, 56);
 			this->labelItemIDVal->Name = L"labelItemIDVal";
-			this->labelItemIDVal->Size = System::Drawing::Size(17, 18);
+			this->labelItemIDVal->Size = System::Drawing::Size(16, 16);
 			this->labelItemIDVal->TabIndex = 83;
 			this->labelItemIDVal->Text = L"#";
 			// 
 			// labelItemID
 			// 
 			this->labelItemID->AutoSize = true;
+			this->labelItemID->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelItemID->Location = System::Drawing::Point(480, 56);
 			this->labelItemID->Name = L"labelItemID";
-			this->labelItemID->Size = System::Drawing::Size(176, 18);
+			this->labelItemID->Size = System::Drawing::Size(162, 16);
 			this->labelItemID->TabIndex = 82;
 			this->labelItemID->Text = L"Identyfikator przedmiotu:";
 			// 
 			// textBoxItemsSearch
 			// 
+			this->textBoxItemsSearch->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxItemsSearch->Location = System::Drawing::Point(588, 15);
 			this->textBoxItemsSearch->Name = L"textBoxItemsSearch";
-			this->textBoxItemsSearch->Size = System::Drawing::Size(251, 26);
+			this->textBoxItemsSearch->Size = System::Drawing::Size(251, 23);
 			this->textBoxItemsSearch->TabIndex = 81;
 			// 
 			// buttonItemsShow
 			// 
+			this->buttonItemsShow->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonItemsShow->Location = System::Drawing::Point(27, 7);
 			this->buttonItemsShow->Name = L"buttonItemsShow";
 			this->buttonItemsShow->Size = System::Drawing::Size(219, 34);
@@ -1680,12 +1747,14 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// tabPage6
 			// 
+			this->tabPage6->Controls->Add(this->buttonSalesDeleteItem);
 			this->tabPage6->Controls->Add(this->buttonSalesHelp);
-			this->tabPage6->Controls->Add(this->button3);
-			this->tabPage6->Controls->Add(this->dataGridViewSalesEmployers);
-			this->tabPage6->Controls->Add(this->buttonTransactionFormClear);
-			this->tabPage6->Controls->Add(this->buttonTransactionDelete);
-			this->tabPage6->Controls->Add(this->buttonTransactionSave);
+			this->tabPage6->Controls->Add(this->buttonSalesClose);
+			this->tabPage6->Controls->Add(this->buttonSalesAddItem);
+			this->tabPage6->Controls->Add(this->buttonSalesClearForm);
+			this->tabPage6->Controls->Add(this->buttonSalesDelete);
+			this->tabPage6->Controls->Add(this->buttonSalesSave);
+			this->tabPage6->Controls->Add(this->dataGridViewSalesClients);
 			this->tabPage6->Controls->Add(this->maskedTextBoxSellQuantity);
 			this->tabPage6->Controls->Add(this->labelSellQuantity);
 			this->tabPage6->Controls->Add(this->comboBoxSellItem);
@@ -1694,10 +1763,8 @@ private: System::Windows::Forms::Button^  button3;
 			this->tabPage6->Controls->Add(this->labelSellClient);
 			this->tabPage6->Controls->Add(this->labelSellIDVal);
 			this->tabPage6->Controls->Add(this->labelSellID);
-			this->tabPage6->Controls->Add(this->dataGridViewSalesClients);
+			this->tabPage6->Controls->Add(this->dataGridViewSalesEmployers);
 			this->tabPage6->Controls->Add(this->dataGridViewSalesItems);
-			this->tabPage6->Controls->Add(this->button2);
-			this->tabPage6->Controls->Add(this->textBox1);
 			this->tabPage6->Controls->Add(this->buttonSellsShow);
 			this->tabPage6->Controls->Add(this->dataGridViewSales);
 			this->tabPage6->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -1709,142 +1776,88 @@ private: System::Windows::Forms::Button^  button3;
 			this->tabPage6->Text = L"Sprzeda¿e";
 			this->tabPage6->UseVisualStyleBackColor = true;
 			// 
+			// buttonSalesDeleteItem
+			// 
+			this->buttonSalesDeleteItem->Enabled = false;
+			this->buttonSalesDeleteItem->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonSalesDeleteItem->Location = System::Drawing::Point(705, 207);
+			this->buttonSalesDeleteItem->Name = L"buttonSalesDeleteItem";
+			this->buttonSalesDeleteItem->Size = System::Drawing::Size(241, 29);
+			this->buttonSalesDeleteItem->TabIndex = 132;
+			this->buttonSalesDeleteItem->Text = L"Usuñ przedmiot z transakcji";
+			this->buttonSalesDeleteItem->UseVisualStyleBackColor = true;
+			this->buttonSalesDeleteItem->Click += gcnew System::EventHandler(this, &Magazin::buttonSalesDeleteItem_Click);
+			// 
 			// buttonSalesHelp
 			// 
-			this->buttonSalesHelp->Location = System::Drawing::Point(809, 252);
+			this->buttonSalesHelp->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonSalesHelp->Location = System::Drawing::Point(417, 316);
 			this->buttonSalesHelp->Name = L"buttonSalesHelp";
-			this->buttonSalesHelp->Size = System::Drawing::Size(153, 34);
-			this->buttonSalesHelp->TabIndex = 127;
+			this->buttonSalesHelp->Size = System::Drawing::Size(84, 29);
+			this->buttonSalesHelp->TabIndex = 131;
 			this->buttonSalesHelp->Text = L"Pomoc";
 			this->buttonSalesHelp->UseVisualStyleBackColor = true;
+			this->buttonSalesHelp->Click += gcnew System::EventHandler(this, &Magazin::buttonSalesHelp_Click);
 			// 
-			// button3
+			// buttonSalesClose
 			// 
-			this->button3->Location = System::Drawing::Point(691, 175);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(255, 26);
-			this->button3->TabIndex = 126;
-			this->button3->Text = L"Dodaj przedmiot do transakcji";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Visible = false;
+			this->buttonSalesClose->Enabled = false;
+			this->buttonSalesClose->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonSalesClose->Location = System::Drawing::Point(826, 281);
+			this->buttonSalesClose->Name = L"buttonSalesClose";
+			this->buttonSalesClose->Size = System::Drawing::Size(150, 29);
+			this->buttonSalesClose->TabIndex = 130;
+			this->buttonSalesClose->Text = L"Zamknij transakcje";
+			this->buttonSalesClose->UseVisualStyleBackColor = true;
+			this->buttonSalesClose->Click += gcnew System::EventHandler(this, &Magazin::buttonSalesClose_Click);
 			// 
-			// dataGridViewSalesEmployers
+			// buttonSalesAddItem
 			// 
-			this->dataGridViewSalesEmployers->AllowUserToAddRows = false;
-			this->dataGridViewSalesEmployers->AllowUserToDeleteRows = false;
-			this->dataGridViewSalesEmployers->AllowUserToOrderColumns = true;
-			this->dataGridViewSalesEmployers->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridViewSalesEmployers->Location = System::Drawing::Point(705, 351);
-			this->dataGridViewSalesEmployers->Name = L"dataGridViewSalesEmployers";
-			this->dataGridViewSalesEmployers->ReadOnly = true;
-			this->dataGridViewSalesEmployers->Size = System::Drawing::Size(271, 193);
-			this->dataGridViewSalesEmployers->TabIndex = 125;
+			this->buttonSalesAddItem->Enabled = false;
+			this->buttonSalesAddItem->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonSalesAddItem->Location = System::Drawing::Point(705, 172);
+			this->buttonSalesAddItem->Name = L"buttonSalesAddItem";
+			this->buttonSalesAddItem->Size = System::Drawing::Size(241, 29);
+			this->buttonSalesAddItem->TabIndex = 129;
+			this->buttonSalesAddItem->Text = L"Dodaj przedmiot do transakcji";
+			this->buttonSalesAddItem->UseVisualStyleBackColor = true;
+			this->buttonSalesAddItem->Click += gcnew System::EventHandler(this, &Magazin::buttonSalesAddItem_Click);
 			// 
-			// buttonTransactionFormClear
+			// buttonSalesClearForm
 			// 
-			this->buttonTransactionFormClear->Enabled = false;
-			this->buttonTransactionFormClear->Location = System::Drawing::Point(514, 311);
-			this->buttonTransactionFormClear->Name = L"buttonTransactionFormClear";
-			this->buttonTransactionFormClear->Size = System::Drawing::Size(153, 34);
-			this->buttonTransactionFormClear->TabIndex = 124;
-			this->buttonTransactionFormClear->Text = L"Wyczyœæ formularz";
-			this->buttonTransactionFormClear->UseVisualStyleBackColor = true;
+			this->buttonSalesClearForm->Enabled = false;
+			this->buttonSalesClearForm->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonSalesClearForm->Location = System::Drawing::Point(542, 316);
+			this->buttonSalesClearForm->Name = L"buttonSalesClearForm";
+			this->buttonSalesClearForm->Size = System::Drawing::Size(146, 29);
+			this->buttonSalesClearForm->TabIndex = 128;
+			this->buttonSalesClearForm->Text = L"Wyczyœæ formularz";
+			this->buttonSalesClearForm->UseVisualStyleBackColor = true;
+			this->buttonSalesClearForm->Click += gcnew System::EventHandler(this, &Magazin::buttonSalesClearForm_Click);
 			// 
-			// buttonTransactionDelete
+			// buttonSalesDelete
 			// 
-			this->buttonTransactionDelete->Enabled = false;
-			this->buttonTransactionDelete->Location = System::Drawing::Point(673, 311);
-			this->buttonTransactionDelete->Name = L"buttonTransactionDelete";
-			this->buttonTransactionDelete->Size = System::Drawing::Size(147, 34);
-			this->buttonTransactionDelete->TabIndex = 123;
-			this->buttonTransactionDelete->Text = L"Usuñ transakcje";
-			this->buttonTransactionDelete->UseVisualStyleBackColor = true;
+			this->buttonSalesDelete->Enabled = false;
+			this->buttonSalesDelete->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonSalesDelete->Location = System::Drawing::Point(694, 316);
+			this->buttonSalesDelete->Name = L"buttonSalesDelete";
+			this->buttonSalesDelete->Size = System::Drawing::Size(126, 29);
+			this->buttonSalesDelete->TabIndex = 127;
+			this->buttonSalesDelete->Text = L"Usuñ transakcje";
+			this->buttonSalesDelete->UseVisualStyleBackColor = true;
+			this->buttonSalesDelete->Click += gcnew System::EventHandler(this, &Magazin::buttonSalesDelete_Click);
 			// 
-			// buttonTransactionSave
+			// buttonSalesSave
 			// 
-			this->buttonTransactionSave->Location = System::Drawing::Point(826, 311);
-			this->buttonTransactionSave->Name = L"buttonTransactionSave";
-			this->buttonTransactionSave->Size = System::Drawing::Size(136, 34);
-			this->buttonTransactionSave->TabIndex = 122;
-			this->buttonTransactionSave->Text = L"Dodaj transakcje";
-			this->buttonTransactionSave->UseVisualStyleBackColor = true;
-			this->buttonTransactionSave->Click += gcnew System::EventHandler(this, &Magazin::buttonTransactionSave_Click);
-			// 
-			// maskedTextBoxSellQuantity
-			// 
-			this->maskedTextBoxSellQuantity->Location = System::Drawing::Point(630, 175);
-			this->maskedTextBoxSellQuantity->Mask = L"00000";
-			this->maskedTextBoxSellQuantity->Name = L"maskedTextBoxSellQuantity";
-			this->maskedTextBoxSellQuantity->Size = System::Drawing::Size(55, 26);
-			this->maskedTextBoxSellQuantity->TabIndex = 119;
-			this->maskedTextBoxSellQuantity->ValidatingType = System::Int32::typeid;
-			this->maskedTextBoxSellQuantity->Visible = false;
-			// 
-			// labelSellQuantity
-			// 
-			this->labelSellQuantity->AutoSize = true;
-			this->labelSellQuantity->Location = System::Drawing::Point(539, 178);
-			this->labelSellQuantity->Name = L"labelSellQuantity";
-			this->labelSellQuantity->Size = System::Drawing::Size(82, 18);
-			this->labelSellQuantity->TabIndex = 118;
-			this->labelSellQuantity->Text = L"Iloœæ sztuk:";
-			this->labelSellQuantity->Visible = false;
-			// 
-			// comboBoxSellItem
-			// 
-			this->comboBoxSellItem->FormattingEnabled = true;
-			this->comboBoxSellItem->Location = System::Drawing::Point(630, 129);
-			this->comboBoxSellItem->Name = L"comboBoxSellItem";
-			this->comboBoxSellItem->Size = System::Drawing::Size(316, 26);
-			this->comboBoxSellItem->TabIndex = 117;
-			this->comboBoxSellItem->Text = L"Wybierz z listy";
-			this->comboBoxSellItem->Visible = false;
-			// 
-			// labelSellItem
-			// 
-			this->labelSellItem->AutoSize = true;
-			this->labelSellItem->Location = System::Drawing::Point(538, 129);
-			this->labelSellItem->Name = L"labelSellItem";
-			this->labelSellItem->Size = System::Drawing::Size(83, 18);
-			this->labelSellItem->TabIndex = 116;
-			this->labelSellItem->Text = L"Przedmiot:";
-			this->labelSellItem->Visible = false;
-			// 
-			// comboBoxSellClient
-			// 
-			this->comboBoxSellClient->FormattingEnabled = true;
-			this->comboBoxSellClient->Location = System::Drawing::Point(630, 84);
-			this->comboBoxSellClient->Name = L"comboBoxSellClient";
-			this->comboBoxSellClient->Size = System::Drawing::Size(316, 26);
-			this->comboBoxSellClient->TabIndex = 115;
-			this->comboBoxSellClient->Text = L"Wybierz z listy";
-			// 
-			// labelSellClient
-			// 
-			this->labelSellClient->AutoSize = true;
-			this->labelSellClient->Location = System::Drawing::Point(570, 84);
-			this->labelSellClient->Name = L"labelSellClient";
-			this->labelSellClient->Size = System::Drawing::Size(51, 18);
-			this->labelSellClient->TabIndex = 114;
-			this->labelSellClient->Text = L"Klient:";
-			// 
-			// labelSellIDVal
-			// 
-			this->labelSellIDVal->AutoSize = true;
-			this->labelSellIDVal->Location = System::Drawing::Point(627, 56);
-			this->labelSellIDVal->Name = L"labelSellIDVal";
-			this->labelSellIDVal->Size = System::Drawing::Size(17, 18);
-			this->labelSellIDVal->TabIndex = 110;
-			this->labelSellIDVal->Text = L"#";
-			// 
-			// labelSellID
-			// 
-			this->labelSellID->AutoSize = true;
-			this->labelSellID->Location = System::Drawing::Point(452, 56);
-			this->labelSellID->Name = L"labelSellID";
-			this->labelSellID->Size = System::Drawing::Size(169, 18);
-			this->labelSellID->TabIndex = 109;
-			this->labelSellID->Text = L"Identyfikator sprzeda¿y:";
+			this->buttonSalesSave->Enabled = false;
+			this->buttonSalesSave->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonSalesSave->Location = System::Drawing::Point(826, 316);
+			this->buttonSalesSave->Name = L"buttonSalesSave";
+			this->buttonSalesSave->Size = System::Drawing::Size(150, 29);
+			this->buttonSalesSave->TabIndex = 126;
+			this->buttonSalesSave->Text = L"Dodaj transakcje";
+			this->buttonSalesSave->UseVisualStyleBackColor = true;
+			this->buttonSalesSave->Click += gcnew System::EventHandler(this, &Magazin::buttonSalesSave_Click);
 			// 
 			// dataGridViewSalesClients
 			// 
@@ -1855,8 +1868,108 @@ private: System::Windows::Forms::Button^  button3;
 			this->dataGridViewSalesClients->Location = System::Drawing::Point(417, 351);
 			this->dataGridViewSalesClients->Name = L"dataGridViewSalesClients";
 			this->dataGridViewSalesClients->ReadOnly = true;
-			this->dataGridViewSalesClients->Size = System::Drawing::Size(282, 193);
-			this->dataGridViewSalesClients->TabIndex = 108;
+			this->dataGridViewSalesClients->Size = System::Drawing::Size(271, 193);
+			this->dataGridViewSalesClients->TabIndex = 125;
+			this->dataGridViewSalesClients->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Magazin::dataGridViewSalesClients_CellClick);
+			// 
+			// maskedTextBoxSellQuantity
+			// 
+			this->maskedTextBoxSellQuantity->Enabled = false;
+			this->maskedTextBoxSellQuantity->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->maskedTextBoxSellQuantity->Location = System::Drawing::Point(630, 175);
+			this->maskedTextBoxSellQuantity->Mask = L"00000";
+			this->maskedTextBoxSellQuantity->Name = L"maskedTextBoxSellQuantity";
+			this->maskedTextBoxSellQuantity->Size = System::Drawing::Size(55, 23);
+			this->maskedTextBoxSellQuantity->TabIndex = 119;
+			this->maskedTextBoxSellQuantity->ValidatingType = System::Int32::typeid;
+			// 
+			// labelSellQuantity
+			// 
+			this->labelSellQuantity->AutoSize = true;
+			this->labelSellQuantity->Enabled = false;
+			this->labelSellQuantity->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelSellQuantity->Location = System::Drawing::Point(541, 178);
+			this->labelSellQuantity->Name = L"labelSellQuantity";
+			this->labelSellQuantity->Size = System::Drawing::Size(76, 16);
+			this->labelSellQuantity->TabIndex = 118;
+			this->labelSellQuantity->Text = L"Iloœæ sztuk:";
+			// 
+			// comboBoxSellItem
+			// 
+			this->comboBoxSellItem->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBoxSellItem->Enabled = false;
+			this->comboBoxSellItem->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->comboBoxSellItem->FormattingEnabled = true;
+			this->comboBoxSellItem->Location = System::Drawing::Point(630, 129);
+			this->comboBoxSellItem->Name = L"comboBoxSellItem";
+			this->comboBoxSellItem->Size = System::Drawing::Size(316, 24);
+			this->comboBoxSellItem->TabIndex = 117;
+			this->comboBoxSellItem->SelectedIndexChanged += gcnew System::EventHandler(this, &Magazin::comboBoxSellItem_SelectedIndexChanged);
+			// 
+			// labelSellItem
+			// 
+			this->labelSellItem->AutoSize = true;
+			this->labelSellItem->Enabled = false;
+			this->labelSellItem->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelSellItem->Location = System::Drawing::Point(543, 129);
+			this->labelSellItem->Name = L"labelSellItem";
+			this->labelSellItem->Size = System::Drawing::Size(74, 16);
+			this->labelSellItem->TabIndex = 116;
+			this->labelSellItem->Text = L"Przedmiot:";
+			// 
+			// comboBoxSellClient
+			// 
+			this->comboBoxSellClient->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBoxSellClient->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->comboBoxSellClient->FormattingEnabled = true;
+			this->comboBoxSellClient->Location = System::Drawing::Point(630, 84);
+			this->comboBoxSellClient->Name = L"comboBoxSellClient";
+			this->comboBoxSellClient->Size = System::Drawing::Size(316, 24);
+			this->comboBoxSellClient->TabIndex = 115;
+			this->comboBoxSellClient->SelectedIndexChanged += gcnew System::EventHandler(this, &Magazin::comboBoxSellClient_SelectedIndexChanged);
+			// 
+			// labelSellClient
+			// 
+			this->labelSellClient->AutoSize = true;
+			this->labelSellClient->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelSellClient->Location = System::Drawing::Point(570, 84);
+			this->labelSellClient->Name = L"labelSellClient";
+			this->labelSellClient->Size = System::Drawing::Size(47, 16);
+			this->labelSellClient->TabIndex = 114;
+			this->labelSellClient->Text = L"Klient:";
+			// 
+			// labelSellIDVal
+			// 
+			this->labelSellIDVal->AutoSize = true;
+			this->labelSellIDVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelSellIDVal->Location = System::Drawing::Point(627, 56);
+			this->labelSellIDVal->Name = L"labelSellIDVal";
+			this->labelSellIDVal->Size = System::Drawing::Size(16, 16);
+			this->labelSellIDVal->TabIndex = 110;
+			this->labelSellIDVal->Text = L"#";
+			// 
+			// labelSellID
+			// 
+			this->labelSellID->AutoSize = true;
+			this->labelSellID->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelSellID->Location = System::Drawing::Point(456, 56);
+			this->labelSellID->Name = L"labelSellID";
+			this->labelSellID->Size = System::Drawing::Size(156, 16);
+			this->labelSellID->TabIndex = 109;
+			this->labelSellID->Text = L"Identyfikator sprzeda¿y:";
+			// 
+			// dataGridViewSalesEmployers
+			// 
+			this->dataGridViewSalesEmployers->AllowUserToAddRows = false;
+			this->dataGridViewSalesEmployers->AllowUserToDeleteRows = false;
+			this->dataGridViewSalesEmployers->AllowUserToOrderColumns = true;
+			this->dataGridViewSalesEmployers->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewSalesEmployers->Location = System::Drawing::Point(695, 351);
+			this->dataGridViewSalesEmployers->Name = L"dataGridViewSalesEmployers";
+			this->dataGridViewSalesEmployers->ReadOnly = true;
+			this->dataGridViewSalesEmployers->Size = System::Drawing::Size(282, 193);
+			this->dataGridViewSalesEmployers->TabIndex = 108;
+			this->dataGridViewSalesEmployers->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Magazin::dataGridViewSalesEmployers_CellClick);
 			// 
 			// dataGridViewSalesItems
 			// 
@@ -1869,25 +1982,11 @@ private: System::Windows::Forms::Button^  button3;
 			this->dataGridViewSalesItems->ReadOnly = true;
 			this->dataGridViewSalesItems->Size = System::Drawing::Size(403, 193);
 			this->dataGridViewSalesItems->TabIndex = 107;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(826, 15);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(120, 26);
-			this->button2->TabIndex = 106;
-			this->button2->Text = L"Wyszukaj";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(569, 15);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(251, 26);
-			this->textBox1->TabIndex = 105;
+			this->dataGridViewSalesItems->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Magazin::dataGridViewSalesItems_CellClick);
 			// 
 			// buttonSellsShow
 			// 
+			this->buttonSellsShow->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonSellsShow->Location = System::Drawing::Point(8, 7);
 			this->buttonSellsShow->Name = L"buttonSellsShow";
 			this->buttonSellsShow->Size = System::Drawing::Size(219, 34);
@@ -1907,9 +2006,32 @@ private: System::Windows::Forms::Button^  button3;
 			this->dataGridViewSales->ReadOnly = true;
 			this->dataGridViewSales->Size = System::Drawing::Size(403, 298);
 			this->dataGridViewSales->TabIndex = 103;
+			this->dataGridViewSales->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Magazin::dataGridViewSales_CellClick);
 			// 
 			// tabPage9
 			// 
+			this->tabPage9->Controls->Add(this->buttonDeliveryDeleteItem);
+			this->tabPage9->Controls->Add(this->buttonDeliveryHelp);
+			this->tabPage9->Controls->Add(this->buttonDeliveryClose);
+			this->tabPage9->Controls->Add(this->buttonDeliveryAddItem);
+			this->tabPage9->Controls->Add(this->buttonDeliveryClearForm);
+			this->tabPage9->Controls->Add(this->buttonDeliveryDelete);
+			this->tabPage9->Controls->Add(this->buttonDeliverySave);
+			this->tabPage9->Controls->Add(this->dataGridViewDeliveryProviders);
+			this->tabPage9->Controls->Add(this->maskedTextBoxDeliveryQuantity);
+			this->tabPage9->Controls->Add(this->labelDeliveryQuantity);
+			this->tabPage9->Controls->Add(this->comboBoxDeliveryItem);
+			this->tabPage9->Controls->Add(this->labelDeliveryItem);
+			this->tabPage9->Controls->Add(this->comboBoxDeliveryProvider);
+			this->tabPage9->Controls->Add(this->labelDeliveryProvider);
+			this->tabPage9->Controls->Add(this->labelDeliveryIDVal);
+			this->tabPage9->Controls->Add(this->labelDeliveryID);
+			this->tabPage9->Controls->Add(this->dataGridViewDeliveryEmployers);
+			this->tabPage9->Controls->Add(this->dataGridViewDeliveryItems);
+			this->tabPage9->Controls->Add(this->buttonDeliveryShow);
+			this->tabPage9->Controls->Add(this->dataGridViewDelivery);
+			this->tabPage9->Font = (gcnew System::Drawing::Font(L"Arial", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
 			this->tabPage9->Location = System::Drawing::Point(4, 22);
 			this->tabPage9->Name = L"tabPage9";
 			this->tabPage9->Size = System::Drawing::Size(979, 550);
@@ -1917,16 +2039,223 @@ private: System::Windows::Forms::Button^  button3;
 			this->tabPage9->Text = L"Dostawy";
 			this->tabPage9->UseVisualStyleBackColor = true;
 			// 
-			// tabPage4
+			// buttonDeliveryDeleteItem
 			// 
-			this->tabPage4->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->tabPage4->Location = System::Drawing::Point(4, 22);
-			this->tabPage4->Name = L"tabPage4";
-			this->tabPage4->Size = System::Drawing::Size(979, 550);
-			this->tabPage4->TabIndex = 3;
-			this->tabPage4->Text = L"Zwroty";
-			this->tabPage4->UseVisualStyleBackColor = true;
+			this->buttonDeliveryDeleteItem->Enabled = false;
+			this->buttonDeliveryDeleteItem->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonDeliveryDeleteItem->Location = System::Drawing::Point(702, 207);
+			this->buttonDeliveryDeleteItem->Name = L"buttonDeliveryDeleteItem";
+			this->buttonDeliveryDeleteItem->Size = System::Drawing::Size(241, 29);
+			this->buttonDeliveryDeleteItem->TabIndex = 152;
+			this->buttonDeliveryDeleteItem->Text = L"Usuñ przedmiot z transakcji";
+			this->buttonDeliveryDeleteItem->UseVisualStyleBackColor = true;
+			// 
+			// buttonDeliveryHelp
+			// 
+			this->buttonDeliveryHelp->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonDeliveryHelp->Location = System::Drawing::Point(414, 316);
+			this->buttonDeliveryHelp->Name = L"buttonDeliveryHelp";
+			this->buttonDeliveryHelp->Size = System::Drawing::Size(84, 29);
+			this->buttonDeliveryHelp->TabIndex = 151;
+			this->buttonDeliveryHelp->Text = L"Pomoc";
+			this->buttonDeliveryHelp->UseVisualStyleBackColor = true;
+			// 
+			// buttonDeliveryClose
+			// 
+			this->buttonDeliveryClose->Enabled = false;
+			this->buttonDeliveryClose->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonDeliveryClose->Location = System::Drawing::Point(823, 281);
+			this->buttonDeliveryClose->Name = L"buttonDeliveryClose";
+			this->buttonDeliveryClose->Size = System::Drawing::Size(150, 29);
+			this->buttonDeliveryClose->TabIndex = 150;
+			this->buttonDeliveryClose->Text = L"Zamknij transakcje";
+			this->buttonDeliveryClose->UseVisualStyleBackColor = true;
+			// 
+			// buttonDeliveryAddItem
+			// 
+			this->buttonDeliveryAddItem->Enabled = false;
+			this->buttonDeliveryAddItem->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonDeliveryAddItem->Location = System::Drawing::Point(702, 172);
+			this->buttonDeliveryAddItem->Name = L"buttonDeliveryAddItem";
+			this->buttonDeliveryAddItem->Size = System::Drawing::Size(241, 29);
+			this->buttonDeliveryAddItem->TabIndex = 149;
+			this->buttonDeliveryAddItem->Text = L"Dodaj przedmiot do transakcji";
+			this->buttonDeliveryAddItem->UseVisualStyleBackColor = true;
+			// 
+			// buttonDeliveryClearForm
+			// 
+			this->buttonDeliveryClearForm->Enabled = false;
+			this->buttonDeliveryClearForm->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonDeliveryClearForm->Location = System::Drawing::Point(539, 316);
+			this->buttonDeliveryClearForm->Name = L"buttonDeliveryClearForm";
+			this->buttonDeliveryClearForm->Size = System::Drawing::Size(146, 29);
+			this->buttonDeliveryClearForm->TabIndex = 148;
+			this->buttonDeliveryClearForm->Text = L"Wyczyœæ formularz";
+			this->buttonDeliveryClearForm->UseVisualStyleBackColor = true;
+			// 
+			// buttonDeliveryDelete
+			// 
+			this->buttonDeliveryDelete->Enabled = false;
+			this->buttonDeliveryDelete->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonDeliveryDelete->Location = System::Drawing::Point(691, 316);
+			this->buttonDeliveryDelete->Name = L"buttonDeliveryDelete";
+			this->buttonDeliveryDelete->Size = System::Drawing::Size(126, 29);
+			this->buttonDeliveryDelete->TabIndex = 147;
+			this->buttonDeliveryDelete->Text = L"Usuñ transakcje";
+			this->buttonDeliveryDelete->UseVisualStyleBackColor = true;
+			// 
+			// buttonDeliverySave
+			// 
+			this->buttonDeliverySave->Enabled = false;
+			this->buttonDeliverySave->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonDeliverySave->Location = System::Drawing::Point(823, 316);
+			this->buttonDeliverySave->Name = L"buttonDeliverySave";
+			this->buttonDeliverySave->Size = System::Drawing::Size(150, 29);
+			this->buttonDeliverySave->TabIndex = 146;
+			this->buttonDeliverySave->Text = L"Dodaj transakcje";
+			this->buttonDeliverySave->UseVisualStyleBackColor = true;
+			// 
+			// dataGridViewDeliveryProviders
+			// 
+			this->dataGridViewDeliveryProviders->AllowUserToAddRows = false;
+			this->dataGridViewDeliveryProviders->AllowUserToDeleteRows = false;
+			this->dataGridViewDeliveryProviders->AllowUserToOrderColumns = true;
+			this->dataGridViewDeliveryProviders->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewDeliveryProviders->Location = System::Drawing::Point(414, 351);
+			this->dataGridViewDeliveryProviders->Name = L"dataGridViewDeliveryProviders";
+			this->dataGridViewDeliveryProviders->ReadOnly = true;
+			this->dataGridViewDeliveryProviders->Size = System::Drawing::Size(271, 193);
+			this->dataGridViewDeliveryProviders->TabIndex = 145;
+			// 
+			// maskedTextBoxDeliveryQuantity
+			// 
+			this->maskedTextBoxDeliveryQuantity->Enabled = false;
+			this->maskedTextBoxDeliveryQuantity->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->maskedTextBoxDeliveryQuantity->Location = System::Drawing::Point(627, 175);
+			this->maskedTextBoxDeliveryQuantity->Mask = L"00000";
+			this->maskedTextBoxDeliveryQuantity->Name = L"maskedTextBoxDeliveryQuantity";
+			this->maskedTextBoxDeliveryQuantity->Size = System::Drawing::Size(55, 23);
+			this->maskedTextBoxDeliveryQuantity->TabIndex = 144;
+			this->maskedTextBoxDeliveryQuantity->ValidatingType = System::Int32::typeid;
+			// 
+			// labelDeliveryQuantity
+			// 
+			this->labelDeliveryQuantity->AutoSize = true;
+			this->labelDeliveryQuantity->Enabled = false;
+			this->labelDeliveryQuantity->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelDeliveryQuantity->Location = System::Drawing::Point(538, 178);
+			this->labelDeliveryQuantity->Name = L"labelDeliveryQuantity";
+			this->labelDeliveryQuantity->Size = System::Drawing::Size(76, 16);
+			this->labelDeliveryQuantity->TabIndex = 143;
+			this->labelDeliveryQuantity->Text = L"Iloœæ sztuk:";
+			// 
+			// comboBoxDeliveryItem
+			// 
+			this->comboBoxDeliveryItem->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBoxDeliveryItem->Enabled = false;
+			this->comboBoxDeliveryItem->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->comboBoxDeliveryItem->FormattingEnabled = true;
+			this->comboBoxDeliveryItem->Location = System::Drawing::Point(627, 129);
+			this->comboBoxDeliveryItem->Name = L"comboBoxDeliveryItem";
+			this->comboBoxDeliveryItem->Size = System::Drawing::Size(316, 24);
+			this->comboBoxDeliveryItem->TabIndex = 142;
+			// 
+			// labelDeliveryItem
+			// 
+			this->labelDeliveryItem->AutoSize = true;
+			this->labelDeliveryItem->Enabled = false;
+			this->labelDeliveryItem->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelDeliveryItem->Location = System::Drawing::Point(538, 132);
+			this->labelDeliveryItem->Name = L"labelDeliveryItem";
+			this->labelDeliveryItem->Size = System::Drawing::Size(74, 16);
+			this->labelDeliveryItem->TabIndex = 141;
+			this->labelDeliveryItem->Text = L"Przedmiot:";
+			// 
+			// comboBoxDeliveryProvider
+			// 
+			this->comboBoxDeliveryProvider->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBoxDeliveryProvider->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->comboBoxDeliveryProvider->FormattingEnabled = true;
+			this->comboBoxDeliveryProvider->Location = System::Drawing::Point(627, 84);
+			this->comboBoxDeliveryProvider->Name = L"comboBoxDeliveryProvider";
+			this->comboBoxDeliveryProvider->Size = System::Drawing::Size(316, 24);
+			this->comboBoxDeliveryProvider->TabIndex = 140;
+			// 
+			// labelDeliveryProvider
+			// 
+			this->labelDeliveryProvider->AutoSize = true;
+			this->labelDeliveryProvider->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelDeliveryProvider->Location = System::Drawing::Point(541, 87);
+			this->labelDeliveryProvider->Name = L"labelDeliveryProvider";
+			this->labelDeliveryProvider->Size = System::Drawing::Size(73, 16);
+			this->labelDeliveryProvider->TabIndex = 139;
+			this->labelDeliveryProvider->Text = L"Dostawca:";
+			// 
+			// labelDeliveryIDVal
+			// 
+			this->labelDeliveryIDVal->AutoSize = true;
+			this->labelDeliveryIDVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelDeliveryIDVal->Location = System::Drawing::Point(624, 56);
+			this->labelDeliveryIDVal->Name = L"labelDeliveryIDVal";
+			this->labelDeliveryIDVal->Size = System::Drawing::Size(16, 16);
+			this->labelDeliveryIDVal->TabIndex = 138;
+			this->labelDeliveryIDVal->Text = L"#";
+			// 
+			// labelDeliveryID
+			// 
+			this->labelDeliveryID->AutoSize = true;
+			this->labelDeliveryID->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelDeliveryID->Location = System::Drawing::Point(470, 56);
+			this->labelDeliveryID->Name = L"labelDeliveryID";
+			this->labelDeliveryID->Size = System::Drawing::Size(144, 16);
+			this->labelDeliveryID->TabIndex = 137;
+			this->labelDeliveryID->Text = L"Identyfikator dostawy:";
+			// 
+			// dataGridViewDeliveryEmployers
+			// 
+			this->dataGridViewDeliveryEmployers->AllowUserToAddRows = false;
+			this->dataGridViewDeliveryEmployers->AllowUserToDeleteRows = false;
+			this->dataGridViewDeliveryEmployers->AllowUserToOrderColumns = true;
+			this->dataGridViewDeliveryEmployers->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewDeliveryEmployers->Location = System::Drawing::Point(692, 351);
+			this->dataGridViewDeliveryEmployers->Name = L"dataGridViewDeliveryEmployers";
+			this->dataGridViewDeliveryEmployers->ReadOnly = true;
+			this->dataGridViewDeliveryEmployers->Size = System::Drawing::Size(282, 193);
+			this->dataGridViewDeliveryEmployers->TabIndex = 136;
+			// 
+			// dataGridViewDeliveryItems
+			// 
+			this->dataGridViewDeliveryItems->AllowUserToAddRows = false;
+			this->dataGridViewDeliveryItems->AllowUserToDeleteRows = false;
+			this->dataGridViewDeliveryItems->AllowUserToOrderColumns = true;
+			this->dataGridViewDeliveryItems->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewDeliveryItems->Location = System::Drawing::Point(5, 351);
+			this->dataGridViewDeliveryItems->Name = L"dataGridViewDeliveryItems";
+			this->dataGridViewDeliveryItems->ReadOnly = true;
+			this->dataGridViewDeliveryItems->Size = System::Drawing::Size(403, 193);
+			this->dataGridViewDeliveryItems->TabIndex = 135;
+			// 
+			// buttonDeliveryShow
+			// 
+			this->buttonDeliveryShow->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->buttonDeliveryShow->Location = System::Drawing::Point(5, 7);
+			this->buttonDeliveryShow->Name = L"buttonDeliveryShow";
+			this->buttonDeliveryShow->Size = System::Drawing::Size(219, 34);
+			this->buttonDeliveryShow->TabIndex = 134;
+			this->buttonDeliveryShow->Text = L"Poka¿ dostawy";
+			this->buttonDeliveryShow->UseVisualStyleBackColor = true;
+			// 
+			// dataGridViewDelivery
+			// 
+			this->dataGridViewDelivery->AllowUserToAddRows = false;
+			this->dataGridViewDelivery->AllowUserToDeleteRows = false;
+			this->dataGridViewDelivery->AllowUserToOrderColumns = true;
+			this->dataGridViewDelivery->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewDelivery->Location = System::Drawing::Point(5, 47);
+			this->dataGridViewDelivery->Name = L"dataGridViewDelivery";
+			this->dataGridViewDelivery->ReadOnly = true;
+			this->dataGridViewDelivery->Size = System::Drawing::Size(403, 298);
+			this->dataGridViewDelivery->TabIndex = 133;
 			// 
 			// tabPage7
 			// 
@@ -1981,129 +2310,117 @@ private: System::Windows::Forms::Button^  button3;
 			// labelASOtherInfoVal
 			// 
 			this->labelASOtherInfoVal->AutoSize = true;
-			this->labelASOtherInfoVal->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASOtherInfoVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASOtherInfoVal->Location = System::Drawing::Point(207, 315);
 			this->labelASOtherInfoVal->Name = L"labelASOtherInfoVal";
-			this->labelASOtherInfoVal->Size = System::Drawing::Size(17, 18);
+			this->labelASOtherInfoVal->Size = System::Drawing::Size(16, 16);
 			this->labelASOtherInfoVal->TabIndex = 64;
 			this->labelASOtherInfoVal->Text = L"#";
 			// 
 			// labelASAddressVal
 			// 
 			this->labelASAddressVal->AutoSize = true;
-			this->labelASAddressVal->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASAddressVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASAddressVal->Location = System::Drawing::Point(207, 218);
 			this->labelASAddressVal->Name = L"labelASAddressVal";
-			this->labelASAddressVal->Size = System::Drawing::Size(17, 18);
+			this->labelASAddressVal->Size = System::Drawing::Size(16, 16);
 			this->labelASAddressVal->TabIndex = 63;
 			this->labelASAddressVal->Text = L"#";
 			// 
 			// labelASSurnameVal
 			// 
 			this->labelASSurnameVal->AutoSize = true;
-			this->labelASSurnameVal->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASSurnameVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASSurnameVal->Location = System::Drawing::Point(207, 187);
 			this->labelASSurnameVal->Name = L"labelASSurnameVal";
-			this->labelASSurnameVal->Size = System::Drawing::Size(17, 18);
+			this->labelASSurnameVal->Size = System::Drawing::Size(16, 16);
 			this->labelASSurnameVal->TabIndex = 62;
 			this->labelASSurnameVal->Text = L"#";
 			// 
 			// labelASNameVal
 			// 
 			this->labelASNameVal->AutoSize = true;
-			this->labelASNameVal->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASNameVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASNameVal->Location = System::Drawing::Point(207, 152);
 			this->labelASNameVal->Name = L"labelASNameVal";
-			this->labelASNameVal->Size = System::Drawing::Size(17, 18);
+			this->labelASNameVal->Size = System::Drawing::Size(16, 16);
 			this->labelASNameVal->TabIndex = 61;
 			this->labelASNameVal->Text = L"#";
 			// 
 			// labelASLoginVal
 			// 
 			this->labelASLoginVal->AutoSize = true;
-			this->labelASLoginVal->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASLoginVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASLoginVal->Location = System::Drawing::Point(207, 119);
 			this->labelASLoginVal->Name = L"labelASLoginVal";
-			this->labelASLoginVal->Size = System::Drawing::Size(17, 18);
+			this->labelASLoginVal->Size = System::Drawing::Size(16, 16);
 			this->labelASLoginVal->TabIndex = 60;
 			this->labelASLoginVal->Text = L"#";
 			// 
 			// labelASIsAdminVal
 			// 
 			this->labelASIsAdminVal->AutoSize = true;
-			this->labelASIsAdminVal->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelASIsAdminVal->Location = System::Drawing::Point(234, 408);
+			this->labelASIsAdminVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelASIsAdminVal->Location = System::Drawing::Point(234, 411);
 			this->labelASIsAdminVal->Name = L"labelASIsAdminVal";
-			this->labelASIsAdminVal->Size = System::Drawing::Size(17, 18);
+			this->labelASIsAdminVal->Size = System::Drawing::Size(16, 16);
 			this->labelASIsAdminVal->TabIndex = 59;
 			this->labelASIsAdminVal->Text = L"#";
 			// 
 			// textBoxASRNewPassword
 			// 
-			this->textBoxASRNewPassword->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->textBoxASRNewPassword->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxASRNewPassword->Location = System::Drawing::Point(606, 187);
 			this->textBoxASRNewPassword->Name = L"textBoxASRNewPassword";
 			this->textBoxASRNewPassword->PasswordChar = '*';
-			this->textBoxASRNewPassword->Size = System::Drawing::Size(293, 26);
+			this->textBoxASRNewPassword->Size = System::Drawing::Size(293, 23);
 			this->textBoxASRNewPassword->TabIndex = 58;
 			// 
 			// labelASRNewPassword
 			// 
 			this->labelASRNewPassword->AutoSize = true;
-			this->labelASRNewPassword->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASRNewPassword->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASRNewPassword->Location = System::Drawing::Point(509, 191);
 			this->labelASRNewPassword->Name = L"labelASRNewPassword";
-			this->labelASRNewPassword->Size = System::Drawing::Size(93, 18);
+			this->labelASRNewPassword->Size = System::Drawing::Size(84, 16);
 			this->labelASRNewPassword->TabIndex = 57;
 			this->labelASRNewPassword->Text = L"Nowe has³o:";
 			// 
 			// textBoxASNewPassword
 			// 
-			this->textBoxASNewPassword->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->textBoxASNewPassword->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxASNewPassword->Location = System::Drawing::Point(606, 152);
 			this->textBoxASNewPassword->Name = L"textBoxASNewPassword";
 			this->textBoxASNewPassword->PasswordChar = '*';
-			this->textBoxASNewPassword->Size = System::Drawing::Size(293, 26);
+			this->textBoxASNewPassword->Size = System::Drawing::Size(293, 23);
 			this->textBoxASNewPassword->TabIndex = 56;
 			// 
 			// labelASNewPassword
 			// 
 			this->labelASNewPassword->AutoSize = true;
-			this->labelASNewPassword->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASNewPassword->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASNewPassword->Location = System::Drawing::Point(509, 155);
 			this->labelASNewPassword->Name = L"labelASNewPassword";
-			this->labelASNewPassword->Size = System::Drawing::Size(93, 18);
+			this->labelASNewPassword->Size = System::Drawing::Size(84, 16);
 			this->labelASNewPassword->TabIndex = 55;
 			this->labelASNewPassword->Text = L"Nowe has³o:";
 			// 
 			// textBoxASOldPassword
 			// 
-			this->textBoxASOldPassword->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->textBoxASOldPassword->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxASOldPassword->Location = System::Drawing::Point(606, 116);
 			this->textBoxASOldPassword->Name = L"textBoxASOldPassword";
 			this->textBoxASOldPassword->PasswordChar = '*';
-			this->textBoxASOldPassword->Size = System::Drawing::Size(293, 26);
+			this->textBoxASOldPassword->Size = System::Drawing::Size(293, 23);
 			this->textBoxASOldPassword->TabIndex = 54;
 			// 
 			// labelASOldPassword
 			// 
 			this->labelASOldPassword->AutoSize = true;
-			this->labelASOldPassword->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASOldPassword->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASOldPassword->Location = System::Drawing::Point(509, 119);
 			this->labelASOldPassword->Name = L"labelASOldPassword";
-			this->labelASOldPassword->Size = System::Drawing::Size(91, 18);
+			this->labelASOldPassword->Size = System::Drawing::Size(84, 16);
 			this->labelASOldPassword->TabIndex = 53;
 			this->labelASOldPassword->Text = L"Stare has³o:";
 			// 
@@ -2111,8 +2428,7 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			this->checkBoxASIsAdmin->AutoSize = true;
 			this->checkBoxASIsAdmin->Enabled = false;
-			this->checkBoxASIsAdmin->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->checkBoxASIsAdmin->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->checkBoxASIsAdmin->Location = System::Drawing::Point(213, 412);
 			this->checkBoxASIsAdmin->Name = L"checkBoxASIsAdmin";
 			this->checkBoxASIsAdmin->Size = System::Drawing::Size(15, 14);
@@ -2122,40 +2438,36 @@ private: System::Windows::Forms::Button^  button3;
 			// labelASIsAdmin
 			// 
 			this->labelASIsAdmin->AutoSize = true;
-			this->labelASIsAdmin->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelASIsAdmin->Location = System::Drawing::Point(40, 410);
+			this->labelASIsAdmin->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelASIsAdmin->Location = System::Drawing::Point(48, 410);
 			this->labelASIsAdmin->Name = L"labelASIsAdmin";
-			this->labelASIsAdmin->Size = System::Drawing::Size(161, 18);
+			this->labelASIsAdmin->Size = System::Drawing::Size(145, 16);
 			this->labelASIsAdmin->TabIndex = 51;
 			this->labelASIsAdmin->Text = L"Prawa administratora:";
 			// 
 			// labelASLastlogoutVal
 			// 
 			this->labelASLastlogoutVal->AutoSize = true;
-			this->labelASLastlogoutVal->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASLastlogoutVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASLastlogoutVal->Location = System::Drawing::Point(207, 382);
 			this->labelASLastlogoutVal->Name = L"labelASLastlogoutVal";
-			this->labelASLastlogoutVal->Size = System::Drawing::Size(17, 18);
+			this->labelASLastlogoutVal->Size = System::Drawing::Size(16, 16);
 			this->labelASLastlogoutVal->TabIndex = 50;
 			this->labelASLastlogoutVal->Text = L"#";
 			// 
 			// labelASLastloginVal
 			// 
 			this->labelASLastloginVal->AutoSize = true;
-			this->labelASLastloginVal->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASLastloginVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASLastloginVal->Location = System::Drawing::Point(207, 351);
 			this->labelASLastloginVal->Name = L"labelASLastloginVal";
-			this->labelASLastloginVal->Size = System::Drawing::Size(17, 18);
+			this->labelASLastloginVal->Size = System::Drawing::Size(16, 16);
 			this->labelASLastloginVal->TabIndex = 49;
 			this->labelASLastloginVal->Text = L"#";
 			// 
 			// button1
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->button1->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->button1->Location = System::Drawing::Point(451, 448);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(107, 29);
@@ -2166,151 +2478,137 @@ private: System::Windows::Forms::Button^  button3;
 			// 
 			// textBoxASPhone
 			// 
-			this->textBoxASPhone->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->textBoxASPhone->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxASPhone->Location = System::Drawing::Point(205, 279);
 			this->textBoxASPhone->Name = L"textBoxASPhone";
-			this->textBoxASPhone->Size = System::Drawing::Size(293, 26);
+			this->textBoxASPhone->Size = System::Drawing::Size(293, 23);
 			this->textBoxASPhone->TabIndex = 46;
 			// 
 			// textBoxASEmail
 			// 
-			this->textBoxASEmail->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->textBoxASEmail->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->textBoxASEmail->Location = System::Drawing::Point(205, 247);
 			this->textBoxASEmail->Name = L"textBoxASEmail";
-			this->textBoxASEmail->Size = System::Drawing::Size(293, 26);
+			this->textBoxASEmail->Size = System::Drawing::Size(293, 23);
 			this->textBoxASEmail->TabIndex = 45;
 			// 
 			// labelASLastlogout
 			// 
 			this->labelASLastlogout->AutoSize = true;
-			this->labelASLastlogout->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelASLastlogout->Location = System::Drawing::Point(38, 382);
+			this->labelASLastlogout->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelASLastlogout->Location = System::Drawing::Point(45, 382);
 			this->labelASLastlogout->Name = L"labelASLastlogout";
-			this->labelASLastlogout->Size = System::Drawing::Size(163, 18);
+			this->labelASLastlogout->Size = System::Drawing::Size(148, 16);
 			this->labelASLastlogout->TabIndex = 40;
 			this->labelASLastlogout->Text = L"Ostatnie wylogowanie:";
 			// 
 			// labelASLastlogin
 			// 
 			this->labelASLastlogin->AutoSize = true;
-			this->labelASLastlogin->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelASLastlogin->Location = System::Drawing::Point(40, 351);
+			this->labelASLastlogin->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelASLastlogin->Location = System::Drawing::Point(47, 351);
 			this->labelASLastlogin->Name = L"labelASLastlogin";
-			this->labelASLastlogin->Size = System::Drawing::Size(161, 18);
+			this->labelASLastlogin->Size = System::Drawing::Size(146, 16);
 			this->labelASLastlogin->TabIndex = 39;
 			this->labelASLastlogin->Text = L"Ostatnie zalogowanie:";
 			// 
 			// labelASOtherInfo
 			// 
 			this->labelASOtherInfo->AutoSize = true;
-			this->labelASOtherInfo->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASOtherInfo->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASOtherInfo->Location = System::Drawing::Point(85, 315);
 			this->labelASOtherInfo->Name = L"labelASOtherInfo";
-			this->labelASOtherInfo->Size = System::Drawing::Size(116, 18);
+			this->labelASOtherInfo->Size = System::Drawing::Size(108, 16);
 			this->labelASOtherInfo->TabIndex = 38;
 			this->labelASOtherInfo->Text = L"Inne informacje:";
 			// 
 			// labelASPhone
 			// 
 			this->labelASPhone->AutoSize = true;
-			this->labelASPhone->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelASPhone->Location = System::Drawing::Point(140, 284);
+			this->labelASPhone->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelASPhone->Location = System::Drawing::Point(135, 286);
 			this->labelASPhone->Name = L"labelASPhone";
-			this->labelASPhone->Size = System::Drawing::Size(61, 18);
+			this->labelASPhone->Size = System::Drawing::Size(58, 16);
 			this->labelASPhone->TabIndex = 37;
 			this->labelASPhone->Text = L"Telefon:";
 			// 
 			// labelASEmail
 			// 
 			this->labelASEmail->AutoSize = true;
-			this->labelASEmail->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelASEmail->Location = System::Drawing::Point(149, 251);
+			this->labelASEmail->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelASEmail->Location = System::Drawing::Point(147, 250);
 			this->labelASEmail->Name = L"labelASEmail";
-			this->labelASEmail->Size = System::Drawing::Size(52, 18);
+			this->labelASEmail->Size = System::Drawing::Size(46, 16);
 			this->labelASEmail->TabIndex = 36;
 			this->labelASEmail->Text = L"Email:";
 			// 
 			// labelASAddress
 			// 
 			this->labelASAddress->AutoSize = true;
-			this->labelASAddress->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelASAddress->Location = System::Drawing::Point(147, 218);
+			this->labelASAddress->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelASAddress->Location = System::Drawing::Point(144, 218);
 			this->labelASAddress->Name = L"labelASAddress";
-			this->labelASAddress->Size = System::Drawing::Size(54, 18);
+			this->labelASAddress->Size = System::Drawing::Size(49, 16);
 			this->labelASAddress->TabIndex = 35;
 			this->labelASAddress->Text = L"Adres:";
 			// 
 			// labelASSurname
 			// 
 			this->labelASSurname->AutoSize = true;
-			this->labelASSurname->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelASSurname->Location = System::Drawing::Point(122, 187);
+			this->labelASSurname->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelASSurname->Location = System::Drawing::Point(124, 187);
 			this->labelASSurname->Name = L"labelASSurname";
-			this->labelASSurname->Size = System::Drawing::Size(79, 18);
+			this->labelASSurname->Size = System::Drawing::Size(69, 16);
 			this->labelASSurname->TabIndex = 34;
 			this->labelASSurname->Text = L"Nazwisko:";
 			// 
 			// labelASName
 			// 
 			this->labelASName->AutoSize = true;
-			this->labelASName->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelASName->Location = System::Drawing::Point(160, 152);
+			this->labelASName->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelASName->Location = System::Drawing::Point(156, 152);
 			this->labelASName->Name = L"labelASName";
-			this->labelASName->Size = System::Drawing::Size(41, 18);
+			this->labelASName->Size = System::Drawing::Size(37, 16);
 			this->labelASName->TabIndex = 33;
 			this->labelASName->Text = L"Imiê:";
 			// 
 			// labelASLogin
 			// 
 			this->labelASLogin->AutoSize = true;
-			this->labelASLogin->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelASLogin->Location = System::Drawing::Point(150, 120);
+			this->labelASLogin->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelASLogin->Location = System::Drawing::Point(146, 119);
 			this->labelASLogin->Name = L"labelASLogin";
-			this->labelASLogin->Size = System::Drawing::Size(51, 18);
+			this->labelASLogin->Size = System::Drawing::Size(47, 16);
 			this->labelASLogin->TabIndex = 32;
 			this->labelASLogin->Text = L"Login:";
 			// 
 			// labelASIDVal
 			// 
 			this->labelASIDVal->AutoSize = true;
-			this->labelASIDVal->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->labelASIDVal->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->labelASIDVal->Location = System::Drawing::Point(207, 82);
 			this->labelASIDVal->Name = L"labelASIDVal";
-			this->labelASIDVal->Size = System::Drawing::Size(17, 18);
+			this->labelASIDVal->Size = System::Drawing::Size(16, 16);
 			this->labelASIDVal->TabIndex = 31;
 			this->labelASIDVal->Text = L"#";
 			// 
 			// labelASID
 			// 
 			this->labelASID->AutoSize = true;
-			this->labelASID->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelASID->Location = System::Drawing::Point(22, 82);
+			this->labelASID->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelASID->Location = System::Drawing::Point(29, 82);
 			this->labelASID->Name = L"labelASID";
-			this->labelASID->Size = System::Drawing::Size(179, 18);
+			this->labelASID->Size = System::Drawing::Size(164, 16);
 			this->labelASID->TabIndex = 30;
 			this->labelASID->Text = L"Identyfikator pracownika:";
 			// 
 			// labelLogedAs
 			// 
 			this->labelLogedAs->AutoSize = true;
-			this->labelLogedAs->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->labelLogedAs->Location = System::Drawing::Point(662, 31);
+			this->labelLogedAs->Font = (gcnew System::Drawing::Font(L"Arial", 10));
+			this->labelLogedAs->Location = System::Drawing::Point(707, 37);
 			this->labelLogedAs->Name = L"labelLogedAs";
-			this->labelLogedAs->Size = System::Drawing::Size(157, 22);
+			this->labelLogedAs->Size = System::Drawing::Size(118, 16);
 			this->labelLogedAs->TabIndex = 1;
 			this->labelLogedAs->Text = L"Zalogowano jako:";
 			// 
@@ -2366,10 +2664,16 @@ private: System::Windows::Forms::Button^  button3;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewItems))->EndInit();
 			this->tabPage6->ResumeLayout(false);
 			this->tabPage6->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewSalesEmployers))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewSalesClients))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewSalesEmployers))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewSalesItems))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewSales))->EndInit();
+			this->tabPage9->ResumeLayout(false);
+			this->tabPage9->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDeliveryProviders))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDeliveryEmployers))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDeliveryItems))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDelivery))->EndInit();
 			this->tabPage8->ResumeLayout(false);
 			this->tabPage8->PerformLayout();
 			this->ResumeLayout(false);
@@ -2484,12 +2788,12 @@ private: System::Windows::Forms::Button^  button3;
 				this->textBoxEmployerEmail->Text = db.result->GetString(12);
 				this->textBoxEmployerPhone->Text = db.result->GetString(11);
 				this->textBoxEmployerOtherInfo->Text = db.result->GetString(13);
-				//this->labelEmployerLastlogin->Text = "";
-				//this->labelEmployerLastlogout->Text =
+				this->labelLastLoginVal->Text = Convert::ToString(db.result->GetDateTime(5));
+				this->labelLastLogoutVal->Text = Convert::ToString(db.result->GetDateTime(6));
 				this->checkBoxIsAdmin->Checked = db.result->GetBoolean(8);
 				db.closeConnection();
 				if (userType)
-					this->buttonEmployerDelete->Enabled = true;
+					this->buttonEmployerDelete->Enabled = true; 
 				btnSaveEmployer->Text = "Zapisz";
 			}
 			else
@@ -2691,8 +2995,14 @@ private: System::Windows::Forms::Button^  button3;
 	}
 
 	private: System::Void Magazin_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
-		if (MessageBox::Show("Czy chcesz zamkn¹æ program?", "Magazyn", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::No)
+		if (MessageBox::Show("Czy chcesz zamkn¹æ program?", "Magazyn", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 		{
+			String^ query = "UPDATE employers set last_log_out=now() WHERE id_employers='" + userId + "'";
+			dbDriver db;
+			db.update(query);
+			if (!db.getStatus())
+				MessageBox::Show(db.getError());
+			db.closeConnection();
 			this->Close();
 		}
 	}
@@ -2709,8 +3019,8 @@ private: System::Windows::Forms::Button^  button3;
 			labelASNameVal->Text = db.result->GetString(1);
 			labelASSurnameVal->Text = db.result->GetString(2);
 			labelASLoginVal->Text = db.result->GetString(3);
-			//labelASLastloginVal->Text = ;
-			//labelASLastlogoutVal->Text = ;
+			labelASLastloginVal->Text = Convert::ToString(db.result->GetDateTime(5));
+			labelASLastlogoutVal->Text = Convert::ToString(db.result->GetDateTime(6));
 			relEmployersToCommonData = db.result->GetInt32(7);
 			int type = db.result->GetInt32(8);
 			if (type = 1)
@@ -3789,23 +4099,362 @@ private: System::Windows::Forms::Button^  button3;
 	}
 	
 	private: System::Void buttonSellsShow_Click(System::Object^  sender, System::EventArgs^  e) {
-		//String^ SalesQuery = "SELECT sales.id_sales, employers.name, employers.surname, clients.name, items.name, items.model, sales.quantity_status, sales.date, sales.transaction_price From sales Inner join employers on sales.id_employers = employers.id_employers inner join clients on sales.id_clients = clients.id_clients inner join items on sales.id_items = items.id_items";
-		//bindTable(SalesQuery, dataGridViewSales);
+		rowIdSales = -1;
+		String^ SalesQuery = "SELECT id_sales as Id_sprzedazy, id_employers as Id_sprzedawcy, id_clients as Id_klienta, date as Data, price as Kwota_transakcji, status from sales";
+		bindTable(SalesQuery, dataGridViewSales);
 
 		String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
 		bindTable(ItemsQuery, dataGridViewSalesItems);
 
-		String^ ProvidersQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
-		bindTable(ProvidersQuery, dataGridViewSalesEmployers);
-
-		String^ ClientsQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+		String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
 		bindTable(ClientsQuery, dataGridViewSalesClients);
 
-		
+		String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+		bindTable(EmployersQuery, dataGridViewSalesEmployers);	
 	}
 
-	private: System::Void buttonTransactionSave_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void buttonSalesSave_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ query = "INSERT INTO sales(id_employers, id_clients, date) VALUES ('" + userId + "', (SELECT id_clients FROM clients WHERE name='" + comboBoxSellClient->Text + "'), now())";
+		dbDriver db;
+		db.insert(query);
+		if (db.getStatus())
+		{
+			MessageBox::Show("Transakcja zosta³a dodana przejdŸ do jej konfiguracji");
+			String^ SalesQuery = "SELECT id_sales as Id_sprzedazy, id_employers as Id_sprzedawcy, id_clients as Id_klienta, date as Data, price as Kwota_transakcji, status from sales WHERE id_employers='" + userId + "' ORDER BY id_sales DESC Limit 1";
+			bindTable(SalesQuery, dataGridViewSales);
+			dataGridViewSalesClients->DataSource = nullptr;
+			dataGridViewSalesItems->DataSource = nullptr;
+			dataGridViewSalesEmployers->DataSource = nullptr;
+			dataGridViewSalesClients->Rows->Clear();
+			dataGridViewSalesItems->Rows->Clear();
+			dataGridViewSalesEmployers->Rows->Clear();
+		}
+		else
+			MessageBox::Show(db.getError());
+		db.closeConnection();
+	}
+
+	private: System::Void dataGridViewSales_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		if (Convert::ToInt32(e->RowIndex) >= 0)
+		{
+			buttonSalesClearForm->Enabled = true;
+			maskedTextBoxSellQuantity->Text = "";
+			this->rowIdSales = Convert::ToInt32(dataGridViewSales->Rows[e->RowIndex]->Cells[0]->Value);
+			String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + rowIdSales + "'";
+			bindTable(ItemsQuery, dataGridViewSalesItems);
+
+			String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.id_clients='" + dataGridViewSales->Rows[e->RowIndex]->Cells[2]->Value + "'";
+			bindTable(ClientsQuery, dataGridViewSalesClients);
+
+			String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email, common_data.phone as NrTelefonu from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers = '" + dataGridViewSales->Rows[e->RowIndex]->Cells[1]->Value + "'";
+			bindTable(EmployersQuery, dataGridViewSalesEmployers);
+
+			if (Convert::ToInt32(dataGridViewSales->Rows[e->RowIndex]->Cells[5]->Value) == 1)
+			{
+				this->labelSellIDVal->Text = dataGridViewSales->Rows[e->RowIndex]->Cells[0]->Value->ToString();
+				this->comboBoxSellClient->Text = this->dataGridViewSalesClients->Rows[0]->Cells[1]->Value->ToString();
+				this->comboBoxSellClient->Enabled = false;
+				this->buttonSalesDelete->Enabled = true;
+
+			}
+			else if (Convert::ToInt32(dataGridViewSales->Rows[e->RowIndex]->Cells[5]->Value) == 0)
+			{
+				this->labelSellIDVal->Text = dataGridViewSales->Rows[e->RowIndex]->Cells[0]->Value->ToString();
+				this->comboBoxSellClient->Text = this->dataGridViewSalesClients->Rows[0]->Cells[1]->Value->ToString();
+				labelSellItem->Enabled = true;
+				comboBoxSellItem->Enabled = true;
+				labelSellQuantity->Enabled = true;
+				maskedTextBoxSellQuantity->Enabled = true;
+				buttonSalesAddItem->Enabled = true;
+				buttonSalesAddItem->Enabled = true;
+				this->comboBoxSellClient->Enabled = false;
+				this->buttonSalesAddItem->Enabled = true;
+				this->buttonSalesClose->Enabled = true;
+				this->buttonSalesSave->Enabled = false;
+				this->maskedTextBoxSellQuantity->Enabled = true;
+				this->buttonSalesDelete->Enabled = true;
+				this->comboBoxSellItem->Enabled = true;
+				
+				String^ query = "Select concat(name, ' ', model) FROM items";
+				dbDriver db;
+				db.selectOne(query);
+				if (db.getStatus())
+				{
+					comboBoxSellItem->Items->Clear();
+					comboBoxSellItem->Items->Add(db.result->GetString(0));
+					while (db.result->Read())
+						comboBoxSellItem->Items->Add(db.result->GetString(0));
+				}
+				else
+					MessageBox::Show(db.getError());
+				db.closeConnection();
+			}
+		}
+	}
+
+	private: System::Void comboBoxSellClient_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+		this->buttonSalesSave->Enabled = true;
+	}
+
+	private: System::Void buttonSalesAddItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		try {
+			if (Convert::ToInt32(maskedTextBoxSellQuantity->Text) <= 0) throw 1;
+			if (comboBoxSellItem->Text == "") throw 2;
+
+			String^ squery = "SELECT count(sales_items.id_sales), items.id_items, sales_items.quantity FROM sales_items inner join items on sales_items.id_items = items.id_items WHERE concat(items.name, ' ', items.model) = '" + comboBoxSellItem->Text + "'";
+			dbDriver dbs;
+			dbs.selectOne(squery);
+			String^ qry = "SELECT quantity from items where concat(name, ' ', model) = '" + comboBoxSellItem->Text + "'";
+			dbDriver dbq;
+			dbq.selectOne(qry);
+			if (dbs.getStatus())
+			{
+				if (dbq.result->GetInt32(0) < Convert::ToInt32(maskedTextBoxSellQuantity->Text)) throw 3;
+				if (dbs.result->GetInt32(0) == 1)
+				{
+					String^ query = "UPDATE sales_items SET quantity = '" + maskedTextBoxSellQuantity->Text + "' WHERE id_sales = '" + rowIdSales + "' AND id_items='" + dbs.result->GetInt32(1) + "'";
+					dbDriver db;
+					db.update(query);
+					if (db.getStatus())
+					{
+						String^ qquery = "UPDATE items SET quantity=(quantity + ('" + dbs.result->GetInt32(2) + "'-'" + maskedTextBoxSellQuantity->Text + "')) WHERE id_items='" + dbs.result->GetInt32(1) + "'";
+						dbDriver ddb;
+						ddb.update(qquery);
+						if (ddb.getStatus())
+						{
+							MessageBox::Show("Przedmiot zosta³ zaktualizowany");
+							String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + rowIdSales + "'";
+							bindTable(ItemsQuery, dataGridViewSalesItems);
+						}
+						else
+							MessageBox::Show(ddb.getError());
+						ddb.closeConnection();
+					}
+					else
+						MessageBox::Show(db.getError());
+					db.closeConnection();
+				}
+				else if (dbs.result->GetInt32(0) == 0)
+				{
+					String^ query = "INSERT INTO sales_items(id_sales, id_items, quantity) VALUES('" + rowIdSales + "', (SELECT id_items from items WHERE concat(name, ' ', model) = '" + comboBoxSellItem->Text + "'), '" + maskedTextBoxSellQuantity->Text + "')";
+					dbDriver db;
+					db.insert(query);
+					if (db.getStatus())
+					{
+						String^ qquery = "UPDATE items SET quantity=quantity - '" + maskedTextBoxSellQuantity->Text + "' WHERE concat(name, ' ', model) = '" + comboBoxSellItem->Text + "'";
+						dbDriver ddb;
+						ddb.update(qquery);
+						if (ddb.getStatus())
+						{
+							MessageBox::Show("Przedmiot dodany");
+							String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + rowIdSales + "'";
+							bindTable(ItemsQuery, dataGridViewSalesItems);
+						}
+						else
+							MessageBox::Show(ddb.getError());
+						ddb.closeConnection();
+					}
+					else
+						MessageBox::Show(db.getError());
+					db.closeConnection();
+				}		
+			}
+			else
+			{
+				MessageBox::Show(dbs.getError());
+				dbs.closeConnection();
+			}
+
+		}
+		catch (int ex)
+		{
+			if (ex == 1)
+				MessageBox::Show("Iloœæ sprzedawanego przedmiotu musi byæ wiêksza od 0");
+			if (ex == 2)
+				MessageBox::Show("Wybierz przedmiot który chcesz sprzedaæ");
+			if (ex == 3)
+				MessageBox::Show("Nie posiadasz tyle sztuk przedmiotu w magazynie");
+		}
+	}
+
+	private: System::Void comboBoxSellItem_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+		buttonSalesDeleteItem->Enabled = true;
+		String^ query = "SELECT count(sales_items.id_sales), sales_items.quantity FROM sales_items inner join items on items.id_items = sales_items.id_items WHERE concat(items.name, ' ', items.model) = '" + comboBoxSellItem->Text + "'";
+		dbDriver db;
+		db.selectOne(query);
+		if (db.getStatus())
+		{
+			if (db.result->GetInt32(0) == 1)
+			{
+				maskedTextBoxSellQuantity->Text = db.result->GetString(1);
+				buttonSalesDeleteItem->Enabled = true;
+			}
+		}
+		else
+		{
+			MessageBox::Show(db.getError());
+			db.closeConnection();
+		}		
+	}
+
+	private: System::Void buttonSalesDeleteItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (MessageBox::Show("Czy chcesz usun¹æ przedmiot z transakcji?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+		{
+			String^ qquery = "SELECT sales_items.quantity FROM sales_items INNER JOIN items on items.id_items = sales_items.id_items WHERE concat(items.name, ' ', items.model) = '" + comboBoxSellItem->Text + "' and sales_items.id_sales = '" + rowIdSales + "'";
+			dbDriver dbqq;
+			dbqq.selectOne(qquery);
+			if (dbqq.getStatus())
+			{
+				String^ query = "DELETE sales_items FROM sales_items INNER JOIN items on items.id_items = sales_items.id_items WHERE sales_items.id_sales = '" + rowIdSales + "' and sales_items.id_items=(SELECT id_items from items where concat(items.name, ' ', items.model) = '" + comboBoxSellItem->Text + "')";
+				dbDriver db;
+				db.deleteFromSql(query);
+				if (db.getStatus())
+				{
+					MessageBox::Show("Przedmiot zosta³ usuniêty z transakcji");
+					String^ qquery = "UPDATE items SET quantity = quantity + '" + dbqq.result->GetString(0) + "' WHERE concat(name, ' ', model) = '" + comboBoxSellItem->Text + "'";
+					dbDriver dbq;
+					dbq.update(qquery);
+					if (dbq.getStatus())
+					{
+						String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + rowIdSales + "'";
+						bindTable(ItemsQuery, dataGridViewSalesItems);
+					}
+					else
+						MessageBox::Show(dbq.getError());
+					dbq.closeConnection();
+				}
+				else
+				{
+					MessageBox::Show(db.getError());
+					db.closeConnection();
+				}
+			}
+			else
+				MessageBox::Show(dbqq.getError());
+			dbqq.closeConnection();
+		}
+	}
+
+	private: System::Void dataGridViewSalesItems_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		if (rowIdSales >= 0)
+		{
+			comboBoxSellItem->Text = dataGridViewSalesItems->Rows[e->RowIndex]->Cells[1]->Value->ToString() + " " + dataGridViewSalesItems->Rows[e->RowIndex]->Cells[2]->Value->ToString();
+			maskedTextBoxSellQuantity->Text = dataGridViewSalesItems->Rows[e->RowIndex]->Cells[4]->Value->ToString();
+		}
+		else
+		{
+			String^ SalesQuery = "SELECT sales.id_sales as Id_sprzedazy, sales.id_employers as Id_sprzedawcy, sales.id_clients as Id_klienta, sales.date as Data, sales.price as Kwota_transakcji, sales.status from sales INNER JOIN sales_items ON sales.id_sales = sales_items.id_sales WHERE sales_items.id_items = '" + dataGridViewSalesItems->Rows[e->RowIndex]->Cells[0]->Value->ToString() + "'";
+			bindTable(SalesQuery, dataGridViewSales);
+		}
+	}
 	
+	private: System::Void buttonSalesClose_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ query = "UPDATE sales SET status = 1, price=(SELECT SUM(sales_items.quantity*items.price) from sales_items INNER JOIN items ON sales_items.id_items = items.id_items WHERE sales_items.id_sales = '" + rowIdSales + "')  WHERE id_sales = '" + rowIdSales + "'";
+		dbDriver db;
+		db.update(query);
+		if (db.getStatus())
+		{
+			MessageBox::Show("Transakcja zosta³a zamkniêta");
+			labelSellItem->Enabled = false;
+			comboBoxSellItem->Enabled = false;
+			labelSellQuantity->Enabled = false;
+			maskedTextBoxSellQuantity->Enabled = false;
+			buttonSalesAddItem->Enabled = false;
+			buttonSalesDeleteItem->Enabled = false;
+			buttonSalesClose->Enabled = false;
+		}
+		else
+			MessageBox::Show(db.getError());
+		db.closeConnection();
+	}
+
+	private: System::Void buttonSalesDelete_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ query = "Select status, count(sales_items.id_sales) from sales INNER JOIN sales_items ON sales.id_sales = sales_items.id_sales where sales.id_sales='" + rowIdSales + "'";
+		dbDriver db;
+		db.selectOne(query);
+		if (db.getStatus())
+		{
+			if (db.result->GetInt32(0) == 1)
+			{
+				if (MessageBox::Show("Czy chcesz usun¹æ transakcje?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+				{
+					String^ dquery;
+					if(db.result->GetInt32(1) > 0)
+						dquery = "DELETE sales, sales_items FROM sales_items INNER JOIN sales ON sales_items.id_sales = sales.id_sales WHERE sales.id_sales = '" + rowIdSales + "'";
+					else if(db.result->GetInt32(1) == 0)
+						dquery = "DELETE FROM sales WHERE id_sales = '" + rowIdSales + "'";
+					dbDriver dbd;
+					dbd.deleteFromSql(dquery);
+					if (dbd.getStatus())
+					{
+						MessageBox::Show("Transakcja zosta³a usuniêta");
+						String^ SalesQuery = "SELECT id_sales as Id_sprzedazy, id_employers as Id_sprzedawcy, id_clients as Id_klienta, date as Data, price as Kwota_transakcji, status from sales";
+						bindTable(SalesQuery, dataGridViewSales);
+
+						String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
+						bindTable(ItemsQuery, dataGridViewSalesItems);
+
+						String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
+						bindTable(ClientsQuery, dataGridViewSalesClients);
+
+						String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+						bindTable(EmployersQuery, dataGridViewSalesEmployers);
+						clearFormSales();
+					}
+					else
+						MessageBox::Show(dbd.getError());
+					dbd.closeConnection();
+				}
+			}
+			else
+				MessageBox::Show("Musisz zamkn¹æ transakcje przed usuniêciem");
+		}
+		else
+			MessageBox::Show(db.getError());
+		db.closeConnection();
+	}
+
+	private: System::Void buttonSalesClearForm_Click(System::Object^  sender, System::EventArgs^  e) {
+		clearFormSales();
+	}
+
+	private: Void clearFormSales(){
+		labelSellIDVal->Text = "#";
+		comboBoxSellClient->Enabled = true;
+		rowIdSales = -1;
+		maskedTextBoxSellQuantity->Text = "";
+		buttonSalesSave->Enabled = true;
+		comboBoxSellItem->Items->Clear();
+		comboBoxSellItem->Enabled = false;
+		maskedTextBoxSellQuantity->Enabled = false;
+		buttonSalesAddItem->Enabled = false;
+		buttonSalesDeleteItem->Enabled = false;
+		buttonSalesClose->Enabled = false;
+		buttonSalesDelete->Enabled = false;
+		buttonSalesClearForm->Enabled = false;
+	}
+
+	private: System::Void dataGridViewSalesClients_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		if (rowIdSales < 0)
+		{
+			String^ Query = "SELECT sales.id_sales as Id_sprzedazy, sales.id_employers as Id_sprzedawcy, sales.id_clients as Id_klienta, sales.date as Data, sales.price as Kwota_transakcji, sales.status from sales WHERE sales.id_clients = '" + dataGridViewSalesClients->Rows[e->RowIndex]->Cells[0]->Value->ToString() + "'";
+			bindTable(Query, dataGridViewSales);
+		}
+	}
+
+	private: System::Void dataGridViewSalesEmployers_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		String^ Query = "SELECT sales.id_sales as Id_sprzedazy, sales.id_employers as Id_sprzedawcy, sales.id_clients as Id_klienta, sales.date as Data, sales.price as Kwota_transakcji, sales.status from sales WHERE sales.id_employers = '" + dataGridViewSalesEmployers->Rows[e->RowIndex]->Cells[0]->Value->ToString() + "'";
+		bindTable(Query, dataGridViewSales);
+	}
+
+	private: System::Void buttonSalesHelp_Click(System::Object^  sender, System::EventArgs^  e) {
+		MessageBox::Show(
+			"Sprzeda¿ - Instrukcja obs³ugi\n"
+			+ "Wybierz klienta z listy a nastêpnie naciœnij Dodaj transakcje\n"
+			+ "Po dodaniu transakcji mo¿esz dodawaæ do niej przedmioty i okreœlaæ ich iloœæ oraz je usuwaæ\n"
+			+ "Aby usun¹æ ca³¹ transakcje nale¿y j¹ wczeœniej zamkn¹æ\n"
+			+ "Po zakmniêciu transakcji nie ma mo¿liwoœæ dodawania do niej przedmiotów\n"
+		);
 	}
 };
 }

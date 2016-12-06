@@ -181,11 +181,13 @@ private: System::Void btnLogin_Click(System::Object^  sender, System::EventArgs^
 	if (db.getStatus())
 	{
 		int id_employers = db.result->GetInt32(0);
-
-		//TODO czas zalogowania
-
-		//String^ queryUpdate = "UPDATE employers SET last_log_in ='" + date + "' WHERE id_employers='" + id_employers + "'";
 		db.closeConnection();
+		String^ queryUpdate = "UPDATE employers SET last_log_in =now() WHERE id_employers='" + id_employers + "'";
+		dbDriver dbl;
+		dbl.update(queryUpdate);
+		if (!dbl.getStatus())
+			MessageBox::Show(dbl.getError());
+		dbl.closeConnection();
 		this->Hide();
 		Magazin^ magazin = gcnew Magazin(id_employers);
 		magazin->ShowDialog();
