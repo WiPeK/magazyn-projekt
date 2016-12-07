@@ -1,10 +1,12 @@
 #include<iostream>
+#include<string>
 #pragma once
 
 namespace dbDriverSpace {
 
 	using namespace std;
 	using namespace System;
+	using namespace System::IO;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
@@ -22,6 +24,16 @@ namespace dbDriverSpace {
 			String^ username;
 			String^ password;
 			String^ database;
+
+			void getConfig()
+			{
+				StreamReader^ config = File::OpenText("config.cfg");
+				this->datasource = config->ReadLine();
+				this->port = config->ReadLine();
+				this->username = config->ReadLine();
+				this->password = config->ReadLine();
+				this->database = config->ReadLine();
+			}
 		
 		public:
 			MySqlDataReader^ result;
@@ -29,11 +41,7 @@ namespace dbDriverSpace {
 			
 			dbDriver()
 			{
-				datasource = "localhost";
-				port = "3306";
-				username = "root";
-				password = "root";
-				database = "magazyn";
+				this->getConfig();
 				String^ config = L"datasource=" + datasource + ";port=" + port + ";username=" + username + ";password=" + password + ";database=" + database + ";CharSet=utf8";
 				connect = gcnew MySqlConnection(config);
 			}

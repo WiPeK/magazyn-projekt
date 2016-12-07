@@ -59,7 +59,7 @@ namespace Magazyn {
 
 	private: System::Windows::Forms::TabPage^  tabPage5;
 	private: System::Windows::Forms::TabPage^  tabPage6;
-	private: System::Windows::Forms::TabPage^  tabPage7;
+
 	private: System::Windows::Forms::DataGridView^  tableEmployers;
 	private: System::Windows::Forms::Button^  btnShowEmployers;
 	private: System::Windows::Forms::Button^  btnSearchEmployers;
@@ -436,7 +436,6 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->dataGridViewDeliveryItems = (gcnew System::Windows::Forms::DataGridView());
 			this->buttonDeliveryShow = (gcnew System::Windows::Forms::Button());
 			this->dataGridViewDelivery = (gcnew System::Windows::Forms::DataGridView());
-			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage8 = (gcnew System::Windows::Forms::TabPage());
 			this->labelASOtherInfoVal = (gcnew System::Windows::Forms::Label());
 			this->labelASAddressVal = (gcnew System::Windows::Forms::Label());
@@ -503,7 +502,6 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->tabControl1->Controls->Add(this->tabPage5);
 			this->tabControl1->Controls->Add(this->tabPage6);
 			this->tabControl1->Controls->Add(this->tabPage9);
-			this->tabControl1->Controls->Add(this->tabPage7);
 			this->tabControl1->Controls->Add(this->tabPage8);
 			this->tabControl1->Location = System::Drawing::Point(13, 61);
 			this->tabControl1->Name = L"tabControl1";
@@ -606,6 +604,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			// 
 			// buttonEmployerDelete
 			// 
+			this->buttonEmployerDelete->Enabled = false;
 			this->buttonEmployerDelete->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonEmployerDelete->Location = System::Drawing::Point(742, 512);
 			this->buttonEmployerDelete->Name = L"buttonEmployerDelete";
@@ -914,6 +913,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			// 
 			// buttonDeleteClient
 			// 
+			this->buttonDeleteClient->Enabled = false;
 			this->buttonDeleteClient->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonDeleteClient->Location = System::Drawing::Point(737, 476);
 			this->buttonDeleteClient->Name = L"buttonDeleteClient";
@@ -1171,6 +1171,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			// 
 			// buttonProviderDelete
 			// 
+			this->buttonProviderDelete->Enabled = false;
 			this->buttonProviderDelete->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->buttonProviderDelete->Location = System::Drawing::Point(748, 476);
 			this->buttonProviderDelete->Name = L"buttonProviderDelete";
@@ -2049,6 +2050,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->buttonDeliveryDeleteItem->TabIndex = 152;
 			this->buttonDeliveryDeleteItem->Text = L"Usuñ przedmiot z transakcji";
 			this->buttonDeliveryDeleteItem->UseVisualStyleBackColor = true;
+			this->buttonDeliveryDeleteItem->Click += gcnew System::EventHandler(this, &Magazin::buttonDeliveryDeleteItem_Click);
 			// 
 			// buttonDeliveryHelp
 			// 
@@ -2059,6 +2061,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->buttonDeliveryHelp->TabIndex = 151;
 			this->buttonDeliveryHelp->Text = L"Pomoc";
 			this->buttonDeliveryHelp->UseVisualStyleBackColor = true;
+			this->buttonDeliveryHelp->Click += gcnew System::EventHandler(this, &Magazin::buttonDeliveryHelp_Click);
 			// 
 			// buttonDeliveryClose
 			// 
@@ -2070,6 +2073,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->buttonDeliveryClose->TabIndex = 150;
 			this->buttonDeliveryClose->Text = L"Zamknij transakcje";
 			this->buttonDeliveryClose->UseVisualStyleBackColor = true;
+			this->buttonDeliveryClose->Click += gcnew System::EventHandler(this, &Magazin::buttonDeliveryClose_Click);
 			// 
 			// buttonDeliveryAddItem
 			// 
@@ -2081,6 +2085,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->buttonDeliveryAddItem->TabIndex = 149;
 			this->buttonDeliveryAddItem->Text = L"Dodaj przedmiot do transakcji";
 			this->buttonDeliveryAddItem->UseVisualStyleBackColor = true;
+			this->buttonDeliveryAddItem->Click += gcnew System::EventHandler(this, &Magazin::buttonDeliveryAddItem_Click);
 			// 
 			// buttonDeliveryClearForm
 			// 
@@ -2092,6 +2097,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->buttonDeliveryClearForm->TabIndex = 148;
 			this->buttonDeliveryClearForm->Text = L"Wyczyœæ formularz";
 			this->buttonDeliveryClearForm->UseVisualStyleBackColor = true;
+			this->buttonDeliveryClearForm->Click += gcnew System::EventHandler(this, &Magazin::buttonDeliveryClearForm_Click);
 			// 
 			// buttonDeliveryDelete
 			// 
@@ -2103,6 +2109,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->buttonDeliveryDelete->TabIndex = 147;
 			this->buttonDeliveryDelete->Text = L"Usuñ transakcje";
 			this->buttonDeliveryDelete->UseVisualStyleBackColor = true;
+			this->buttonDeliveryDelete->Click += gcnew System::EventHandler(this, &Magazin::buttonDeliveryDelete_Click);
 			// 
 			// buttonDeliverySave
 			// 
@@ -2114,6 +2121,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->buttonDeliverySave->TabIndex = 146;
 			this->buttonDeliverySave->Text = L"Dodaj transakcje";
 			this->buttonDeliverySave->UseVisualStyleBackColor = true;
+			this->buttonDeliverySave->Click += gcnew System::EventHandler(this, &Magazin::buttonDeliverySave_Click);
 			// 
 			// dataGridViewDeliveryProviders
 			// 
@@ -2126,6 +2134,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->dataGridViewDeliveryProviders->ReadOnly = true;
 			this->dataGridViewDeliveryProviders->Size = System::Drawing::Size(271, 193);
 			this->dataGridViewDeliveryProviders->TabIndex = 145;
+			this->dataGridViewDeliveryProviders->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Magazin::dataGridViewDeliveryProviders_CellClick);
 			// 
 			// maskedTextBoxDeliveryQuantity
 			// 
@@ -2159,6 +2168,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->comboBoxDeliveryItem->Name = L"comboBoxDeliveryItem";
 			this->comboBoxDeliveryItem->Size = System::Drawing::Size(316, 24);
 			this->comboBoxDeliveryItem->TabIndex = 142;
+			this->comboBoxDeliveryItem->SelectedIndexChanged += gcnew System::EventHandler(this, &Magazin::comboBoxDeliveryItem_SelectedIndexChanged);
 			// 
 			// labelDeliveryItem
 			// 
@@ -2180,6 +2190,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->comboBoxDeliveryProvider->Name = L"comboBoxDeliveryProvider";
 			this->comboBoxDeliveryProvider->Size = System::Drawing::Size(316, 24);
 			this->comboBoxDeliveryProvider->TabIndex = 140;
+			this->comboBoxDeliveryProvider->SelectedIndexChanged += gcnew System::EventHandler(this, &Magazin::comboBoxDeliveryProvider_SelectedIndexChanged);
 			// 
 			// labelDeliveryProvider
 			// 
@@ -2222,6 +2233,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->dataGridViewDeliveryEmployers->ReadOnly = true;
 			this->dataGridViewDeliveryEmployers->Size = System::Drawing::Size(282, 193);
 			this->dataGridViewDeliveryEmployers->TabIndex = 136;
+			this->dataGridViewDeliveryEmployers->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Magazin::dataGridViewDeliveryEmployers_CellClick);
 			// 
 			// dataGridViewDeliveryItems
 			// 
@@ -2234,6 +2246,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->dataGridViewDeliveryItems->ReadOnly = true;
 			this->dataGridViewDeliveryItems->Size = System::Drawing::Size(403, 193);
 			this->dataGridViewDeliveryItems->TabIndex = 135;
+			this->dataGridViewDeliveryItems->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Magazin::dataGridViewDeliveryItems_CellClick);
 			// 
 			// buttonDeliveryShow
 			// 
@@ -2244,6 +2257,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->buttonDeliveryShow->TabIndex = 134;
 			this->buttonDeliveryShow->Text = L"Poka¿ dostawy";
 			this->buttonDeliveryShow->UseVisualStyleBackColor = true;
+			this->buttonDeliveryShow->Click += gcnew System::EventHandler(this, &Magazin::buttonDeliveryShow_Click);
 			// 
 			// dataGridViewDelivery
 			// 
@@ -2256,17 +2270,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->dataGridViewDelivery->ReadOnly = true;
 			this->dataGridViewDelivery->Size = System::Drawing::Size(403, 298);
 			this->dataGridViewDelivery->TabIndex = 133;
-			// 
-			// tabPage7
-			// 
-			this->tabPage7->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->tabPage7->Location = System::Drawing::Point(4, 22);
-			this->tabPage7->Name = L"tabPage7";
-			this->tabPage7->Size = System::Drawing::Size(979, 550);
-			this->tabPage7->TabIndex = 6;
-			this->tabPage7->Text = L"Ustawienia";
-			this->tabPage7->UseVisualStyleBackColor = true;
+			this->dataGridViewDelivery->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Magazin::dataGridViewDelivery_CellClick);
 			// 
 			// tabPage8
 			// 
@@ -2685,18 +2689,17 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			 String^ query = "Select login, type from employers where id_employers ='" + this->userId + "' LIMIT 1";
 			 dbDriver db;
 			 db.selectOne(query);
-
 			 if (db.getStatus())
 			 {
+				if (userType)
+					 this->btnSaveEmployer->Enabled = true;
 				this->labelLogedUser->Text = db.result->GetString(0);
 				this->userType = db.result->GetBoolean(1);
-				
-				disableComponents();
 				db.closeConnection();
-				accountSettings();
+				this->accountSettings();
 
 				String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
-				bindTable(ManyQuery, tableEmployers);
+				bindTable(ManyQuery, this->tableEmployers);
 			 }
 			 else
 			 {
@@ -2709,9 +2712,9 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			 dbc.selectOne(clToCombo);
 			 if (dbc.getStatus())
 			 {
-				 comboBoxSellClient->Items->Add(dbc.result->GetString(0));
+				 this->comboBoxSellClient->Items->Add(dbc.result->GetString(0));
 				 while (dbc.result->Read())
-					 comboBoxSellClient->Items->Add(dbc.result->GetString(0));
+					 this->comboBoxSellClient->Items->Add(dbc.result->GetString(0));
 				 dbc.closeConnection();
 			 }
 			 else
@@ -2719,20 +2722,22 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				 MessageBox::Show(dbc.getError());
 				 dbc.closeConnection();
 			 }
-	}
 
-	private: Void disableComponents()
-	{
-		this->buttonEmployerDelete->Enabled = false;
-		this->buttonDeleteClient->Enabled = false;
-		this->buttonProviderDelete->Enabled = false;
-		if (!this->userType)
-		{
-			
-			this->btnSaveEmployer->Enabled = false;
-			this->buttonDeleteClient->Enabled = false;
-			this->buttonProviderDelete->Enabled = false;
-		}
+			 String^ prToCombo = "SELECT name from providers";
+			 dbDriver dbp;
+			 dbp.selectOne(prToCombo);
+			 if (dbp.getStatus())
+			 {
+				 this->comboBoxDeliveryProvider->Items->Add(dbp.result->GetString(0));
+				 while (dbp.result->Read())
+					 this->comboBoxDeliveryProvider->Items->Add(dbp.result->GetString(0));
+				 dbp.closeConnection();
+			 }
+			 else
+			 {
+				 MessageBox::Show(dbp.getError());
+				 dbp.closeConnection();
+			 }
 	}
 
 	private: Void bindTable(String^ query, System::Windows::Forms::DataGridView^ table)
@@ -2758,28 +2763,28 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void btnSearchEmployers_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.name LIKE '%" + txtBoxSearchEmployers->Text + "%' OR employers.surname LIKE '%" + txtBoxSearchEmployers->Text + "%' OR employers.login LIKE '%" + txtBoxSearchEmployers->Text + "%' OR common_data.email LIKE '%" + txtBoxSearchEmployers->Text + "%'";
-		bindTable(ManyQuery, tableEmployers);
+		String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.name LIKE '%" + this->txtBoxSearchEmployers->Text + "%' OR employers.surname LIKE '%" + this->txtBoxSearchEmployers->Text + "%' OR employers.login LIKE '%" + this->txtBoxSearchEmployers->Text + "%' OR common_data.email LIKE '%" + this->txtBoxSearchEmployers->Text + "%'";
+		this->bindTable(ManyQuery, this->tableEmployers);
 	}
 
 	private: System::Void btnShowEmployers_Click(System::Object^  sender, System::EventArgs^  e) {
 		String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
-		bindTable(ManyQuery, tableEmployers);
+		this->bindTable(ManyQuery, this->tableEmployers);
 	}
 
 	private: System::Void tableEmployers_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 		if (Convert::ToInt32(e->RowIndex) >= 0)
 		{
 			this->rowId = Convert::ToInt32(tableEmployers->Rows[e->RowIndex]->Cells[0]->Value);
-			labelEmployerPassword->Visible = false;
-			textBoxEmployerPassword->Visible = false;
+			this->labelEmployerPassword->Visible = false;
+			this->textBoxEmployerPassword->Visible = false;
 			String^ query = "Select * from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data where employers.id_employers ='" + this->rowId + "' LIMIT 1";
 			dbDriver db;
 			db.selectOne(query);
 
 			if (db.getStatus())
 			{
-				relEmployersToCommonData = db.result->GetInt32(7);
+				this->relEmployersToCommonData = db.result->GetInt32(7);
 				this->labelEmplID->Text = db.result->GetString(0);
 				this->textBoxEmployerName->Text = db.result->GetString(1);
 				this->textBoxEmployerSurname->Text = db.result->GetString(2);
@@ -2794,7 +2799,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				db.closeConnection();
 				if (userType)
 					this->buttonEmployerDelete->Enabled = true; 
-				btnSaveEmployer->Text = "Zapisz";
+				this->btnSaveEmployer->Text = "Zapisz";
 			}
 			else
 			{
@@ -2805,19 +2810,18 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void btnSaveEmployer_Click(System::Object^  sender, System::EventArgs^  e) {
-		
 		if (this->textBoxEmployerName->Text->Length > 3 
-			&& textBoxEmployerName->Text->Length < 50 
-			&& textBoxEmployerSurname->Text->Length > 2 
-			&& textBoxEmployerSurname->Text->Length < 50 
-			&& textBoxEmployerLogin->Text->Length > 3 
-			&& textBoxEmployerLogin->Text->Length < 25
-			&& textBoxEmployerAddress->Text->Length > 10
-			&& textBoxEmployerAddress->Text->Length < 255
-			&& textBoxEmployerEmail->Text->Length > 5
-			&& textBoxEmployerEmail->Text->Length < 255
-			&& textBoxEmployerPhone->Text->Length > 4
-			&& textBoxEmployerPhone->Text->Length < 20
+			&& this->textBoxEmployerName->Text->Length < 50
+			&& this->textBoxEmployerSurname->Text->Length > 2
+			&& this->textBoxEmployerSurname->Text->Length < 50
+			&& this->textBoxEmployerLogin->Text->Length > 3
+			&& this->textBoxEmployerLogin->Text->Length < 25
+			&& this->textBoxEmployerAddress->Text->Length > 10
+			&& this->textBoxEmployerAddress->Text->Length < 255
+			&& this->textBoxEmployerEmail->Text->Length > 5
+			&& this->textBoxEmployerEmail->Text->Length < 255
+			&& this->textBoxEmployerPhone->Text->Length > 4
+			&& this->textBoxEmployerPhone->Text->Length < 20
 			)
 		{
 			int type;
@@ -2827,29 +2831,29 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				type = 0;
 			if (this->rowId > 0)
 			{
-				String^ query = "UPDATE employers SET name='" + textBoxEmployerName->Text
-					+ "', surname='" + textBoxEmployerSurname->Text
-					+ "', login='" + textBoxEmployerLogin->Text
+				String^ query = "UPDATE employers SET name='" + this->textBoxEmployerName->Text
+					+ "', surname='" + this->textBoxEmployerSurname->Text
+					+ "', login='" + this->textBoxEmployerLogin->Text
 					+ "', type='" + type
-					+ "' WHERE id_employers ='" + rowId + "'";
+					+ "' WHERE id_employers ='" + this->rowId + "'";
 				dbDriver db;
 				db.update(query);
 
 				if (db.getStatus())
 				{
 					db.closeConnection();
-					String^ cquery = "UPDATE common_data SET address='" + textBoxEmployerAddress->Text
-						+ "', phone='" + textBoxEmployerPhone->Text
-						+ "', email='" + textBoxEmployerEmail->Text
-						+"', other_info='" + textBoxEmployerOtherInfo->Text
-						+ "' WHERE id_common_data ='" + relEmployersToCommonData + "'";
+					String^ cquery = "UPDATE common_data SET address='" + this->textBoxEmployerAddress->Text
+						+ "', phone='" + this->textBoxEmployerPhone->Text
+						+ "', email='" + this->textBoxEmployerEmail->Text
+						+"', other_info='" + this->textBoxEmployerOtherInfo->Text
+						+ "' WHERE id_common_data ='" + this->relEmployersToCommonData + "'";
 
 					db.update(cquery);
 
 					if (db.getStatus())
 					{
 						String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
-						bindTable(ManyQuery, tableEmployers);
+						this->bindTable(ManyQuery, this->tableEmployers);
 						db.closeConnection();
 					}
 					else
@@ -2864,17 +2868,17 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					db.closeConnection();
 				}
 
-				clearForm();
+				this->clearForm();
 			}
 			else
 			{
-				if (textBoxEmployerPassword->Text->Length > 3 && textBoxEmployerPassword->Text->Length < 100)
+				if (this->textBoxEmployerPassword->Text->Length > 3 && this->textBoxEmployerPassword->Text->Length < 100)
 				{
 					String^ cquery = "INSERT INTO common_data(address, phone, email, other_info) VALUES('"
-						+ textBoxEmployerAddress->Text + "', '"
-						+ textBoxEmployerPhone->Text + "', '"
-						+ textBoxEmployerEmail->Text + "', '"
-						+ textBoxEmployerOtherInfo->Text + "')";
+						+ this->textBoxEmployerAddress->Text + "', '"
+						+ this->textBoxEmployerPhone->Text + "', '"
+						+ this->textBoxEmployerEmail->Text + "', '"
+						+ this->textBoxEmployerOtherInfo->Text + "')";
 					dbDriver db;
 					db.insert(cquery);
 
@@ -2884,17 +2888,17 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 						db.closeConnection();
 						dbDriver dbs;
 						String^ squery = "SELECT id_common_data FROM common_data WHERE address='"
-							+ textBoxEmployerAddress->Text + "'AND phone='"
-							+ textBoxEmployerPhone->Text + "'AND email='"
-							+ textBoxEmployerEmail->Text + "'";
+							+ this->textBoxEmployerAddress->Text + "'AND phone='"
+							+ this->textBoxEmployerPhone->Text + "'AND email='"
+							+ this->textBoxEmployerEmail->Text + "'";
 						dbs.selectOne(squery);
 						if (dbs.getStatus())
 						{	
 							String^ equery = "INSERT INTO employers(name, surname, login, password, cdata, type) VALUES('"
-								+ textBoxEmployerName->Text + "', '"
-								+ textBoxEmployerSurname->Text + "', '"
-								+ textBoxEmployerLogin->Text + "',password('"
-								+ textBoxEmployerPassword->Text + "'),'"
+								+ this->textBoxEmployerName->Text + "', '"
+								+ this->textBoxEmployerSurname->Text + "', '"
+								+ this->textBoxEmployerLogin->Text + "',password('"
+								+ this->textBoxEmployerPassword->Text + "'),'"
 								+ dbs.result->GetInt32(0) + "','"
 								+ type + "')";
 							dbs.closeConnection();
@@ -2904,7 +2908,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 							if (dbi.getStatus())
 							{
 								String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
-								bindTable(ManyQuery, tableEmployers);
+								this->bindTable(ManyQuery, this->tableEmployers);
 								dbi.closeConnection();
 							}
 							else
@@ -2930,7 +2934,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					MessageBox::Show("Has³o za krótkie lub za d³ugie 4-99 znaków.");
 				}
 				
-				clearForm();
+				this->clearForm();
 			}
 		}
 		else
@@ -2940,7 +2944,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 	
 	private: System::Void buttonClearForm_Click(System::Object^  sender, System::EventArgs^  e) {
-		clearForm();
+		this->clearForm();
 	}
 
 	private: Void clearForm()
@@ -2957,18 +2961,18 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		this->labelLastLoginVal->Text = "";
 		this->checkBoxIsAdmin->Checked = false;
 		this->buttonEmployerDelete->Enabled = false;
-		btnSaveEmployer->Text = "Dodaj";
-		labelEmployerPassword->Visible = true;
-		textBoxEmployerPassword->Visible = true;
-		rowId = 0;
+		this->btnSaveEmployer->Text = "Dodaj";
+		this->labelEmployerPassword->Visible = true;
+		this->textBoxEmployerPassword->Visible = true;
+		this->rowId = -1;
 	}
 
 	private: System::Void buttonEmployerDelete_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (rowId > 1 && userId != rowId)
+		if (this->rowId > 1 && this->userId != this->rowId)
 		{
 			if (MessageBox::Show("Czy chcesz usun¹æ u¿ytkownika?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 			{
-				String^ query = "DELETE employers, common_data FROM employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers='" + rowId + "'";
+				String^ query = "DELETE employers, common_data FROM employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers='" + this->rowId + "'";
 				dbDriver db;
 				db.deleteFromSql(query);
 
@@ -2976,8 +2980,8 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				{
 					db.closeConnection();
 					String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
-					bindTable(ManyQuery, tableEmployers);
-					clearForm();
+					this->bindTable(ManyQuery, this->tableEmployers);
+					this->clearForm();
 					MessageBox::Show("Usuniêto u¿ytkownika");
 				}
 				else
@@ -2997,14 +3001,14 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	private: System::Void Magazin_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
 		if (MessageBox::Show("Czy chcesz zamkn¹æ program?", "Magazyn", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 		{
-			String^ query = "UPDATE employers set last_log_out=now() WHERE id_employers='" + userId + "'";
+			String^ query = "UPDATE employers set last_log_out=now() WHERE id_employers='" + this->userId + "'";
 			dbDriver db;
 			db.update(query);
 			if (!db.getStatus())
 				MessageBox::Show(db.getError());
 			db.closeConnection();
 			this->Close();
-		}
+		}	
 	}
 
 	private: Void accountSettings()
@@ -3015,42 +3019,42 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 		if (db.getStatus())
 		{
-			labelASIDVal->Text = db.result->GetString(0);
-			labelASNameVal->Text = db.result->GetString(1);
-			labelASSurnameVal->Text = db.result->GetString(2);
-			labelASLoginVal->Text = db.result->GetString(3);
-			labelASLastloginVal->Text = Convert::ToString(db.result->GetDateTime(5));
-			labelASLastlogoutVal->Text = Convert::ToString(db.result->GetDateTime(6));
-			relEmployersToCommonData = db.result->GetInt32(7);
+			this->labelASIDVal->Text = db.result->GetString(0);
+			this->labelASNameVal->Text = db.result->GetString(1);
+			this->labelASSurnameVal->Text = db.result->GetString(2);
+			this->labelASLoginVal->Text = db.result->GetString(3);
+			this->labelASLastloginVal->Text = Convert::ToString(db.result->GetDateTime(5));
+			this->labelASLastlogoutVal->Text = Convert::ToString(db.result->GetDateTime(6));
+			this->relEmployersToCommonData = db.result->GetInt32(7);
 			int type = db.result->GetInt32(8);
 			if (type = 1)
 			{
-				labelASIsAdminVal->Text = "Posiada";
-				checkBoxASIsAdmin->Checked = true;
+				this->labelASIsAdminVal->Text = "Posiada";
+				this->checkBoxASIsAdmin->Checked = true;
 			}
 			else
-				labelASIsAdminVal->Text = "Brak";
-			labelASAddressVal->Text = db.result->GetString(10);
-			textBoxASPhone->Text = db.result->GetString(11);
-			textBoxASEmail->Text = db.result->GetString(12);
-			labelASOtherInfoVal->Text = db.result->GetString(13);
+				this->labelASIsAdminVal->Text = "Brak";
+			this->labelASAddressVal->Text = db.result->GetString(10);
+			this->textBoxASPhone->Text = db.result->GetString(11);
+			this->textBoxASEmail->Text = db.result->GetString(12);
+			this->labelASOtherInfoVal->Text = db.result->GetString(13);
 			db.closeConnection();
 		}
 	}
 
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (
-			textBoxASEmail->Text->Length > 5
-			&& textBoxASEmail->Text->Length < 255
-			&& textBoxASPhone->Text->Length > 4
-			&& textBoxASPhone->Text->Length < 20
+			this->textBoxASEmail->Text->Length > 5
+			&& this->textBoxASEmail->Text->Length < 255
+			&& this->textBoxASPhone->Text->Length > 4
+			&& this->textBoxASPhone->Text->Length < 20
 			)
 		{
-			if (textBoxASOldPassword->Text == "" && textBoxASNewPassword->Text == "" && textBoxASRNewPassword->Text == "")
+			if (this->textBoxASOldPassword->Text == "" && this->textBoxASNewPassword->Text == "" && this->textBoxASRNewPassword->Text == "")
 			{
-				String^ cquery = "UPDATE common_data SET phone='" + textBoxASPhone->Text
-					+ "', email='" + textBoxASEmail->Text
-					+ "' WHERE id_common_data ='" + relEmployersToCommonData + "'";
+				String^ cquery = "UPDATE common_data SET phone='" + this->textBoxASPhone->Text
+					+ "', email='" + this->textBoxASEmail->Text
+					+ "' WHERE id_common_data ='" + this->relEmployersToCommonData + "'";
 				dbDriver db;
 				db.update(cquery);
 
@@ -3065,9 +3069,9 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					db.closeConnection();
 				}
 			}
-			else if (textBoxASOldPassword->Text != "" && textBoxASNewPassword->Text != "" && textBoxASRNewPassword->Text != "")
+			else if (this->textBoxASOldPassword->Text != "" && this->textBoxASNewPassword->Text != "" && this->textBoxASRNewPassword->Text != "")
 			{
-				String^ query = "Select count(id_employers) from employers WHERE id_employers='" + userId + "' AND password=password('" + textBoxASOldPassword->Text + "')";
+				String^ query = "Select count(id_employers) from employers WHERE id_employers='" + this->userId + "' AND password=password('" + this->textBoxASOldPassword->Text + "')";
 				dbDriver db;
 				db.selectOne(query);
 				if (db.getStatus())
@@ -3076,19 +3080,19 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					if (db.result->GetInt32(0) == 1)
 					{
 						db.closeConnection();
-						if (textBoxASNewPassword->Text->Length > 3 && textBoxASNewPassword->Text->Length < 100
-							&& textBoxASRNewPassword->Text->Length > 3 && textBoxASRNewPassword->Text->Length < 100
-							&& (textBoxASNewPassword->Text == textBoxASRNewPassword->Text)
+						if (this->textBoxASNewPassword->Text->Length > 3 && this->textBoxASNewPassword->Text->Length < 100
+							&& this->textBoxASRNewPassword->Text->Length > 3 && this->textBoxASRNewPassword->Text->Length < 100
+							&& (this->textBoxASNewPassword->Text == this->textBoxASRNewPassword->Text)
 							)
 						{
-							String^ cquery = "UPDATE employers SET password=password('" + textBoxASNewPassword->Text
-								+ "') WHERE id_employers ='" + userId + "'";
+							String^ cquery = "UPDATE employers SET password=password('" + this->textBoxASNewPassword->Text
+								+ "') WHERE id_employers ='" + this->userId + "'";
 
 							db.update(cquery);
 							db.closeConnection();
 
-							cquery = "UPDATE common_data SET common_data.phone='" + textBoxASPhone->Text
-								+ "', email='" + textBoxASEmail->Text + "' WHERE id_common_data ='" + relEmployersToCommonData + "'";
+							cquery = "UPDATE common_data SET common_data.phone='" + this->textBoxASPhone->Text
+								+ "', email='" + this->textBoxASEmail->Text + "' WHERE id_common_data ='" + this->relEmployersToCommonData + "'";
 							db.update(cquery);
 
 							if (db.getStatus())
@@ -3124,25 +3128,25 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 	private: System::Void buttonShowClients_Click(System::Object^  sender, System::EventArgs^  e) {
 		String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
-		bindTable(ManyQuery, dataGridViewClients);
+		this->bindTable(ManyQuery, this->dataGridViewClients);
 	}
 
 	private: System::Void buttonSearchClients_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ ManyQuery = "Select clients.id_clients as id, clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.name LIKE '%" + textBoxSearchClients->Text + "%' OR clients.nip LIKE '%" + textBoxSearchClients->Text + "%' OR clients.regon LIKE '%" + textBoxSearchClients->Text + "%' OR common_data.email LIKE '%" + textBoxSearchClients + "%' OR common_data.phone LIKE '%" + textBoxSearchClients + "%'";
-		bindTable(ManyQuery, dataGridViewClients);
+		String^ ManyQuery = "Select clients.id_clients as id, clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.name LIKE '%" + this->textBoxSearchClients->Text + "%' OR clients.nip LIKE '%" + this->textBoxSearchClients->Text + "%' OR clients.regon LIKE '%" + this->textBoxSearchClients->Text + "%' OR common_data.email LIKE '%" + this->textBoxSearchClients + "%' OR common_data.phone LIKE '%" + this->textBoxSearchClients + "%'";
+		this->bindTable(ManyQuery, this->dataGridViewClients);
 	}
 	
 	private: System::Void dataGridViewClients_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 		if (Convert::ToInt32(e->RowIndex) >= 0)
 		{
-			this->rowIdClients = Convert::ToInt32(dataGridViewClients->Rows[e->RowIndex]->Cells[0]->Value);
+			this->rowIdClients = Convert::ToInt32(this->dataGridViewClients->Rows[e->RowIndex]->Cells[0]->Value);
 			String^ query = "Select * from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data where clients.id_clients ='" + this->rowIdClients + "' LIMIT 1";
 			dbDriver db;
 			db.selectOne(query);
 
 			if (db.getStatus())
 			{
-				relClientsToCommonData = db.result->GetInt32(5);
+				this->relClientsToCommonData = db.result->GetInt32(5);
 				this->labelClientID->Text = db.result->GetString(0);
 				this->textBoxClientName->Text = db.result->GetString(1);
 				this->textBoxClientNIP->Text = db.result->GetString(2);
@@ -3154,7 +3158,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				db.closeConnection();
 				if (userType)
 					this->buttonDeleteClient->Enabled = true;
-				buttonSaveClient->Text = "Zapisz";
+				this->buttonSaveClient->Text = "Zapisz";
 			}
 			else
 			{
@@ -3165,7 +3169,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void buttonClearFormClient_Click(System::Object^  sender, System::EventArgs^  e) {
-		clearFormClients();
+		this->clearFormClients();
 	}
 
 	private: Void clearFormClients()
@@ -3178,48 +3182,48 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		this->textBoxClientEmail->Text = "";
 		this->textBoxClientPhone->Text = "";
 		this->textBoxClientOtherInfo->Text = "";
-		buttonSaveClient->Text = "Dodaj";
+		this->buttonSaveClient->Text = "Dodaj";
 		this->buttonDeleteClient->Enabled = false;
-		rowIdClients = 0;
+		this->rowIdClients = -1;
 	}
 
 	private: System::Void buttonSaveClient_Click(System::Object^  sender, System::EventArgs^  e) {
 		try {
-			if (textBoxClientName->Text->Length < 2) throw 1;
-			if (textBoxClientName->Text->Length > 255) throw 2;
-			if (textBoxClientNIP->Text->Length != 10) throw 3;
-			if (textBoxClientREGON->Text->Length != 9) throw 4;
-			if (textBoxClientAddress->Text->Length < 10) throw 5;
-			if (textBoxClientAddress->Text->Length > 255) throw 6;
-			if (textBoxClientEmail->Text->Length < 5) throw 7;
-			if (textBoxClientEmail->Text->Length > 255) throw 8;
-			if (textBoxClientPhone->Text->Length < 4) throw 9;
-			if (textBoxClientPhone->Text->Length > 20) throw 10;
+			if (this->textBoxClientName->Text->Length < 2) throw 1;
+			if (this->textBoxClientName->Text->Length > 255) throw 2;
+			if (this->textBoxClientNIP->Text->Length != 10) throw 3;
+			if (this->textBoxClientREGON->Text->Length != 9) throw 4;
+			if (this->textBoxClientAddress->Text->Length < 10) throw 5;
+			if (this->textBoxClientAddress->Text->Length > 255) throw 6;
+			if (this->textBoxClientEmail->Text->Length < 5) throw 7;
+			if (this->textBoxClientEmail->Text->Length > 255) throw 8;
+			if (this->textBoxClientPhone->Text->Length < 4) throw 9;
+			if (this->textBoxClientPhone->Text->Length > 20) throw 10;
 
-			if (rowIdClients > 0)
+			if (this->rowIdClients > 0)
 			{
-				String^ query = "UPDATE clients SET name='" + textBoxClientName->Text
-					+ "', nip='" + textBoxClientNIP->Text
-					+ "', regon='" + textBoxClientREGON->Text
-					+ "' WHERE id_clients ='" + rowIdClients + "'";
+				String^ query = "UPDATE clients SET name='" + this->textBoxClientName->Text
+					+ "', nip='" + this->textBoxClientNIP->Text
+					+ "', regon='" + this->textBoxClientREGON->Text
+					+ "' WHERE id_clients ='" + this->rowIdClients + "'";
 				dbDriver db;
 				db.update(query);
 
 				if (db.getStatus())
 				{
 					db.closeConnection();
-					String^ cquery = "UPDATE common_data SET address='" + textBoxClientAddress->Text
-						+ "', phone='" + textBoxClientPhone->Text
-						+ "', email='" + textBoxClientEmail->Text
-						+ "', other_info='" + textBoxClientOtherInfo->Text
-						+ "' WHERE id_common_data ='" + relClientsToCommonData + "'";
+					String^ cquery = "UPDATE common_data SET address='" + this->textBoxClientAddress->Text
+						+ "', phone='" + this->textBoxClientPhone->Text
+						+ "', email='" + this->textBoxClientEmail->Text
+						+ "', other_info='" + this->textBoxClientOtherInfo->Text
+						+ "' WHERE id_common_data ='" + this->relClientsToCommonData + "'";
 
 					db.update(cquery);
 
 					if (db.getStatus())
 					{
 						String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
-						bindTable(ManyQuery, dataGridViewClients);
+						this->bindTable(ManyQuery, this->dataGridViewClients);
 						db.closeConnection();
 					}
 					else
@@ -3234,15 +3238,15 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					db.closeConnection();
 				}
 
-				clearFormClients();
+				this->clearFormClients();
 			}
 			else
 			{
 				String^ cquery = "INSERT INTO common_data(address, phone, email, other_info) VALUES('"
-					+ textBoxClientAddress->Text + "', '"
-					+ textBoxClientPhone->Text + "', '"
-					+ textBoxClientEmail->Text + "', '"
-					+ textBoxClientOtherInfo->Text + "')";
+					+ this->textBoxClientAddress->Text + "', '"
+					+ this->textBoxClientPhone->Text + "', '"
+					+ this->textBoxClientEmail->Text + "', '"
+					+ this->textBoxClientOtherInfo->Text + "')";
 				dbDriver db;
 				db.insert(cquery);
 
@@ -3251,16 +3255,16 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					db.closeConnection();
 					dbDriver dbs;
 					String^ squery = "SELECT id_common_data FROM common_data WHERE address='"
-						+ textBoxClientAddress->Text + "'AND phone='"
-						+ textBoxClientPhone->Text + "'AND email='"
-						+ textBoxClientEmail->Text + "'";
+						+ this->textBoxClientAddress->Text + "'AND phone='"
+						+ this->textBoxClientPhone->Text + "'AND email='"
+						+ this->textBoxClientEmail->Text + "'";
 					dbs.selectOne(squery);
 					if (dbs.getStatus())
 					{
 						String^ equery = "INSERT INTO clients(name, nip, regon, cdata) VALUES('"
-							+ textBoxClientName->Text + "', '"
-							+ textBoxClientNIP->Text + "', '"
-							+ textBoxClientREGON->Text + "', '"
+							+ this->textBoxClientName->Text + "', '"
+							+ this->textBoxClientNIP->Text + "', '"
+							+ this->textBoxClientREGON->Text + "', '"
 							+ dbs.result->GetInt32(0) + "')";
 						dbs.closeConnection();
 						dbDriver dbi;
@@ -3269,7 +3273,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 						if (dbi.getStatus())
 						{
 							String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
-							bindTable(ManyQuery, dataGridViewClients);
+							this->bindTable(ManyQuery, this->dataGridViewClients);
 						}
 						else
 							MessageBox::Show(db.getError());
@@ -3286,7 +3290,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					MessageBox::Show(db.getError());
 					db.closeConnection();
 				}
-				clearFormClients();
+				this->clearFormClients();
 			}
 		}
 		catch (int err)
@@ -3333,11 +3337,11 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 	
 	private: System::Void buttonDeleteClient_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (rowIdClients > 0 && userType)
+		if (this->rowIdClients > 0 && this->userType)
 		{
 			if (MessageBox::Show("Czy chcesz usun¹æ klienta?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 			{
-				String^ query = "DELETE clients, common_data FROM clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.id_clients='" + rowIdClients + "'";
+				String^ query = "DELETE clients, common_data FROM clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.id_clients='" + this->rowIdClients + "'";
 				dbDriver db;
 				db.deleteFromSql(query);
 
@@ -3345,8 +3349,8 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				{
 					db.closeConnection();
 					String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
-					bindTable(ManyQuery, dataGridViewClients);
-					clearFormClients();
+					this->bindTable(ManyQuery, this->dataGridViewClients);
+					this->clearFormClients();
 					MessageBox::Show("Usuniêto klienta");
 				}
 				else
@@ -3368,12 +3372,12 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 	private: System::Void buttonShowProviders_Click(System::Object^  sender, System::EventArgs^  e) {
 		String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
-		bindTable(ManyQuery, dataGridViewProviders);
+		this->bindTable(ManyQuery, this->dataGridViewProviders);
 	}
 
 	private: System::Void buttonSearchProviders_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ ManyQuery = "Select providers.id_providers as id, providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE providers.name LIKE '%" + textBoxSearchClients->Text + "%' OR providers.nip LIKE '%" + textBoxSearchClients->Text + "%' OR providers.regon LIKE '%" + textBoxSearchClients->Text + "%' OR common_data.email LIKE '%" + textBoxSearchClients + "%' OR common_data.phone LIKE '%" + textBoxSearchClients + "%'";
-		bindTable(ManyQuery, dataGridViewProviders);
+		String^ ManyQuery = "Select providers.id_providers as id, providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE providers.name LIKE '%" + this->textBoxSearchClients->Text + "%' OR providers.nip LIKE '%" + this->textBoxSearchClients->Text + "%' OR providers.regon LIKE '%" + this->textBoxSearchClients->Text + "%' OR common_data.email LIKE '%" + this->textBoxSearchClients + "%' OR common_data.phone LIKE '%" + this->textBoxSearchClients + "%'";
+		this->bindTable(ManyQuery, this->dataGridViewProviders);
 	}
 
 	private: System::Void dataGridViewProviders_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
@@ -3386,7 +3390,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 			if (db.getStatus())
 			{
-				relProvidersToCommonData = db.result->GetInt32(5);
+				this->relProvidersToCommonData = db.result->GetInt32(5);
 				this->labelProviderIDVal->Text = db.result->GetString(0);
 				this->textBoxProviderName->Text = db.result->GetString(1);
 				this->textBoxProviderNIP->Text = db.result->GetString(2);
@@ -3396,9 +3400,9 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				this->textBoxProviderPhone->Text = db.result->GetString(7);
 				this->textBoxProviderOtherInfo->Text = db.result->GetString(9);
 
-				if (userType)
+				if (this->userType)
 					this->buttonProviderDelete->Enabled = true;
-				buttonProviderSave->Text = "Zapisz";
+				this->buttonProviderSave->Text = "Zapisz";
 			}
 			else
 				MessageBox::Show(db.getError());
@@ -3408,7 +3412,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void buttonClearProviderForm_Click(System::Object^  sender, System::EventArgs^  e) {
-		clearFormProviders();
+		this->clearFormProviders();
 	}
 
 	private: Void clearFormProviders()
@@ -3421,48 +3425,48 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		this->textBoxProviderEmail->Text = "";
 		this->textBoxProviderPhone->Text = "";
 		this->textBoxProviderOtherInfo->Text = "";
-		buttonProviderSave->Text = "Dodaj";
+		this->buttonProviderSave->Text = "Dodaj";
 		this->buttonProviderDelete->Enabled = false;
-		rowIdProviders = 0;
+		this->rowIdProviders = -1;
 	}
 
 	private: System::Void buttonProviderSave_Click(System::Object^  sender, System::EventArgs^  e) {
 		try {
-			if (textBoxProviderName->Text->Length < 2) throw 1;
-			if (textBoxProviderName->Text->Length > 255) throw 2;
-			if (textBoxProviderNIP->Text->Length != 10) throw 3;
-			if (textBoxProviderREGON->Text->Length != 9) throw 4;
-			if (textBoxProviderAddress->Text->Length < 10) throw 5;
-			if (textBoxProviderAddress->Text->Length > 255) throw 6;
-			if (textBoxProviderEmail->Text->Length < 5) throw 7;
-			if (textBoxProviderEmail->Text->Length > 255) throw 8;
-			if (textBoxProviderPhone->Text->Length < 4) throw 9;
-			if (textBoxProviderPhone->Text->Length > 20) throw 10;
+			if (this->textBoxProviderName->Text->Length < 2) throw 1;
+			if (this->textBoxProviderName->Text->Length > 255) throw 2;
+			if (this->textBoxProviderNIP->Text->Length != 10) throw 3;
+			if (this->textBoxProviderREGON->Text->Length != 9) throw 4;
+			if (this->textBoxProviderAddress->Text->Length < 10) throw 5;
+			if (this->textBoxProviderAddress->Text->Length > 255) throw 6;
+			if (this->textBoxProviderEmail->Text->Length < 5) throw 7;
+			if (this->textBoxProviderEmail->Text->Length > 255) throw 8;
+			if (this->textBoxProviderPhone->Text->Length < 4) throw 9;
+			if (this->textBoxProviderPhone->Text->Length > 20) throw 10;
 
-			if (rowIdProviders > 0)
+			if (this->rowIdProviders > 0)
 			{
-				String^ query = "UPDATE providers SET name='" + textBoxProviderName->Text
-					+ "', nip='" + textBoxProviderNIP->Text
-					+ "', regon='" + textBoxProviderREGON->Text
-					+ "' WHERE id_providers ='" + rowIdProviders + "'";
+				String^ query = "UPDATE providers SET name='" + this->textBoxProviderName->Text
+					+ "', nip='" + this->textBoxProviderNIP->Text
+					+ "', regon='" + this->textBoxProviderREGON->Text
+					+ "' WHERE id_providers ='" + this->rowIdProviders + "'";
 				dbDriver db;
 				db.update(query);
 
 				if (db.getStatus())
 				{
 					db.closeConnection();
-					String^ cquery = "UPDATE common_data SET address='" + textBoxProviderAddress->Text
-						+ "', phone='" + textBoxProviderPhone->Text
-						+ "', email='" + textBoxProviderEmail->Text
-						+ "', other_info='" + textBoxProviderOtherInfo->Text
-						+ "' WHERE id_common_data ='" + relProvidersToCommonData + "'";
+					String^ cquery = "UPDATE common_data SET address='" + this->textBoxProviderAddress->Text
+						+ "', phone='" + this->textBoxProviderPhone->Text
+						+ "', email='" + this->textBoxProviderEmail->Text
+						+ "', other_info='" + this->textBoxProviderOtherInfo->Text
+						+ "' WHERE id_common_data ='" + this->relProvidersToCommonData + "'";
 					MessageBox::Show(cquery);
 					db.update(cquery);
 
 					if (db.getStatus())
 					{
 						String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
-						bindTable(ManyQuery, dataGridViewProviders);
+						this->bindTable(ManyQuery, this->dataGridViewProviders);
 						db.closeConnection();
 					}
 					else
@@ -3477,15 +3481,15 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					db.closeConnection();
 				}
 
-				clearFormProviders();
+				this->clearFormProviders();
 			}
 			else
 			{
 				String^ cquery = "INSERT INTO common_data(address, phone, email, other_info) VALUES('"
-					+ textBoxProviderAddress->Text + "', '"
-					+ textBoxProviderPhone->Text + "', '"
-					+ textBoxProviderEmail->Text + "', '"
-					+ textBoxProviderOtherInfo->Text + "')";
+					+ this->textBoxProviderAddress->Text + "', '"
+					+ this->textBoxProviderPhone->Text + "', '"
+					+ this->textBoxProviderEmail->Text + "', '"
+					+ this->textBoxProviderOtherInfo->Text + "')";
 				dbDriver db;
 				db.insert(cquery);
 
@@ -3494,16 +3498,16 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					db.closeConnection();
 					dbDriver dbs;
 					String^ squery = "SELECT id_common_data FROM common_data WHERE address='"
-						+ textBoxProviderAddress->Text + "'AND phone='"
-						+ textBoxProviderPhone->Text + "'AND email='"
-						+ textBoxProviderEmail->Text + "'";
+						+ this->textBoxProviderAddress->Text + "'AND phone='"
+						+ this->textBoxProviderPhone->Text + "'AND email='"
+						+ this->textBoxProviderEmail->Text + "'";
 					dbs.selectOne(squery);
 					if (dbs.getStatus())
 					{
 						String^ equery = "INSERT INTO providers(name, nip, regon, cdata) VALUES('"
-							+ textBoxProviderName->Text + "', '"
-							+ textBoxProviderNIP->Text + "', '"
-							+ textBoxProviderREGON->Text + "', '"
+							+ this->textBoxProviderName->Text + "', '"
+							+ this->textBoxProviderNIP->Text + "', '"
+							+ this->textBoxProviderREGON->Text + "', '"
 							+ dbs.result->GetInt32(0) + "')";
 						dbs.closeConnection();
 						dbDriver dbi;
@@ -3512,7 +3516,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 						if (dbi.getStatus())
 						{
 							String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
-							bindTable(ManyQuery, dataGridViewProviders);
+							this->bindTable(ManyQuery, this->dataGridViewProviders);
 						}
 						else
 							MessageBox::Show(db.getError());
@@ -3529,7 +3533,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					MessageBox::Show(db.getError());
 					db.closeConnection();
 				}
-				clearFormProviders();
+				this->clearFormProviders();
 			}
 		}
 		catch (int err)
@@ -3576,11 +3580,11 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void buttonProviderDelete_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (rowIdProviders > 0 && userType)
+		if (this->rowIdProviders > 0 && this->userType)
 		{
 			if (MessageBox::Show("Czy chcesz usun¹æ dostawce?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 			{
-				String^ query = "DELETE providers, common_data FROM providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE providers.id_providers='" + rowIdProviders + "'";
+				String^ query = "DELETE providers, common_data FROM providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE providers.id_providers='" + this->rowIdProviders + "'";
 				dbDriver db;
 				db.deleteFromSql(query);
 
@@ -3588,8 +3592,8 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				{
 					db.closeConnection();
 					String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
-					bindTable(ManyQuery, dataGridViewProviders);
-					clearFormClients();
+					this->bindTable(ManyQuery, this->dataGridViewProviders);
+					this->clearFormProviders();
 					MessageBox::Show("Usuniêto dostawce");
 				}
 				else
@@ -3610,33 +3614,33 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	/* items*/
 	private: System::Void buttonItemsShow_Click(System::Object^  sender, System::EventArgs^  e) {
 		String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price from items INNER JOIN producers ON items.id_producers = producers.id_producers";
-		bindTable(ItemsQuery, dataGridViewItems);
+		this->bindTable(ItemsQuery, this->dataGridViewItems);
 
 		String^ ParamsQuery = "Select name as Parametry from features";
-		bindTable(ParamsQuery, dataGridViewParams);
+		this->bindTable(ParamsQuery, this->dataGridViewParams);
 
 		String^ ProducersQuery = "Select name as Producenci from producers";
-		bindTable(ProducersQuery, dataGridViewProducers);
+		this->bindTable(ProducersQuery, this->dataGridViewProducers);
 	}
 
 	private: System::Void buttonItemsSearch_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ ManyQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price from items INNER JOIN producers ON items.id_producers = producers.id_producers WHERE items.name LIKE '%" + textBoxItemsSearch->Text + "%' OR items.model LIKE '%" + textBoxItemsSearch->Text + "%' OR producers.name LIKE '%" + textBoxItemsSearch->Text + "%'";
-		bindTable(ManyQuery, dataGridViewItems);
+		String^ ManyQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price from items INNER JOIN producers ON items.id_producers = producers.id_producers WHERE items.name LIKE '%" + this->textBoxItemsSearch->Text + "%' OR items.model LIKE '%" + this->textBoxItemsSearch->Text + "%' OR producers.name LIKE '%" + this->textBoxItemsSearch->Text + "%'";
+		this->bindTable(ManyQuery, this->dataGridViewItems);
 	}
 
 	private: System::Void dataGridViewItems_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 		
 		if (Convert::ToInt32(e->RowIndex) >= 0)
 		{
-			this->rowIdItems = Convert::ToInt32(dataGridViewItems->Rows[e->RowIndex]->Cells[0]->Value);
+			this->rowIdItems = Convert::ToInt32(this->dataGridViewItems->Rows[e->RowIndex]->Cells[0]->Value);
 			
-			String^ ParamsQuery = "Select features.name as Parametry, products_features.value as Wartosc from features INNER JOIN products_features ON products_features.id_features = features.id_features INNER JOIN items ON products_features.id_items = items.id_items WHERE products_features.id_items='" + rowIdItems + "'";
-			bindTable(ParamsQuery, dataGridViewParams);
+			String^ ParamsQuery = "Select features.name as Parametry, products_features.value as Wartosc from features INNER JOIN products_features ON products_features.id_features = features.id_features INNER JOIN items ON products_features.id_items = items.id_items WHERE products_features.id_items='" + this->rowIdItems + "'";
+			this->bindTable(ParamsQuery, this->dataGridViewParams);
 
-			String^ ProducersQuery = "Select producers.name as Producenci from producers INNER JOIN items ON items.id_producers = producers.id_producers WHERE items.id_items='" + rowIdItems + "'";
-			bindTable(ProducersQuery, dataGridViewProducers);
+			String^ ProducersQuery = "Select producers.name as Producenci from producers INNER JOIN items ON items.id_producers = producers.id_producers WHERE items.id_items='" + this->rowIdItems + "'";
+			this->bindTable(ProducersQuery, this->dataGridViewProducers);
 
-			String^ query = "Select * FROM items WHERE id_items='" + rowIdItems + "'";
+			String^ query = "Select * FROM items WHERE id_items='" + this->rowIdItems + "'";
 			dbDriver db;
 			db.selectOne(query);
 
@@ -3650,26 +3654,26 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 				if (userType)
 					this->buttonItemDelete->Enabled = true;
-				buttonItemSave->Text = "Zapisz";
-				labelItemParam->Visible = true;
-				comboBoxItemParam->Visible = true;
-				textBoxItemParamVal->Visible = true;
-				labelItemProducer->Visible = true;
-				comboBoxItemProducer->Visible = true;
-				comboBoxItemProducer->Visible = true;
-				buttonItemParamAdd->Visible = true;
-				buttonItemProducerAdd->Visible = true;
-				comboBoxItemParam->Items->Clear();
-				comboBoxItemProducer->Items->Clear();
-				comboBoxItemParam->Text = "Dodaj nowy";
-				comboBoxItemProducer->Text = "Dodaj nowy";
-				buttonItemClearForm->Enabled = true;
-				buttonItemParamHelp->Visible = true;
-				buttonItemParamDelete->Visible = true;
-				buttonItemParamHelp->Visible = true;
-				buttonItemProducerDelete->Visible = true;
-				textBoxItemParamVal->Text = "";
-				buttonItemProducerHelp->Visible = true;
+				this->buttonItemSave->Text = "Zapisz";
+				this->labelItemParam->Visible = true;
+				this->comboBoxItemParam->Visible = true;
+				this->textBoxItemParamVal->Visible = true;
+				this->labelItemProducer->Visible = true;
+				this->comboBoxItemProducer->Visible = true;
+				this->comboBoxItemProducer->Visible = true;
+				this->buttonItemParamAdd->Visible = true;
+				this->buttonItemProducerAdd->Visible = true;
+				this->comboBoxItemParam->Items->Clear();
+				this->comboBoxItemProducer->Items->Clear();
+				this->comboBoxItemParam->Text = "Dodaj nowy";
+				this->comboBoxItemProducer->Text = "Dodaj nowy";
+				this->buttonItemClearForm->Enabled = true;
+				this->buttonItemParamHelp->Visible = true;
+				this->buttonItemParamDelete->Visible = true;
+				this->buttonItemParamHelp->Visible = true;
+				this->buttonItemProducerDelete->Visible = true;
+				this->textBoxItemParamVal->Text = "";
+				this->buttonItemProducerHelp->Visible = true;
 
 				String^ ParamsQueryToBox = "Select features.name as Parametry, products_features.value as Wartosc from features INNER JOIN products_features ON products_features.id_features = features.id_features INNER JOIN items ON products_features.id_items = items.id_items";
 				dbDriver db;
@@ -3677,22 +3681,22 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				if (db.getStatus())
 				{
 					while(db.result->Read())
-						comboBoxItemParam->Items->Add(db.result->GetString(0));
+						this->comboBoxItemParam->Items->Add(db.result->GetString(0));
 
-					String^ ProducerQueryToBox = "Select producers.name FROM producers INNER JOIN items ON items.id_producers = producers.id_producers WHERE items.id_items='" + rowIdItems + "'";
+					String^ ProducerQueryToBox = "Select producers.name FROM producers INNER JOIN items ON items.id_producers = producers.id_producers WHERE items.id_items='" + this->rowIdItems + "'";
 					dbDriver dbp;
 					dbp.selectOne(ProducerQueryToBox);
 					if (dbp.getStatus())
 					{
-						comboBoxItemProducer->Text = dbp.result->GetString(0);
+						this->comboBoxItemProducer->Text = dbp.result->GetString(0);
 						String^ AllProducerQueryToBox = "Select name From producers";
 						dbDriver dbpa;
 						dbpa.selectOne(AllProducerQueryToBox);
 						if (dbpa.getStatus())
 						{
-							comboBoxItemProducer->Items->Add(dbpa.result->GetString(0));
+							this->comboBoxItemProducer->Items->Add(dbpa.result->GetString(0));
 							while (dbpa.result->Read())
-								comboBoxItemProducer->Items->Add(dbpa.result->GetString(0));
+								this->comboBoxItemProducer->Items->Add(dbpa.result->GetString(0));
 						}
 						else
 							MessageBox::Show(dbp.getError());
@@ -3716,14 +3720,14 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 	
 	private: System::Void comboBoxItemParam_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		textBoxItemParamVal->Text = "";
-		String^ query = "SELECT products_features.value FROM products_features INNER JOIN features ON products_features.id_features = features.id_features WHERE products_features.id_items='" + rowIdItems +
-			"' AND products_features.id_features=(SELECT features.id_features FROM features WHERE features.name='" + comboBoxItemParam->Text + "')";
+		this->textBoxItemParamVal->Text = "";
+		String^ query = "SELECT products_features.value FROM products_features INNER JOIN features ON products_features.id_features = features.id_features WHERE products_features.id_items='" + this->rowIdItems +
+			"' AND products_features.id_features=(SELECT features.id_features FROM features WHERE features.name='" + this->comboBoxItemParam->Text + "')";
 		dbDriver db;
 		db.selectOne(query);
 		if (db.getStatus())
 		{
-			textBoxItemParamVal->Text = db.result->GetString(0);
+			this->textBoxItemParamVal->Text = db.result->GetString(0);
 		}
 		else
 			MessageBox::Show(db.getError());
@@ -3731,51 +3735,51 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void buttonItemClearForm_Click(System::Object^  sender, System::EventArgs^  e) {
-		clearItemForm();
+		this->clearItemForm();
 	}
 
 	private: Void clearItemForm()
 	{
-		rowIdItems = 0;
-		labelItemIDVal->Text = "#";
-		textBoxItemName->Text = "";
-		textBoxItemModel->Text = "";
-		labelItemQuantityVal->Text = "";
-		TextBoxItemPrice->Text = "";
-		buttonItemDelete->Enabled = false;
-		buttonItemSave->Text = "Dodaj";
-		labelItemParam->Visible = false;
-		comboBoxItemParam->Visible = false;
-		textBoxItemParamVal->Visible = false;
-		labelItemProducer->Visible = false;
-		comboBoxItemProducer->Visible = false;
-		comboBoxItemProducer->Visible = false;
-		buttonItemParamAdd->Visible = false;
-		buttonItemProducerAdd->Visible = false;
-		comboBoxItemParam->Items->Clear();
-		comboBoxItemProducer->Items->Clear();
-		comboBoxItemParam->Text = "Dodaj nowy";
-		comboBoxItemProducer->Text = "Dodaj nowy";
-		buttonItemClearForm->Enabled = false;
-		buttonItemParamHelp->Visible = false;
-		buttonItemParamDelete->Visible = false;
-		buttonItemParamHelp->Visible = false;
-		buttonItemProducerDelete->Visible = false;
-		buttonItemParamHelp->Visible = false;
+		this->rowIdItems = -1;
+		this->labelItemIDVal->Text = "#";
+		this->textBoxItemName->Text = "";
+		this->textBoxItemModel->Text = "";
+		this->labelItemQuantityVal->Text = "";
+		this->TextBoxItemPrice->Text = "";
+		this->buttonItemDelete->Enabled = false;
+		this->buttonItemSave->Text = "Dodaj";
+		this->labelItemParam->Visible = false;
+		this->comboBoxItemParam->Visible = false;
+		this->textBoxItemParamVal->Visible = false;
+		this->labelItemProducer->Visible = false;
+		this->comboBoxItemProducer->Visible = false;
+		this->comboBoxItemProducer->Visible = false;
+		this->buttonItemParamAdd->Visible = false;
+		this->buttonItemProducerAdd->Visible = false;
+		this->comboBoxItemParam->Items->Clear();
+		this->comboBoxItemProducer->Items->Clear();
+		this->comboBoxItemParam->Text = "Dodaj nowy";
+		this->comboBoxItemProducer->Text = "Dodaj nowy";
+		this->buttonItemClearForm->Enabled = false;
+		this->buttonItemParamHelp->Visible = false;
+		this->buttonItemParamDelete->Visible = false;
+		this->buttonItemParamHelp->Visible = false;
+		this->buttonItemProducerDelete->Visible = false;
+		this->buttonItemParamHelp->Visible = false;
 	}
 
 	private: System::Void buttonItemSave_Click(System::Object^  sender, System::EventArgs^  e) {
 		try {
-			String^ price = TextBoxItemPrice->Text->Replace(",", ".");
-			if (textBoxItemName->Text->Length < 2) throw 1;
-			if (textBoxItemName->Text->Length > 255) throw 2;
-			if (textBoxItemModel->Text->Length < 2) throw 3;
-			if (textBoxItemModel->Text->Length > 255) throw 4;
+			String^ price = this->TextBoxItemPrice->Text->Replace(",", ".");
+			if (this->textBoxItemName->Text->Length < 2) throw 1;
+			if (this->textBoxItemName->Text->Length > 255) throw 2;
+			if (this->textBoxItemModel->Text->Length < 2) throw 3;
+			if (this->textBoxItemModel->Text->Length > 255) throw 4;
 			//if (Convert::ToDouble(price) < 0.00) throw 5;
 			
-			if (rowIdItems > 0)
+			if (this->rowIdItems > 0)
 			{
-				String^ query = "UPDATE items SET name='" + textBoxItemName->Text + "', model='" + textBoxItemModel->Text + "', price='" + price + "' WHERE id_items='" + rowIdItems + "'";
+				String^ query = "UPDATE items SET name='" + this->textBoxItemName->Text + "', model='" + this->textBoxItemModel->Text + "', price='" + price + "' WHERE id_items='" + this->rowIdItems + "'";
 				dbDriver db;
 				db.update(query); MessageBox::Show(query);
 				if (!db.getStatus())
@@ -3783,11 +3787,11 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				else
 					MessageBox::Show("Dane przedmiotu zosta³y zaktualizowane");
 				db.closeConnection();
-				clearItemForm();
+				this->clearItemForm();
 			}
 			else
 			{
-				String^ query = "INSERT INTO items(name, model, price, id_producers) VALUES('" + textBoxItemName->Text + "','" + textBoxItemModel->Text + "','" + price + "', '1')";
+				String^ query = "INSERT INTO items(name, model, price, id_producers) VALUES('" + this->textBoxItemName->Text + "','" + this->textBoxItemModel->Text + "','" + price + "', '1')";
 				dbDriver db;
 				db.insert(query);
 				if (!db.getStatus())
@@ -3795,17 +3799,17 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				else
 					MessageBox::Show("Przedmiot zosta³ dodany");
 				db.closeConnection();
-				clearItemForm();
+				this->clearItemForm();
 			}
 			
 			String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price AS Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
-			bindTable(ItemsQuery, dataGridViewItems);
+			this->bindTable(ItemsQuery, this->dataGridViewItems);
 
 			String^ ParamsQuery = "Select name as Parametry from features";
-			bindTable(ParamsQuery, dataGridViewParams);
+			this->bindTable(ParamsQuery, this->dataGridViewParams);
 
 			String^ ProducersQuery = "Select name as Producenci from producers";
-			bindTable(ProducersQuery, dataGridViewProducers);
+			this->bindTable(ProducersQuery, this->dataGridViewProducers);
 
 		}
 		catch (int ex)
@@ -3823,11 +3827,11 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 	private: System::Void buttonItemParamAdd_Click(System::Object^  sender, System::EventArgs^  e) {
 		try {
-			if (comboBoxItemParam->Text->Length < 2) throw 1;
-			if (comboBoxItemParam->Text->Length > 255) throw 2;
-			if (textBoxItemParamVal->Text->Length == 0) throw 4;
-			if (textBoxItemParamVal->Text->Length > 255) throw 5;
-			String^ query = "SELECT count(id_features) AS ct, id_features FROM features WHERE name='" + comboBoxItemParam->Text + "'";
+			if (this->comboBoxItemParam->Text->Length < 2) throw 1;
+			if (this->comboBoxItemParam->Text->Length > 255) throw 2;
+			if (this->textBoxItemParamVal->Text->Length == 0) throw 4;
+			if (this->textBoxItemParamVal->Text->Length > 255) throw 5;
+			String^ query = "SELECT count(id_features) AS ct, id_features FROM features WHERE name='" + this->comboBoxItemParam->Text + "'";
 			dbDriver db;
 			db.selectOne(query);
 			if (!db.getStatus()) {
@@ -3839,7 +3843,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				int id_features = db.result->GetInt32(1);
 				db.closeConnection();
 
-				String^ squery = "SELECT count(id_items) as ct FROM products_features WHERE id_features='" + id_features + "' AND id_items='" + rowIdItems + "'";
+				String^ squery = "SELECT count(id_items) as ct FROM products_features WHERE id_features='" + id_features + "' AND id_items='" + this->rowIdItems + "'";
 				dbDriver dbs;
 				dbs.selectOne(squery);
 				if (!dbs.getStatus()) {
@@ -3848,7 +3852,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				}
 				if (dbs.result->GetInt32(0) == 1)
 				{
-					String^ uquery = "UPDATE products_features INNER JOIN features ON products_features.id_features = features.id_features SET products_features.value='" + textBoxItemParamVal->Text + "' WHERE products_features.id_features='" + id_features + "' AND products_features.id_items='" + rowIdItems + "'";
+					String^ uquery = "UPDATE products_features INNER JOIN features ON products_features.id_features = features.id_features SET products_features.value='" + this->textBoxItemParamVal->Text + "' WHERE products_features.id_features='" + id_features + "' AND products_features.id_items='" + this->rowIdItems + "'";
 					dbDriver dbu;
 					dbu.update(uquery);
 					if (!dbu.getStatus()) {
@@ -3860,7 +3864,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				}
 				else if (dbs.result->GetInt32(0) == 0)
 				{
-					String^ iquery = "INSERT INTO products_features(id_items, id_features, value) VALUES('" + rowIdItems + "', '" + id_features + "', '" + textBoxItemParamVal->Text + "')";
+					String^ iquery = "INSERT INTO products_features(id_items, id_features, value) VALUES('" + this->rowIdItems + "', '" + id_features + "', '" + this->textBoxItemParamVal->Text + "')";
 					dbDriver dbi;
 					dbi.update(iquery);
 					if (!dbi.getStatus()) {
@@ -3877,7 +3881,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			else if (db.result->GetInt32(0) == 0)
 			{
 				db.closeConnection();
-				String^ iquery = "INSERT INTO features(name) VALUES('" + comboBoxItemParam->Text + "')";
+				String^ iquery = "INSERT INTO features(name) VALUES('" + this->comboBoxItemParam->Text + "')";
 				dbDriver dbi;
 				dbi.insert(iquery);
 				if (!dbi.getStatus()) {
@@ -3887,7 +3891,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				else
 				{
 					dbi.closeConnection();
-					String^ iiquery = "INSERT INTO products_features(id_items, id_features, value) VALUES('" + rowIdItems + "', (SELECT id_features FROM features WHERE name='" + comboBoxItemParam->Text + "'), '" + textBoxItemParamVal->Text + "')";
+					String^ iiquery = "INSERT INTO products_features(id_items, id_features, value) VALUES('" + this->rowIdItems + "', (SELECT id_features FROM features WHERE name='" + this->comboBoxItemParam->Text + "'), '" + this->textBoxItemParamVal->Text + "')";
 					dbDriver dbii;
 					dbii.insert(iiquery);
 					if (!dbii.getStatus())
@@ -3918,11 +3922,11 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void buttonItemParamDelete_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (textBoxItemParamVal->Text == "")
+		if (this->textBoxItemParamVal->Text == "")
 		{
 			if (MessageBox::Show("Czy chcesz na sta³e usun¹æ parametr?\n Zostanie on usuniêty ze wszystkich przedmiotów w magazynie!", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 			{
-				String^ query = "DELETE features, products_features FROM features INNER JOIN products_features ON products_features.id_features = features.id_features WHERE features.name='" + comboBoxItemParam->Text + "'";
+				String^ query = "DELETE features, products_features FROM features INNER JOIN products_features ON products_features.id_features = features.id_features WHERE features.name='" + this->comboBoxItemParam->Text + "'";
 				dbDriver db;
 				db.deleteFromSql(query);
 				if (db.getStatus())
@@ -3935,11 +3939,11 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 			}
 		}
-		else if(textBoxItemParamVal->Text != "")
+		else if(this->textBoxItemParamVal->Text != "")
 		{
 			if (MessageBox::Show("Czy chcesz na sta³e usun¹æ parametr z przedmiotu?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 			{
-				String^ query = "DELETE FROM products_features WHERE products_features.id_features=(SELECT id_features FROM features WHERE name='" + comboBoxItemParam->Text + "')";
+				String^ query = "DELETE FROM products_features WHERE products_features.id_features=(SELECT id_features FROM features WHERE name='" + this->comboBoxItemParam->Text + "')";
 				dbDriver db;
 				db.deleteFromSql(query);
 				if (db.getStatus())
@@ -3957,9 +3961,9 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	private: System::Void buttonItemProducerAdd_Click(System::Object^  sender, System::EventArgs^  e) {
 		try
 		{
-			if (comboBoxItemProducer->Text->Length < 2) throw 1;
-			if (comboBoxItemProducer->Text->Length > 255) throw 2;
-			String^ query = "SELECT count(id_producers), id_producers FROM producers WHERE name='" + comboBoxItemProducer->Text + "'";
+			if (this->comboBoxItemProducer->Text->Length < 2) throw 1;
+			if (this->comboBoxItemProducer->Text->Length > 255) throw 2;
+			String^ query = "SELECT count(id_producers), id_producers FROM producers WHERE name='" + this->comboBoxItemProducer->Text + "'";
 			dbDriver db;
 			db.selectOne(query);
 			if (!db.getStatus())
@@ -3970,7 +3974,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			if (db.result->GetInt32(0) == 1)
 			{
 				db.closeConnection();
-				String^ uquery = "UPDATE items SET id_producers=(SELECT id_producers FROM producers WHERE name='" + comboBoxItemProducer->Text + "') WHERE id_items='" + rowIdItems + "'";
+				String^ uquery = "UPDATE items SET id_producers=(SELECT id_producers FROM producers WHERE name='" + this->comboBoxItemProducer->Text + "') WHERE id_items='" + this->rowIdItems + "'";
 				dbDriver db;
 				db.update(uquery);
 				if (!db.getStatus()) {
@@ -3984,7 +3988,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			else if (db.result->GetInt32(0) == 0)
 			{
 				db.closeConnection();
-				String^ upquery = "INSERT INTO producers(name) VALUES('" + comboBoxItemProducer->Text + "')";
+				String^ upquery = "INSERT INTO producers(name) VALUES('" + this->comboBoxItemProducer->Text + "')";
 				dbDriver dbup;
 				dbup.insert(upquery);
 				if (!dbup.getStatus())
@@ -3995,7 +3999,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				else
 				{
 					dbup.closeConnection();
-					String^ uquery = "UPDATE items SET id_producers=(SELECT id_producers FROM producers WHERE name='" + comboBoxItemProducer->Text + "') WHERE id_items='" + rowIdItems + "'";
+					String^ uquery = "UPDATE items SET id_producers=(SELECT id_producers FROM producers WHERE name='" + this->comboBoxItemProducer->Text + "') WHERE id_items='" + this->rowIdItems + "'";
 					dbDriver dbu;
 					dbu.update(uquery);
 					if (!dbu.getStatus()) {
@@ -4026,12 +4030,12 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	private: System::Void buttonItemProducerDelete_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (MessageBox::Show("Czy chcesz na sta³e usun¹æ producenta?\n Zostanie on usuniêty ze wszystkich przedmiotów w magazynie!", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 		{
-			String^ uquery = "UPDATE items SET id_producers=1 WHERE id_producers=(SELECT id_producers FROM producers WHERE name='" + comboBoxItemProducer->Text + "')";
+			String^ uquery = "UPDATE items SET id_producers=1 WHERE id_producers=(SELECT id_producers FROM producers WHERE name='" + this->comboBoxItemProducer->Text + "')";
 			dbDriver dbu;
 			dbu.update(uquery);
 			if (dbu.getStatus())
 			{
-				String^ query = "DELETE FROM producers WHERE name ='" + comboBoxItemProducer->Text + "'";
+				String^ query = "DELETE FROM producers WHERE name ='" + this->comboBoxItemProducer->Text + "'";
 				dbDriver db;
 				db.deleteFromSql(query);
 				if (db.getStatus())
@@ -4049,25 +4053,25 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void buttonItemDelete_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (userType)
+		if (this->userType)
 		{
 			if (MessageBox::Show("Czy chcesz na sta³e usun¹æ przedmiot?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 			{
-				String^ query = "DELETE items, products_features FROM items INNER JOIN products_features ON products_features.id_items = items.id_items WHERE items.id_items='" + rowIdItems + "'";
+				String^ query = "DELETE items, products_features FROM items INNER JOIN products_features ON products_features.id_items = items.id_items WHERE items.id_items='" + this->rowIdItems + "'";
 
 				dbDriver db;
 				db.deleteFromSql(query);
 				if (db.getStatus())
 				{
 					String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price from items INNER JOIN producers ON items.id_producers = producers.id_producers";
-					bindTable(ItemsQuery, dataGridViewItems);
+					this->bindTable(ItemsQuery, this->dataGridViewItems);
 
 					String^ ParamsQuery = "Select name as Parametry from features";
-					bindTable(ParamsQuery, dataGridViewParams);
+					this->bindTable(ParamsQuery, this->dataGridViewParams);
 
 					String^ ProducersQuery = "Select name as Producenci from producers";
-					bindTable(ProducersQuery, dataGridViewProducers);
-					clearItemForm();
+					this->bindTable(ProducersQuery, this->dataGridViewProducers);
+					this->clearItemForm();
 					MessageBox::Show("Przedmiot zosta³ usuniêty z bazy dancyh");
 				}
 				else
@@ -4097,37 +4101,39 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		+ "Aby ustawiæ istniej¹cego producenta wybierz go z rozwijanej listy a nastêpnie naciœnij przycisk Dodaj\n"
 		+ "Aby usun¹æ producenta wybierz go z rozwijanej listy a nastêpnie naciœnij przycisk X");
 	}
+
+	/* Sales */
 	
 	private: System::Void buttonSellsShow_Click(System::Object^  sender, System::EventArgs^  e) {
-		rowIdSales = -1;
+		this->rowIdSales = -1;
 		String^ SalesQuery = "SELECT id_sales as Id_sprzedazy, id_employers as Id_sprzedawcy, id_clients as Id_klienta, date as Data, price as Kwota_transakcji, status from sales";
-		bindTable(SalesQuery, dataGridViewSales);
+		this->bindTable(SalesQuery, this->dataGridViewSales);
 
 		String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
-		bindTable(ItemsQuery, dataGridViewSalesItems);
+		this->bindTable(ItemsQuery, this->dataGridViewSalesItems);
 
 		String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
-		bindTable(ClientsQuery, dataGridViewSalesClients);
+		this->bindTable(ClientsQuery, this->dataGridViewSalesClients);
 
 		String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
-		bindTable(EmployersQuery, dataGridViewSalesEmployers);	
+		this->bindTable(EmployersQuery, this->dataGridViewSalesEmployers);
 	}
 
 	private: System::Void buttonSalesSave_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ query = "INSERT INTO sales(id_employers, id_clients, date) VALUES ('" + userId + "', (SELECT id_clients FROM clients WHERE name='" + comboBoxSellClient->Text + "'), now())";
+		String^ query = "INSERT INTO sales(id_employers, id_clients, date) VALUES ('" + this->userId + "', (SELECT id_clients FROM clients WHERE name='" + this->comboBoxSellClient->Text + "'), now())";
 		dbDriver db;
 		db.insert(query);
 		if (db.getStatus())
 		{
 			MessageBox::Show("Transakcja zosta³a dodana przejdŸ do jej konfiguracji");
-			String^ SalesQuery = "SELECT id_sales as Id_sprzedazy, id_employers as Id_sprzedawcy, id_clients as Id_klienta, date as Data, price as Kwota_transakcji, status from sales WHERE id_employers='" + userId + "' ORDER BY id_sales DESC Limit 1";
-			bindTable(SalesQuery, dataGridViewSales);
-			dataGridViewSalesClients->DataSource = nullptr;
-			dataGridViewSalesItems->DataSource = nullptr;
-			dataGridViewSalesEmployers->DataSource = nullptr;
-			dataGridViewSalesClients->Rows->Clear();
-			dataGridViewSalesItems->Rows->Clear();
-			dataGridViewSalesEmployers->Rows->Clear();
+			String^ SalesQuery = "SELECT id_sales as Id_sprzedazy, id_employers as Id_sprzedawcy, id_clients as Id_klienta, date as Data, price as Kwota_transakcji, status from sales WHERE id_employers='" + this->userId + "' ORDER BY id_sales DESC Limit 1";
+			this->bindTable(SalesQuery, this->dataGridViewSales);
+			this->dataGridViewSalesClients->DataSource = nullptr;
+			this->dataGridViewSalesItems->DataSource = nullptr;
+			this->dataGridViewSalesEmployers->DataSource = nullptr;
+			this->dataGridViewSalesClients->Rows->Clear();
+			this->dataGridViewSalesItems->Rows->Clear();
+			this->dataGridViewSalesEmployers->Rows->Clear();
 		}
 		else
 			MessageBox::Show(db.getError());
@@ -4137,21 +4143,21 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	private: System::Void dataGridViewSales_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 		if (Convert::ToInt32(e->RowIndex) >= 0)
 		{
-			buttonSalesClearForm->Enabled = true;
-			maskedTextBoxSellQuantity->Text = "";
-			this->rowIdSales = Convert::ToInt32(dataGridViewSales->Rows[e->RowIndex]->Cells[0]->Value);
-			String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + rowIdSales + "'";
-			bindTable(ItemsQuery, dataGridViewSalesItems);
+			this->buttonSalesClearForm->Enabled = true;
+			this->maskedTextBoxSellQuantity->Text = "";
+			this->rowIdSales = Convert::ToInt32(this->dataGridViewSales->Rows[e->RowIndex]->Cells[0]->Value);
+			String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + this->rowIdSales + "'";
+			this->bindTable(ItemsQuery, this->dataGridViewSalesItems);
 
-			String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.id_clients='" + dataGridViewSales->Rows[e->RowIndex]->Cells[2]->Value + "'";
-			bindTable(ClientsQuery, dataGridViewSalesClients);
+			String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.id_clients='" + this->dataGridViewSales->Rows[e->RowIndex]->Cells[2]->Value + "'";
+			this->bindTable(ClientsQuery, this->dataGridViewSalesClients);
 
-			String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email, common_data.phone as NrTelefonu from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers = '" + dataGridViewSales->Rows[e->RowIndex]->Cells[1]->Value + "'";
-			bindTable(EmployersQuery, dataGridViewSalesEmployers);
+			String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email, common_data.phone as NrTelefonu from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers = '" + this->dataGridViewSales->Rows[e->RowIndex]->Cells[1]->Value + "'";
+			this->bindTable(EmployersQuery, this->dataGridViewSalesEmployers);
 
-			if (Convert::ToInt32(dataGridViewSales->Rows[e->RowIndex]->Cells[5]->Value) == 1)
+			if (Convert::ToInt32(this->dataGridViewSales->Rows[e->RowIndex]->Cells[5]->Value) == 1)
 			{
-				this->labelSellIDVal->Text = dataGridViewSales->Rows[e->RowIndex]->Cells[0]->Value->ToString();
+				this->labelSellIDVal->Text = this->dataGridViewSales->Rows[e->RowIndex]->Cells[0]->Value->ToString();
 				this->comboBoxSellClient->Text = this->dataGridViewSalesClients->Rows[0]->Cells[1]->Value->ToString();
 				this->comboBoxSellClient->Enabled = false;
 				this->buttonSalesDelete->Enabled = true;
@@ -4159,14 +4165,14 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			}
 			else if (Convert::ToInt32(dataGridViewSales->Rows[e->RowIndex]->Cells[5]->Value) == 0)
 			{
-				this->labelSellIDVal->Text = dataGridViewSales->Rows[e->RowIndex]->Cells[0]->Value->ToString();
+				this->labelSellIDVal->Text = this->dataGridViewSales->Rows[e->RowIndex]->Cells[0]->Value->ToString();
 				this->comboBoxSellClient->Text = this->dataGridViewSalesClients->Rows[0]->Cells[1]->Value->ToString();
-				labelSellItem->Enabled = true;
-				comboBoxSellItem->Enabled = true;
-				labelSellQuantity->Enabled = true;
-				maskedTextBoxSellQuantity->Enabled = true;
-				buttonSalesAddItem->Enabled = true;
-				buttonSalesAddItem->Enabled = true;
+				this->labelSellItem->Enabled = true;
+				this->comboBoxSellItem->Enabled = true;
+				this->labelSellQuantity->Enabled = true;
+				this->maskedTextBoxSellQuantity->Enabled = true;
+				this->buttonSalesAddItem->Enabled = true;
+				this->buttonSalesAddItem->Enabled = true;
 				this->comboBoxSellClient->Enabled = false;
 				this->buttonSalesAddItem->Enabled = true;
 				this->buttonSalesClose->Enabled = true;
@@ -4180,10 +4186,10 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				db.selectOne(query);
 				if (db.getStatus())
 				{
-					comboBoxSellItem->Items->Clear();
-					comboBoxSellItem->Items->Add(db.result->GetString(0));
+					this->comboBoxSellItem->Items->Clear();
+					this->comboBoxSellItem->Items->Add(db.result->GetString(0));
 					while (db.result->Read())
-						comboBoxSellItem->Items->Add(db.result->GetString(0));
+						this->comboBoxSellItem->Items->Add(db.result->GetString(0));
 				}
 				else
 					MessageBox::Show(db.getError());
@@ -4198,33 +4204,33 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 	private: System::Void buttonSalesAddItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		try {
-			if (Convert::ToInt32(maskedTextBoxSellQuantity->Text) <= 0) throw 1;
-			if (comboBoxSellItem->Text == "") throw 2;
+			if (Convert::ToInt32(this->maskedTextBoxSellQuantity->Text) <= 0) throw 1;
+			if (this->comboBoxSellItem->Text == "") throw 2;
 
-			String^ squery = "SELECT count(sales_items.id_sales), items.id_items, sales_items.quantity FROM sales_items inner join items on sales_items.id_items = items.id_items WHERE concat(items.name, ' ', items.model) = '" + comboBoxSellItem->Text + "'";
+			String^ squery = "SELECT count(sales_items.id_sales), items.id_items, sales_items.quantity FROM sales_items inner join items on sales_items.id_items = items.id_items WHERE concat(items.name, ' ', items.model) = '" + this->comboBoxSellItem->Text + "' AND sales_items.id_sales='" + this->rowIdSales + "'";
 			dbDriver dbs;
 			dbs.selectOne(squery);
-			String^ qry = "SELECT quantity from items where concat(name, ' ', model) = '" + comboBoxSellItem->Text + "'";
+			String^ qry = "SELECT quantity from items where concat(name, ' ', model) = '" + this->comboBoxSellItem->Text + "'";
 			dbDriver dbq;
 			dbq.selectOne(qry);
 			if (dbs.getStatus())
 			{
-				if (dbq.result->GetInt32(0) < Convert::ToInt32(maskedTextBoxSellQuantity->Text)) throw 3;
+				if (dbq.result->GetInt32(0) < Convert::ToInt32(this->maskedTextBoxSellQuantity->Text)) throw 3;
 				if (dbs.result->GetInt32(0) == 1)
 				{
-					String^ query = "UPDATE sales_items SET quantity = '" + maskedTextBoxSellQuantity->Text + "' WHERE id_sales = '" + rowIdSales + "' AND id_items='" + dbs.result->GetInt32(1) + "'";
+					String^ query = "UPDATE sales_items SET quantity = '" + this->maskedTextBoxSellQuantity->Text + "' WHERE id_sales = '" + this->rowIdSales + "' AND id_items='" + dbs.result->GetInt32(1) + "'";
 					dbDriver db;
 					db.update(query);
 					if (db.getStatus())
 					{
-						String^ qquery = "UPDATE items SET quantity=(quantity + ('" + dbs.result->GetInt32(2) + "'-'" + maskedTextBoxSellQuantity->Text + "')) WHERE id_items='" + dbs.result->GetInt32(1) + "'";
+						String^ qquery = "UPDATE items SET quantity=(quantity + ('" + dbs.result->GetInt32(2) + "'-'" + this->maskedTextBoxSellQuantity->Text + "')) WHERE id_items='" + dbs.result->GetInt32(1) + "'";
 						dbDriver ddb;
 						ddb.update(qquery);
 						if (ddb.getStatus())
 						{
 							MessageBox::Show("Przedmiot zosta³ zaktualizowany");
-							String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + rowIdSales + "'";
-							bindTable(ItemsQuery, dataGridViewSalesItems);
+							String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + this->rowIdSales + "'";
+							this->bindTable(ItemsQuery, this->dataGridViewSalesItems);
 						}
 						else
 							MessageBox::Show(ddb.getError());
@@ -4236,19 +4242,19 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				}
 				else if (dbs.result->GetInt32(0) == 0)
 				{
-					String^ query = "INSERT INTO sales_items(id_sales, id_items, quantity) VALUES('" + rowIdSales + "', (SELECT id_items from items WHERE concat(name, ' ', model) = '" + comboBoxSellItem->Text + "'), '" + maskedTextBoxSellQuantity->Text + "')";
+					String^ query = "INSERT INTO sales_items(id_sales, id_items, quantity) VALUES('" + this->rowIdSales + "', (SELECT id_items from items WHERE concat(name, ' ', model) = '" + this->comboBoxSellItem->Text + "'), '" + this->maskedTextBoxSellQuantity->Text + "')";
 					dbDriver db;
 					db.insert(query);
 					if (db.getStatus())
 					{
-						String^ qquery = "UPDATE items SET quantity=quantity - '" + maskedTextBoxSellQuantity->Text + "' WHERE concat(name, ' ', model) = '" + comboBoxSellItem->Text + "'";
+						String^ qquery = "UPDATE items SET quantity=quantity - '" + this->maskedTextBoxSellQuantity->Text + "' WHERE concat(name, ' ', model) = '" + this->comboBoxSellItem->Text + "'";
 						dbDriver ddb;
 						ddb.update(qquery);
 						if (ddb.getStatus())
 						{
 							MessageBox::Show("Przedmiot dodany");
-							String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + rowIdSales + "'";
-							bindTable(ItemsQuery, dataGridViewSalesItems);
+							String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + this->rowIdSales + "'";
+							this->bindTable(ItemsQuery, this->dataGridViewSalesItems);
 						}
 						else
 							MessageBox::Show(ddb.getError());
@@ -4264,7 +4270,6 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				MessageBox::Show(dbs.getError());
 				dbs.closeConnection();
 			}
-
 		}
 		catch (int ex)
 		{
@@ -4278,16 +4283,16 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void comboBoxSellItem_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		buttonSalesDeleteItem->Enabled = true;
-		String^ query = "SELECT count(sales_items.id_sales), sales_items.quantity FROM sales_items inner join items on items.id_items = sales_items.id_items WHERE concat(items.name, ' ', items.model) = '" + comboBoxSellItem->Text + "'";
+		this->buttonSalesDeleteItem->Enabled = true;
+		String^ query = "SELECT count(sales_items.id_sales), sales_items.quantity FROM sales_items inner join items on items.id_items = sales_items.id_items WHERE concat(items.name, ' ', items.model) = '" + this->comboBoxSellItem->Text + "'";
 		dbDriver db;
 		db.selectOne(query);
 		if (db.getStatus())
 		{
 			if (db.result->GetInt32(0) == 1)
 			{
-				maskedTextBoxSellQuantity->Text = db.result->GetString(1);
-				buttonSalesDeleteItem->Enabled = true;
+				this->maskedTextBoxSellQuantity->Text = db.result->GetString(1);
+				this->buttonSalesDeleteItem->Enabled = true;
 			}
 		}
 		else
@@ -4300,24 +4305,24 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	private: System::Void buttonSalesDeleteItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (MessageBox::Show("Czy chcesz usun¹æ przedmiot z transakcji?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 		{
-			String^ qquery = "SELECT sales_items.quantity FROM sales_items INNER JOIN items on items.id_items = sales_items.id_items WHERE concat(items.name, ' ', items.model) = '" + comboBoxSellItem->Text + "' and sales_items.id_sales = '" + rowIdSales + "'";
+			String^ qquery = "SELECT sales_items.quantity FROM sales_items INNER JOIN items on items.id_items = sales_items.id_items WHERE concat(items.name, ' ', items.model) = '" + this->comboBoxSellItem->Text + "' and sales_items.id_sales = '" + this->rowIdSales + "'";
 			dbDriver dbqq;
 			dbqq.selectOne(qquery);
 			if (dbqq.getStatus())
 			{
-				String^ query = "DELETE sales_items FROM sales_items INNER JOIN items on items.id_items = sales_items.id_items WHERE sales_items.id_sales = '" + rowIdSales + "' and sales_items.id_items=(SELECT id_items from items where concat(items.name, ' ', items.model) = '" + comboBoxSellItem->Text + "')";
+				String^ query = "DELETE sales_items FROM sales_items INNER JOIN items on items.id_items = sales_items.id_items WHERE sales_items.id_sales = '" + this->rowIdSales + "' and sales_items.id_items=(SELECT id_items from items where concat(items.name, ' ', items.model) = '" + this->comboBoxSellItem->Text + "')";
 				dbDriver db;
 				db.deleteFromSql(query);
 				if (db.getStatus())
 				{
 					MessageBox::Show("Przedmiot zosta³ usuniêty z transakcji");
-					String^ qquery = "UPDATE items SET quantity = quantity + '" + dbqq.result->GetString(0) + "' WHERE concat(name, ' ', model) = '" + comboBoxSellItem->Text + "'";
+					String^ qquery = "UPDATE items SET quantity = quantity + '" + dbqq.result->GetString(0) + "' WHERE concat(name, ' ', model) = '" + this->comboBoxSellItem->Text + "'";
 					dbDriver dbq;
 					dbq.update(qquery);
 					if (dbq.getStatus())
 					{
 						String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + rowIdSales + "'";
-						bindTable(ItemsQuery, dataGridViewSalesItems);
+						this->bindTable(ItemsQuery, this->dataGridViewSalesItems);
 					}
 					else
 						MessageBox::Show(dbq.getError());
@@ -4336,32 +4341,32 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void dataGridViewSalesItems_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
-		if (rowIdSales >= 0)
+		if (this->rowIdSales >= 0)
 		{
-			comboBoxSellItem->Text = dataGridViewSalesItems->Rows[e->RowIndex]->Cells[1]->Value->ToString() + " " + dataGridViewSalesItems->Rows[e->RowIndex]->Cells[2]->Value->ToString();
-			maskedTextBoxSellQuantity->Text = dataGridViewSalesItems->Rows[e->RowIndex]->Cells[4]->Value->ToString();
+			this->comboBoxSellItem->Text = this->dataGridViewSalesItems->Rows[e->RowIndex]->Cells[1]->Value->ToString() + " " + this->dataGridViewSalesItems->Rows[e->RowIndex]->Cells[2]->Value->ToString();
+			this->maskedTextBoxSellQuantity->Text = this->dataGridViewSalesItems->Rows[e->RowIndex]->Cells[4]->Value->ToString();
 		}
 		else
 		{
 			String^ SalesQuery = "SELECT sales.id_sales as Id_sprzedazy, sales.id_employers as Id_sprzedawcy, sales.id_clients as Id_klienta, sales.date as Data, sales.price as Kwota_transakcji, sales.status from sales INNER JOIN sales_items ON sales.id_sales = sales_items.id_sales WHERE sales_items.id_items = '" + dataGridViewSalesItems->Rows[e->RowIndex]->Cells[0]->Value->ToString() + "'";
-			bindTable(SalesQuery, dataGridViewSales);
+			this->bindTable(SalesQuery, this->dataGridViewSales);
 		}
 	}
 	
 	private: System::Void buttonSalesClose_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ query = "UPDATE sales SET status = 1, price=(SELECT SUM(sales_items.quantity*items.price) from sales_items INNER JOIN items ON sales_items.id_items = items.id_items WHERE sales_items.id_sales = '" + rowIdSales + "')  WHERE id_sales = '" + rowIdSales + "'";
+		String^ query = "UPDATE sales SET status = 1, price=(SELECT SUM(sales_items.quantity*items.price) from sales_items INNER JOIN items ON sales_items.id_items = items.id_items WHERE sales_items.id_sales = '" + this->rowIdSales + "')  WHERE id_sales = '" + this->rowIdSales + "'";
 		dbDriver db;
 		db.update(query);
 		if (db.getStatus())
 		{
 			MessageBox::Show("Transakcja zosta³a zamkniêta");
-			labelSellItem->Enabled = false;
-			comboBoxSellItem->Enabled = false;
-			labelSellQuantity->Enabled = false;
-			maskedTextBoxSellQuantity->Enabled = false;
-			buttonSalesAddItem->Enabled = false;
-			buttonSalesDeleteItem->Enabled = false;
-			buttonSalesClose->Enabled = false;
+			this->labelSellItem->Enabled = false;
+			this->comboBoxSellItem->Enabled = false;
+			this->labelSellQuantity->Enabled = false;
+			this->maskedTextBoxSellQuantity->Enabled = false;
+			this->buttonSalesAddItem->Enabled = false;
+			this->buttonSalesDeleteItem->Enabled = false;
+			this->buttonSalesClose->Enabled = false;
 		}
 		else
 			MessageBox::Show(db.getError());
@@ -4369,7 +4374,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void buttonSalesDelete_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ query = "Select status, count(sales_items.id_sales) from sales INNER JOIN sales_items ON sales.id_sales = sales_items.id_sales where sales.id_sales='" + rowIdSales + "'";
+		String^ query = "Select status, count(sales_items.id_sales) from sales INNER JOIN sales_items ON sales.id_sales = sales_items.id_sales where sales.id_sales='" + this->rowIdSales + "'";
 		dbDriver db;
 		db.selectOne(query);
 		if (db.getStatus())
@@ -4380,26 +4385,26 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				{
 					String^ dquery;
 					if(db.result->GetInt32(1) > 0)
-						dquery = "DELETE sales, sales_items FROM sales_items INNER JOIN sales ON sales_items.id_sales = sales.id_sales WHERE sales.id_sales = '" + rowIdSales + "'";
+						dquery = "DELETE sales, sales_items FROM sales_items INNER JOIN sales ON sales_items.id_sales = sales.id_sales WHERE sales.id_sales = '" + this->rowIdSales + "'";
 					else if(db.result->GetInt32(1) == 0)
-						dquery = "DELETE FROM sales WHERE id_sales = '" + rowIdSales + "'";
+						dquery = "DELETE FROM sales WHERE id_sales = '" + this->rowIdSales + "'";
 					dbDriver dbd;
 					dbd.deleteFromSql(dquery);
 					if (dbd.getStatus())
 					{
 						MessageBox::Show("Transakcja zosta³a usuniêta");
 						String^ SalesQuery = "SELECT id_sales as Id_sprzedazy, id_employers as Id_sprzedawcy, id_clients as Id_klienta, date as Data, price as Kwota_transakcji, status from sales";
-						bindTable(SalesQuery, dataGridViewSales);
+						this->bindTable(SalesQuery, this->dataGridViewSales);
 
 						String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
-						bindTable(ItemsQuery, dataGridViewSalesItems);
+						this->bindTable(ItemsQuery, this->dataGridViewSalesItems);
 
 						String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
-						bindTable(ClientsQuery, dataGridViewSalesClients);
+						this->bindTable(ClientsQuery, this->dataGridViewSalesClients);
 
 						String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
-						bindTable(EmployersQuery, dataGridViewSalesEmployers);
-						clearFormSales();
+						this->bindTable(EmployersQuery, this->dataGridViewSalesEmployers);
+						this->clearFormSales();
 					}
 					else
 						MessageBox::Show(dbd.getError());
@@ -4415,42 +4420,404 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void buttonSalesClearForm_Click(System::Object^  sender, System::EventArgs^  e) {
-		clearFormSales();
+		this->clearFormSales();
 	}
 
 	private: Void clearFormSales(){
-		labelSellIDVal->Text = "#";
-		comboBoxSellClient->Enabled = true;
-		rowIdSales = -1;
-		maskedTextBoxSellQuantity->Text = "";
-		buttonSalesSave->Enabled = true;
-		comboBoxSellItem->Items->Clear();
-		comboBoxSellItem->Enabled = false;
-		maskedTextBoxSellQuantity->Enabled = false;
-		buttonSalesAddItem->Enabled = false;
-		buttonSalesDeleteItem->Enabled = false;
-		buttonSalesClose->Enabled = false;
-		buttonSalesDelete->Enabled = false;
-		buttonSalesClearForm->Enabled = false;
+		this->labelSellIDVal->Text = "#";
+		this->comboBoxSellClient->Enabled = true;
+		this->rowIdSales = -1;
+		this->maskedTextBoxSellQuantity->Text = "";
+		this->buttonSalesSave->Enabled = true;
+		this->comboBoxSellItem->Items->Clear();
+		this->comboBoxSellItem->Enabled = false;
+		this->maskedTextBoxSellQuantity->Enabled = false;
+		this->buttonSalesAddItem->Enabled = false;
+		this->buttonSalesDeleteItem->Enabled = false;
+		this->buttonSalesClose->Enabled = false;
+		this->buttonSalesDelete->Enabled = false;
+		this->buttonSalesClearForm->Enabled = false;
 	}
 
 	private: System::Void dataGridViewSalesClients_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
-		if (rowIdSales < 0)
+		if (this->rowIdSales < 0)
 		{
-			String^ Query = "SELECT sales.id_sales as Id_sprzedazy, sales.id_employers as Id_sprzedawcy, sales.id_clients as Id_klienta, sales.date as Data, sales.price as Kwota_transakcji, sales.status from sales WHERE sales.id_clients = '" + dataGridViewSalesClients->Rows[e->RowIndex]->Cells[0]->Value->ToString() + "'";
-			bindTable(Query, dataGridViewSales);
+			String^ Query = "SELECT sales.id_sales as Id_sprzedazy, sales.id_employers as Id_sprzedawcy, sales.id_clients as Id_klienta, sales.date as Data, sales.price as Kwota_transakcji, sales.status from sales WHERE sales.id_clients = '" + this->dataGridViewSalesClients->Rows[e->RowIndex]->Cells[0]->Value->ToString() + "'";
+			this->bindTable(Query, this->dataGridViewSales);
 		}
 	}
 
 	private: System::Void dataGridViewSalesEmployers_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
-		String^ Query = "SELECT sales.id_sales as Id_sprzedazy, sales.id_employers as Id_sprzedawcy, sales.id_clients as Id_klienta, sales.date as Data, sales.price as Kwota_transakcji, sales.status from sales WHERE sales.id_employers = '" + dataGridViewSalesEmployers->Rows[e->RowIndex]->Cells[0]->Value->ToString() + "'";
-		bindTable(Query, dataGridViewSales);
+		String^ Query = "SELECT sales.id_sales as Id_sprzedazy, sales.id_employers as Id_sprzedawcy, sales.id_clients as Id_klienta, sales.date as Data, sales.price as Kwota_transakcji, sales.status from sales WHERE sales.id_employers = '" + this->dataGridViewSalesEmployers->Rows[e->RowIndex]->Cells[0]->Value->ToString() + "'";
+		this->bindTable(Query, this->dataGridViewSales);
 	}
 
 	private: System::Void buttonSalesHelp_Click(System::Object^  sender, System::EventArgs^  e) {
 		MessageBox::Show(
 			"Sprzeda¿ - Instrukcja obs³ugi\n"
 			+ "Wybierz klienta z listy a nastêpnie naciœnij Dodaj transakcje\n"
+			+ "Po dodaniu transakcji mo¿esz dodawaæ do niej przedmioty i okreœlaæ ich iloœæ oraz je usuwaæ\n"
+			+ "Aby usun¹æ ca³¹ transakcje nale¿y j¹ wczeœniej zamkn¹æ\n"
+			+ "Po zakmniêciu transakcji nie ma mo¿liwoœæ dodawania do niej przedmiotów\n"
+		);
+	}
+
+	/* Deliveries */
+
+	private: System::Void buttonDeliveryShow_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->rowIdDelivery = -1;
+		String^ DeliveryQuery = "SELECT id_provides as Id_sprzedazy, id_employers as Id_sprzedawcy, id_providers as Id_dostawcy, date as Data, price as Kwota_transakcji, status from provides";
+		this->bindTable(DeliveryQuery, this->dataGridViewDelivery);
+
+		String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
+		this->bindTable(ItemsQuery, this->dataGridViewDeliveryItems);
+
+		String^ ProvidersQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
+		this->bindTable(ProvidersQuery, this->dataGridViewDeliveryProviders);
+
+		String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+		this->bindTable(EmployersQuery, this->dataGridViewDeliveryEmployers);
+	}
+
+	private: System::Void buttonDeliverySave_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ query = "INSERT INTO provides(id_employers, id_providers, date) VALUES ('" + this->userId + "', (SELECT id_providers FROM providers WHERE name='" + this->comboBoxDeliveryProvider->Text + "'), now())";
+		dbDriver db;
+		db.insert(query);
+		if (db.getStatus())
+		{
+			MessageBox::Show("Transakcja zosta³a dodana przejdŸ do jej konfiguracji");
+			String^ DeliveryQuery = "SELECT id_provides as Id_dostawy, id_employers as Id_sprzedawcy, id_providers as Id_dostawcy, date as Data, price as Kwota_transakcji, status from provides WHERE id_employers='" + this->userId + "' ORDER BY id_provides DESC Limit 1";
+			this->bindTable(DeliveryQuery, dataGridViewDelivery);
+			this->dataGridViewDeliveryProviders->DataSource = nullptr;
+			this->dataGridViewDeliveryItems->DataSource = nullptr;
+			this->dataGridViewDeliveryEmployers->DataSource = nullptr;
+			this->dataGridViewDeliveryProviders->Rows->Clear();
+			this->dataGridViewDeliveryItems->Rows->Clear();
+			this->dataGridViewDeliveryEmployers->Rows->Clear();
+		}
+		else
+			MessageBox::Show(db.getError());
+		db.closeConnection();
+	}
+
+	private: System::Void dataGridViewDelivery_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		if (Convert::ToInt32(e->RowIndex) >= 0)
+		{
+			this->buttonDeliveryClearForm->Enabled = true;
+			this->maskedTextBoxDeliveryQuantity->Text = "";
+			this->rowIdDelivery = Convert::ToInt32(this->dataGridViewDelivery->Rows[e->RowIndex]->Cells[0]->Value);
+			String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, provides_items.quantity as Ilosc, items.price * provides_items.quantity as Cena from items INNER JOIN provides_items ON provides_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN provides on provides.id_provides = provides_items.id_provides WHERE provides_items.id_provides='" + rowIdDelivery + "'";
+			this->bindTable(ItemsQuery, this->dataGridViewDeliveryItems);
+
+			String^ ProvidersQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE providers.id_providers='" + this->dataGridViewDelivery->Rows[e->RowIndex]->Cells[2]->Value + "'";
+			this->bindTable(ProvidersQuery, this->dataGridViewDeliveryProviders);
+
+			String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email, common_data.phone as NrTelefonu from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers = '" + this->dataGridViewDelivery->Rows[e->RowIndex]->Cells[1]->Value + "'";
+			this->bindTable(EmployersQuery, this->dataGridViewDeliveryEmployers);
+
+			if (Convert::ToInt32(this->dataGridViewDelivery->Rows[e->RowIndex]->Cells[5]->Value) == 1)
+			{
+				this->labelDeliveryIDVal->Text = this->dataGridViewDelivery->Rows[e->RowIndex]->Cells[0]->Value->ToString();
+				this->comboBoxDeliveryProvider->Text = this->dataGridViewDeliveryProviders->Rows[0]->Cells[1]->Value->ToString();
+				this->comboBoxDeliveryProvider->Enabled = false;
+				this->buttonDeliveryDelete->Enabled = true;
+
+			}
+			else if (Convert::ToInt32(dataGridViewDelivery->Rows[e->RowIndex]->Cells[5]->Value) == 0)
+			{
+				this->labelDeliveryIDVal->Text = this->dataGridViewDelivery->Rows[e->RowIndex]->Cells[0]->Value->ToString();
+				this->comboBoxDeliveryProvider->Text = this->dataGridViewDeliveryProviders->Rows[0]->Cells[1]->Value->ToString();
+				this->comboBoxDeliveryItem->Enabled = true;
+				this->maskedTextBoxDeliveryQuantity->Enabled = true;
+				this->buttonDeliveryAddItem->Enabled = true;
+				this->buttonDeliveryAddItem->Enabled = true;
+				this->comboBoxDeliveryProvider->Enabled = false;
+				this->buttonDeliveryAddItem->Enabled = true;
+				this->buttonDeliveryClose->Enabled = true;
+				this->buttonDeliverySave->Enabled = false;
+				this->maskedTextBoxDeliveryQuantity->Enabled = true;
+				this->buttonDeliveryDelete->Enabled = true;
+				this->comboBoxDeliveryItem->Enabled = true;
+
+				String^ query = "Select concat(name, ' ', model) FROM items";
+				dbDriver db;
+				db.selectOne(query);
+				if (db.getStatus())
+				{
+					this->comboBoxDeliveryItem->Items->Clear();
+					this->comboBoxDeliveryItem->Items->Add(db.result->GetString(0));
+					while (db.result->Read())
+						this->comboBoxDeliveryItem->Items->Add(db.result->GetString(0));
+				}
+				else
+					MessageBox::Show(db.getError());
+				db.closeConnection();
+			}
+		}
+	}
+
+	private: System::Void comboBoxDeliveryProvider_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+		this->buttonDeliverySave->Enabled = true;
+	}
+
+	private: System::Void buttonDeliveryAddItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		try {
+			if (Convert::ToInt32(this->maskedTextBoxDeliveryQuantity->Text) <= 0) throw 1;
+			if (this->comboBoxDeliveryItem->Text == "") throw 2;
+
+			String^ squery = "SELECT count(provides_items.id_provides), provides_items.id_items, provides_items.quantity FROM provides_items inner join items on provides_items.id_items = items.id_items WHERE concat(items.name, ' ', items.model) = '" + this->comboBoxDeliveryItem->Text + "'";
+			dbDriver dbs;
+			dbs.selectOne(squery);
+			if (dbs.getStatus())
+			{
+				if (dbs.result->GetInt32(0) == 1)
+				{
+					String^ query = "UPDATE provides_items SET quantity = '" + this->maskedTextBoxDeliveryQuantity->Text + "' WHERE id_provides = '" + this->rowIdDelivery + "' AND id_items='" + dbs.result->GetInt32(1) + "'";
+					dbDriver db;
+					db.update(query);
+					if (db.getStatus())
+					{
+						String^ qquery;
+						if (Convert::ToInt32(this->maskedTextBoxDeliveryQuantity->Text) >= dbs.result->GetInt32(2))
+						{
+							qquery = "UPDATE items SET quantity=(quantity + ('" + this->maskedTextBoxDeliveryQuantity->Text + "'-'" + dbs.result->GetInt32(2) + "')) WHERE id_items='" + dbs.result->GetInt32(1) + "'";
+						}
+						else if (Convert::ToInt32(this->maskedTextBoxDeliveryQuantity->Text) < dbs.result->GetInt32(2))
+						{
+							qquery = "UPDATE items SET quantity=(quantity - ('" + dbs.result->GetInt32(2) + "'-'" + this->maskedTextBoxDeliveryQuantity->Text + "')) WHERE id_items='" + dbs.result->GetInt32(1) + "'";
+						}
+
+						dbDriver ddb;
+						ddb.update(qquery);
+						if (ddb.getStatus())
+						{
+							MessageBox::Show("Przedmiot zosta³ zaktualizowany");
+							String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, provides_items.quantity as Ilosc, items.price * provides_items.quantity as Cena from items INNER JOIN provides_items ON provides_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN provides on provides.id_provides = provides_items.id_provides WHERE provides_items.id_provides ='" + this->rowIdDelivery + "'";
+							this->bindTable(ItemsQuery, this->dataGridViewDeliveryItems);
+						}
+						else
+							MessageBox::Show(ddb.getError());
+						ddb.closeConnection();
+					}
+					else
+						MessageBox::Show(db.getError());
+					db.closeConnection();
+				}
+				else if (dbs.result->GetInt32(0) == 0)
+				{
+					String^ query = "INSERT INTO provides_items(id_provides, id_items, quantity) VALUES('" + this->rowIdDelivery + "', (SELECT id_items from items WHERE concat(name, ' ', model) = '" + this->comboBoxDeliveryItem->Text + "'), '" + this->maskedTextBoxDeliveryQuantity->Text + "')";
+					dbDriver db;
+					db.insert(query);
+					if (db.getStatus())
+					{
+						String^ qquery = "UPDATE items SET quantity=quantity + '" + this->maskedTextBoxDeliveryQuantity->Text + "' WHERE concat(name, ' ', model) = '" + this->comboBoxDeliveryItem->Text + "'";
+						dbDriver ddb;
+						ddb.update(qquery);
+						if (ddb.getStatus())
+						{
+							MessageBox::Show("Przedmiot dodany");
+							String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, provides_items.quantity as Ilosc, items.price * provides_items.quantity as Cena from items INNER JOIN provides_items ON provides_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN provides on provides.id_provides = provides_items.id_provides WHERE provides_items.id_provides='" + this->rowIdDelivery + "'";
+							this->bindTable(ItemsQuery, this->dataGridViewDeliveryItems);
+						}
+						else
+							MessageBox::Show(ddb.getError());
+						ddb.closeConnection();
+					}
+					else
+						MessageBox::Show(db.getError());
+					db.closeConnection();
+				}
+			}
+			else
+			{
+				MessageBox::Show(dbs.getError());
+				dbs.closeConnection();
+			}
+		}
+		catch (int ex)
+		{
+			if (ex == 1)
+				MessageBox::Show("Iloœæ dostarczonego przedmiotu musi byæ wiêksza od 0");
+			if (ex == 2)
+				MessageBox::Show("Wybierz przedmiot który jest dostarczony");
+		}
+	}
+
+	private: System::Void comboBoxDeliveryItem_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+		this->buttonDeliveryDeleteItem->Enabled = true;
+		String^ query = "SELECT count(provides_items.id_provides), provides_items.quantity FROM provides_items inner join items on items.id_items = provides_items.id_items WHERE concat(items.name, ' ', items.model) = '" + this->comboBoxDeliveryItem->Text + "'";
+		dbDriver db;
+		db.selectOne(query);
+		if (db.getStatus())
+		{
+			if (db.result->GetInt32(0) == 1)
+			{
+				this->maskedTextBoxDeliveryQuantity->Text = db.result->GetString(1);
+				this->buttonDeliveryDeleteItem->Enabled = true;
+			}
+		}
+		else
+		{
+			MessageBox::Show(db.getError());
+			db.closeConnection();
+		}
+	}
+
+	private: System::Void buttonDeliveryDeleteItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (MessageBox::Show("Czy chcesz usun¹æ przedmiot z transakcji?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+		{
+			String^ qquery = "SELECT provides_items.quantity FROM provides_items INNER JOIN items on items.id_items = provides_items.id_items WHERE concat(items.name, ' ', items.model) = '" + this->comboBoxDeliveryItem->Text + "' and provides_items.id_provides= '" + this->rowIdDelivery + "'";
+			dbDriver dbqq;
+			dbqq.selectOne(qquery);
+			if (dbqq.getStatus())
+			{
+				String^ query = "DELETE provides_items FROM provides_items INNER JOIN items on items.id_items = provides_items.id_items WHERE provides_items.id_provides = '" + this->rowIdDelivery + "' and provides_items.id_items=(SELECT id_items from items where concat(items.name, ' ', items.model) = '" + this->comboBoxDeliveryItem->Text + "')";
+				dbDriver db;
+				db.deleteFromSql(query);
+				if (db.getStatus())
+				{
+					MessageBox::Show("Przedmiot zosta³ usuniêty z transakcji");
+					String^ qquery = "UPDATE items SET quantity = quantity - '" + dbqq.result->GetString(0) + "' WHERE concat(name, ' ', model) = '" + this->comboBoxDeliveryItem->Text + "'";
+					dbDriver dbq;
+					dbq.update(qquery);
+					if (dbq.getStatus())
+					{
+						String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, provides_items.quantity as Ilosc, items.price * provides_items.quantity as Cena from items INNER JOIN provides_items ON provides_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN provides on provides.id_provides = provides_items.id_provides WHERE provides_items.id_provides ='" + this->rowIdDelivery + "'";
+						this->bindTable(ItemsQuery, this->dataGridViewDeliveryItems);
+					}
+					else
+						MessageBox::Show(dbq.getError());
+					dbq.closeConnection();
+				}
+				else
+				{
+					MessageBox::Show(db.getError());
+					db.closeConnection();
+				}
+			}
+			else
+				MessageBox::Show(dbqq.getError());
+			dbqq.closeConnection();
+		}
+	}
+
+	private: System::Void dataGridViewDeliveryItems_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		if (this->rowIdDelivery >= 0)
+		{
+			this->comboBoxDeliveryItem->Text = this->dataGridViewDeliveryItems->Rows[e->RowIndex]->Cells[1]->Value->ToString() + " " + this->dataGridViewDeliveryItems->Rows[e->RowIndex]->Cells[2]->Value->ToString();
+			this->maskedTextBoxDeliveryQuantity->Text = this->dataGridViewDeliveryItems->Rows[e->RowIndex]->Cells[4]->Value->ToString();
+		}
+		else
+		{
+			String^ DeliveryQuery = "SELECT provides.id_provides as Id_sprzedazy, provides.id_employers as Id_sprzedawcy, provides.id_providers as Id_klienta, provides.date as Data, provides.price as Kwota_transakcji, provides.status from provides INNER JOIN provides_items ON provides.id_provides= provides_items.id_provides WHERE provides_items.id_items = '" + this->dataGridViewDeliveryItems->Rows[e->RowIndex]->Cells[0]->Value->ToString() + "'";
+			this->bindTable(DeliveryQuery, this->dataGridViewDelivery);
+		}
+	}
+
+	private: System::Void buttonDeliveryClose_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ query = "UPDATE provides SET status = 1, price=(SELECT SUM(provides_items.quantity*items.price) from provides_items INNER JOIN items ON provides_items.id_items = items.id_items WHERE provides_items.id_provides = '" + this->rowIdDelivery + "')  WHERE id_provides = '" + this->rowIdDelivery + "'";
+		dbDriver db;
+		db.update(query);
+		if (db.getStatus())
+		{
+			MessageBox::Show("Transakcja zosta³a zamkniêta");
+			this->comboBoxDeliveryItem->Enabled = false;
+			this->maskedTextBoxDeliveryQuantity->Enabled = false;
+			this->buttonDeliveryAddItem->Enabled = false;
+			this->buttonDeliveryDeleteItem->Enabled = false;
+			this->buttonDeliveryClose->Enabled = false;
+		}
+		else
+			MessageBox::Show(db.getError());
+		db.closeConnection();
+	}
+
+	private: System::Void buttonDeliveryDelete_Click(System::Object^  sender, System::EventArgs^  e) {
+		String^ query = "Select status, count(provides_items.id_provides) from provides INNER JOIN provides_items ON provides.id_provides = provides_items.id_provides where provides.id_provides='" + this->rowIdDelivery + "'";
+		dbDriver db;
+		db.selectOne(query);
+		if (db.getStatus())
+		{
+			if (db.result->GetInt32(0) == 1)
+			{
+				if (MessageBox::Show("Czy chcesz usun¹æ transakcje?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+				{
+					String^ dquery;
+					if (db.result->GetInt32(1) > 0)
+						dquery = "DELETE provides, provides_items FROM provides_items INNER JOIN provides ON provides_items.id_provides = provides.id_provides WHERE provides.id_provides = '" + this->rowIdDelivery + "'";
+					else if (db.result->GetInt32(1) == 0)
+						dquery = "DELETE FROM provides WHERE id_provides = '" + this->rowIdDelivery + "'";
+					dbDriver dbd;
+					dbd.deleteFromSql(dquery);
+					if (dbd.getStatus())
+					{
+						MessageBox::Show("Transakcja zosta³a usuniêta");
+						String^ DeliveryQuery = "SELECT id_provides as Id_dostawy, id_employers as Id_sprzedawcy, id_providers as Id_klienta, date as Data, price as Kwota_transakcji, status from provides";
+						this->bindTable(DeliveryQuery, this->dataGridViewDelivery);
+
+						String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
+						this->bindTable(ItemsQuery, this->dataGridViewDeliveryItems);
+
+						String^ ProvidersQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
+						this->bindTable(ProvidersQuery, this->dataGridViewDeliveryProviders);
+
+						String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+						bindTable(EmployersQuery, this->dataGridViewDeliveryEmployers);
+						this->clearFormDelivery();
+					}
+					else
+						MessageBox::Show(dbd.getError());
+					dbd.closeConnection();
+				}
+			}
+			else
+				MessageBox::Show("Musisz zamkn¹æ transakcje przed usuniêciem");
+		}
+		else
+			MessageBox::Show(db.getError());
+		db.closeConnection();
+	}
+
+	private: System::Void buttonDeliveryClearForm_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->clearFormDelivery();
+	}
+
+	private: Void clearFormDelivery() {
+		this->labelDeliveryIDVal->Text = "#";
+		this->comboBoxDeliveryProvider->Enabled = true;
+		this->rowIdDelivery = -1;
+		this->maskedTextBoxDeliveryQuantity->Text = "";
+		this->buttonDeliverySave->Enabled = true;
+		this->comboBoxDeliveryItem->Items->Clear();
+		this->comboBoxDeliveryItem->Enabled = false;
+		this->maskedTextBoxDeliveryQuantity->Enabled = false;
+		this->buttonDeliveryAddItem->Enabled = false;
+		this->buttonDeliveryDeleteItem->Enabled = false;
+		this->buttonDeliveryClose->Enabled = false;
+		this->buttonDeliveryDelete->Enabled = false;
+		this->buttonDeliveryClearForm->Enabled = false;
+	}
+	
+	private: System::Void dataGridViewDeliveryProviders_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		if (this->rowIdDelivery < 0)
+		{
+			String^ Query = "SELECT provides.id_provides as Id_sprzedazy, provides.id_employers as Id_sprzedawcy, provides.id_providers as Id_dostawcy, provides.date as Data, provides.price as Kwota_transakcji, provides.status from provides WHERE provides.id_providers = '" + this->dataGridViewDeliveryProviders->Rows[e->RowIndex]->Cells[0]->Value->ToString() + "'";
+			this->bindTable(Query, this->dataGridViewDelivery);
+		}
+	}
+
+	private: System::Void dataGridViewDeliveryEmployers_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		if (this->rowIdDelivery < 0)
+		{
+			String^ Query = "SELECT provides.id_provides as Id_sprzedazy, provides.id_employers as Id_sprzedawcy, provides.id_providers as Id_dostawcy, provides.date as Data, provides.price as Kwota_transakcji, provides.status from provides WHERE provides.id_employers = '" + this->dataGridViewDeliveryEmployers->Rows[e->RowIndex]->Cells[0]->Value->ToString() + "'";
+			this->bindTable(Query, this->dataGridViewDelivery);
+		}
+	}
+
+	private: System::Void buttonDeliveryHelp_Click(System::Object^  sender, System::EventArgs^  e) {
+		MessageBox::Show(
+			"Dostawa - Instrukcja obs³ugi\n"
+			+ "Wybierz dostawce z listy a nastêpnie naciœnij Dodaj transakcje\n"
 			+ "Po dodaniu transakcji mo¿esz dodawaæ do niej przedmioty i okreœlaæ ich iloœæ oraz je usuwaæ\n"
 			+ "Aby usun¹æ ca³¹ transakcje nale¿y j¹ wczeœniej zamkn¹æ\n"
 			+ "Po zakmniêciu transakcji nie ma mo¿liwoœæ dodawania do niej przedmiotów\n"

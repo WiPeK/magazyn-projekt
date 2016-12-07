@@ -1,7 +1,7 @@
-﻿  Login.cpp
+﻿  Base.cpp
+  Login.cpp
   Magazin.cpp
   Generating Code...
   Base.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
-Login.obj : error LNK2022: metadata operation failed (801311D7) : Inna liczba pˇl w zduplikowanych typach (Magazyn.Magazin): (0x02000003).
-Magazin.obj : error LNK2022: metadata operation failed (801311D7) : Inna liczba pˇl w zduplikowanych typach (Magazyn.Magazin): (0x02000003).
-LINK : fatal error LNK1255: link failed because of metadata errors
+  Magazyn.vcxproj -> E:\projekt_cpp_magazyn\projekt\Magazyn\Magazyn\x64\Debug\Magazyn.exe
+  Magazyn.vcxproj -> E:\projekt_cpp_magazyn\projekt\Magazyn\Magazyn\x64\Debug\Magazyn.pdb (Partial PDB)
