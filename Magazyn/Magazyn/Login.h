@@ -105,7 +105,6 @@ namespace Magazyn {
 			this->textBoxLogin->Name = L"textBoxLogin";
 			this->textBoxLogin->Size = System::Drawing::Size(163, 29);
 			this->textBoxLogin->TabIndex = 2;
-			this->textBoxLogin->Text = L"wipek";
 			// 
 			// textBoxPassword
 			// 
@@ -117,7 +116,6 @@ namespace Magazyn {
 			this->textBoxPassword->PasswordChar = '*';
 			this->textBoxPassword->Size = System::Drawing::Size(163, 29);
 			this->textBoxPassword->TabIndex = 3;
-			this->textBoxPassword->Text = L"12345";
 			// 
 			// labelLogin
 			// 
@@ -175,23 +173,32 @@ namespace Magazyn {
 		this->Close();
 	}
 private: System::Void btnLogin_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ query = "Select id_employers from employers where login ='" + this->textBoxLogin->Text + "' and password = password('" + this->textBoxPassword->Text + "') limit 1";
+	String^ query = "Select count(employers.id_employers), employers.id_employers from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data where common_data.status = 1 AND employers.login ='" + this->textBoxLogin->Text + "' and employers.password = password('" + this->textBoxPassword->Text + "') limit 1";
 	dbDriver db;
 	db.selectOne(query);
 	if (db.getStatus())
 	{
-		int id_employers = db.result->GetInt32(0);
-		db.closeConnection();
-		String^ queryUpdate = "UPDATE employers SET last_log_in =now() WHERE id_employers='" + id_employers + "'";
-		dbDriver dbl;
-		dbl.update(queryUpdate);
-		if (!dbl.getStatus())
-			MessageBox::Show(dbl.getError());
-		dbl.closeConnection();
-		this->Hide();
-		Magazin^ magazin = gcnew Magazin(id_employers);
-		magazin->ShowDialog();
-		this->Close();
+		try {
+			if (db.result->GetInt32(0) == 0) throw 1;
+			int id_employers = db.result->GetInt32(1);
+			db.closeConnection();
+			String^ queryUpdate = "UPDATE employers SET last_log_in =now() WHERE id_employers='" + id_employers + "'";
+			dbDriver dbl;
+			dbl.update(queryUpdate);
+			if (!dbl.getStatus())
+				MessageBox::Show(dbl.getError());
+			dbl.closeConnection();
+			this->Hide();
+			Magazin^ magazin = gcnew Magazin(id_employers);
+			magazin->ShowDialog();
+			this->Close();
+		}
+		catch (int ex)
+		{
+			if (ex == 1)
+				MessageBox::Show("Wprowadü poprawne dane logowania");
+		}
+		
 	}
 	else
 	{

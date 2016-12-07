@@ -22,6 +22,15 @@ namespace Magazyn {
 		{
 			InitializeComponent();
 			this->userId = userIdFromLogin;
+			rowId = -1;
+			rowIdClients = -1;
+			rowIdProviders = -1;
+			rowIdItems = -1;
+			rowIdSales = -1;
+			rowIdDelivery = -1;
+			relEmployersToCommonData = -1;
+			relClientsToCommonData = -1;
+			relProvidersToCommonData = -1;
 		}
 
 	protected:
@@ -2686,7 +2695,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		}
 #pragma endregion
 	private: System::Void Magazin_Load(System::Object^  sender, System::EventArgs^  e) {
-			 String^ query = "Select login, type from employers where id_employers ='" + this->userId + "' LIMIT 1";
+			 String^ query = "Select employers.login, employers.type from employers INNER JOIN common_data ON common_data.id_common_data = employers.cdata where common_data.status = 1 and employers.id_employers ='" + this->userId + "' LIMIT 1";
 			 dbDriver db;
 			 db.selectOne(query);
 			 if (db.getStatus())
@@ -2697,9 +2706,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				this->userType = db.result->GetBoolean(1);
 				db.closeConnection();
 				this->accountSettings();
-
-				String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
-				bindTable(ManyQuery, this->tableEmployers);
+				this->bindAllTables();
 			 }
 			 else
 			 {
@@ -2707,7 +2714,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				 db.closeConnection();
 			 }
 
-			 String^ clToCombo = "SELECT name from clients";
+			 String^ clToCombo = "SELECT clients.name from clients INNER JOIN common_data ON common_data.id_common_data = clients.cdata where common_data.status = 1";
 			 dbDriver dbc;
 			 dbc.selectOne(clToCombo);
 			 if (dbc.getStatus())
@@ -2723,7 +2730,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				 dbc.closeConnection();
 			 }
 
-			 String^ prToCombo = "SELECT name from providers";
+			 String^ prToCombo = "SELECT providers.name from providers INNER JOIN common_data ON common_data.id_common_data = providers.cdata where common_data.status = 1";
 			 dbDriver dbp;
 			 dbp.selectOne(prToCombo);
 			 if (dbp.getStatus())
@@ -2738,6 +2745,51 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				 MessageBox::Show(dbp.getError());
 				 dbp.closeConnection();
 			 }
+	}
+
+	private: Void bindAllTables()
+	{
+		String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE common_data.status = 1";
+		bindTable(ManyQuery, this->tableEmployers);
+		
+		ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE common_data.status = 1";
+		this->bindTable(ManyQuery, this->dataGridViewClients);
+		
+		ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE common_data.status = 1";
+		this->bindTable(ManyQuery, this->dataGridViewProviders);
+		
+		String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price from items INNER JOIN producers ON items.id_producers = producers.id_producers";
+		this->bindTable(ItemsQuery, this->dataGridViewItems);
+
+		String^ ParamsQuery = "Select name as Parametry from features";
+		this->bindTable(ParamsQuery, this->dataGridViewParams);
+
+		String^ ProducersQuery = "Select name as Producenci from producers";
+		this->bindTable(ProducersQuery, this->dataGridViewProducers);
+
+		String^ SalesQuery = "SELECT id_sales as Id_sprzedazy, id_employers as Id_sprzedawcy, id_clients as Id_klienta, date as Data, price as Kwota_transakcji, status from sales";
+		this->bindTable(SalesQuery, this->dataGridViewSales);
+
+		ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
+		this->bindTable(ItemsQuery, this->dataGridViewSalesItems);
+
+		String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE common_data.status = 1";
+		this->bindTable(ClientsQuery, this->dataGridViewSalesClients);
+
+		String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE common_data.status = 1";
+		this->bindTable(EmployersQuery, this->dataGridViewSalesEmployers);
+
+		String^ DeliveryQuery = "SELECT id_provides as Id_sprzedazy, id_employers as Id_sprzedawcy, id_providers as Id_dostawcy, date as Data, price as Kwota_transakcji, status from provides";
+		this->bindTable(DeliveryQuery, this->dataGridViewDelivery);
+
+		ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
+		this->bindTable(ItemsQuery, this->dataGridViewDeliveryItems);
+
+		String^ ProvidersQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE common_data.status = 1";
+		this->bindTable(ProvidersQuery, this->dataGridViewDeliveryProviders);
+
+		EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE common_data.status = 1";
+		this->bindTable(EmployersQuery, this->dataGridViewDeliveryEmployers);
 	}
 
 	private: Void bindTable(String^ query, System::Windows::Forms::DataGridView^ table)
@@ -2763,12 +2815,12 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void btnSearchEmployers_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.name LIKE '%" + this->txtBoxSearchEmployers->Text + "%' OR employers.surname LIKE '%" + this->txtBoxSearchEmployers->Text + "%' OR employers.login LIKE '%" + this->txtBoxSearchEmployers->Text + "%' OR common_data.email LIKE '%" + this->txtBoxSearchEmployers->Text + "%'";
+		String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.name LIKE '%" + this->txtBoxSearchEmployers->Text + "%' OR employers.surname LIKE '%" + this->txtBoxSearchEmployers->Text + "%' OR employers.login LIKE '%" + this->txtBoxSearchEmployers->Text + "%' OR common_data.email LIKE '%" + this->txtBoxSearchEmployers->Text + "%' WHERE common_data.status = 1";
 		this->bindTable(ManyQuery, this->tableEmployers);
 	}
 
 	private: System::Void btnShowEmployers_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+		String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE common_data.status = 1";
 		this->bindTable(ManyQuery, this->tableEmployers);
 	}
 
@@ -2778,7 +2830,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->rowId = Convert::ToInt32(tableEmployers->Rows[e->RowIndex]->Cells[0]->Value);
 			this->labelEmployerPassword->Visible = false;
 			this->textBoxEmployerPassword->Visible = false;
-			String^ query = "Select * from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data where employers.id_employers ='" + this->rowId + "' LIMIT 1";
+			String^ query = "Select * from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data where common_data.status = 1 and employers.id_employers ='" + this->rowId + "' LIMIT 1";
 			dbDriver db;
 			db.selectOne(query);
 
@@ -2852,7 +2904,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 					if (db.getStatus())
 					{
-						String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+						String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE common_data.status = 1";
 						this->bindTable(ManyQuery, this->tableEmployers);
 						db.closeConnection();
 					}
@@ -2890,7 +2942,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 						String^ squery = "SELECT id_common_data FROM common_data WHERE address='"
 							+ this->textBoxEmployerAddress->Text + "'AND phone='"
 							+ this->textBoxEmployerPhone->Text + "'AND email='"
-							+ this->textBoxEmployerEmail->Text + "'";
+							+ this->textBoxEmployerEmail->Text + "' AND common_data.status = 1";
 						dbs.selectOne(squery);
 						if (dbs.getStatus())
 						{	
@@ -2907,7 +2959,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 							if (dbi.getStatus())
 							{
-								String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+								String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE common_data.status = 1";
 								this->bindTable(ManyQuery, this->tableEmployers);
 								dbi.closeConnection();
 							}
@@ -2972,14 +3024,14 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		{
 			if (MessageBox::Show("Czy chcesz usun规 u縴tkownika?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 			{
-				String^ query = "DELETE employers, common_data FROM employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers='" + this->rowId + "'";
+				String^ query = "UPDATE common_data SET status = 0 FROM common_data INNER JOIN employers ON employers.cdata = common_data.id_common_data WHERE employers.id_employers = '" + this->rowId + "'";
 				dbDriver db;
-				db.deleteFromSql(query);
+				db.update(query);
 
 				if (db.getStatus())
 				{
 					db.closeConnection();
-					String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+					String^ ManyQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE common_data.status = 1";
 					this->bindTable(ManyQuery, this->tableEmployers);
 					this->clearForm();
 					MessageBox::Show("Usuni阾o u縴tkownika");
@@ -2999,7 +3051,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void Magazin_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
-		if (MessageBox::Show("Czy chcesz zamkn规 program?", "Magazyn", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+		if (MessageBox::Show("Czy na pewno chcesz zamkn规 program?", "Magazyn", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 		{
 			String^ query = "UPDATE employers set last_log_out=now() WHERE id_employers='" + this->userId + "'";
 			dbDriver db;
@@ -3008,12 +3060,12 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				MessageBox::Show(db.getError());
 			db.closeConnection();
 			this->Close();
-		}	
+		}
 	}
 
 	private: Void accountSettings()
 	{
-		String^ query = "Select * from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data where employers.id_employers ='" + this->userId + "' LIMIT 1";
+		String^ query = "Select * from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data where common_data.status = 1 AND employers.id_employers ='" + this->userId + "' LIMIT 1";
 		dbDriver db;
 		db.selectOne(query);
 
@@ -3071,7 +3123,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			}
 			else if (this->textBoxASOldPassword->Text != "" && this->textBoxASNewPassword->Text != "" && this->textBoxASRNewPassword->Text != "")
 			{
-				String^ query = "Select count(id_employers) from employers WHERE id_employers='" + this->userId + "' AND password=password('" + this->textBoxASOldPassword->Text + "')";
+				String^ query = "Select count(employers.id_employers) from employers INNER JOIN common_data ON common_data.id_common_data = employers.cdata WHERE common_data.status = 1 AND employers.id_employers='" + this->userId + "' AND password=password('" + this->textBoxASOldPassword->Text + "')";
 				dbDriver db;
 				db.selectOne(query);
 				if (db.getStatus())
@@ -3114,7 +3166,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					}
 					else
 					{
-						MessageBox::Show(db.getError());
+						MessageBox::Show("Podane stare has硂 jest nieprawid硂we");
 						db.closeConnection();
 					}
 				}
@@ -3127,12 +3179,12 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	/*clients*/
 
 	private: System::Void buttonShowClients_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
+		String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE common_data.status = 1";
 		this->bindTable(ManyQuery, this->dataGridViewClients);
 	}
 
 	private: System::Void buttonSearchClients_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ ManyQuery = "Select clients.id_clients as id, clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.name LIKE '%" + this->textBoxSearchClients->Text + "%' OR clients.nip LIKE '%" + this->textBoxSearchClients->Text + "%' OR clients.regon LIKE '%" + this->textBoxSearchClients->Text + "%' OR common_data.email LIKE '%" + this->textBoxSearchClients + "%' OR common_data.phone LIKE '%" + this->textBoxSearchClients + "%'";
+		String^ ManyQuery = "Select clients.id_clients as id, clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.name LIKE '%" + this->textBoxSearchClients->Text + "%' OR clients.nip LIKE '%" + this->textBoxSearchClients->Text + "%' OR clients.regon LIKE '%" + this->textBoxSearchClients->Text + "%' OR common_data.email LIKE '%" + this->textBoxSearchClients + "%' OR common_data.phone LIKE '%" + this->textBoxSearchClients + "%' AND common_data.status = 1";
 		this->bindTable(ManyQuery, this->dataGridViewClients);
 	}
 	
@@ -3140,7 +3192,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		if (Convert::ToInt32(e->RowIndex) >= 0)
 		{
 			this->rowIdClients = Convert::ToInt32(this->dataGridViewClients->Rows[e->RowIndex]->Cells[0]->Value);
-			String^ query = "Select * from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data where clients.id_clients ='" + this->rowIdClients + "' LIMIT 1";
+			String^ query = "Select * from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data where common_data.status = 1 and clients.id_clients ='" + this->rowIdClients + "' LIMIT 1";
 			dbDriver db;
 			db.selectOne(query);
 
@@ -3222,7 +3274,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 					if (db.getStatus())
 					{
-						String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
+						String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data where common_data.status = 1";
 						this->bindTable(ManyQuery, this->dataGridViewClients);
 						db.closeConnection();
 					}
@@ -3257,7 +3309,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					String^ squery = "SELECT id_common_data FROM common_data WHERE address='"
 						+ this->textBoxClientAddress->Text + "'AND phone='"
 						+ this->textBoxClientPhone->Text + "'AND email='"
-						+ this->textBoxClientEmail->Text + "'";
+						+ this->textBoxClientEmail->Text + "' AND common_data.status = 1";
 					dbs.selectOne(squery);
 					if (dbs.getStatus())
 					{
@@ -3272,7 +3324,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 						if (dbi.getStatus())
 						{
-							String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
+							String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE common_data.status = 1";
 							this->bindTable(ManyQuery, this->dataGridViewClients);
 						}
 						else
@@ -3341,14 +3393,14 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		{
 			if (MessageBox::Show("Czy chcesz usun规 klienta?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 			{
-				String^ query = "DELETE clients, common_data FROM clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.id_clients='" + this->rowIdClients + "'";
+				String^ query = "UPDATE common_data SET status = 0 FROM common_data INNER JOIN clients ON clients.cdata = common_data.id_common_data WHERE clients.id_clients='" + this->rowIdClients + "'";
 				dbDriver db;
-				db.deleteFromSql(query);
+				db.update(query);
 
 				if (db.getStatus())
 				{
 					db.closeConnection();
-					String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
+					String^ ManyQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE common_data.status = 1";
 					this->bindTable(ManyQuery, this->dataGridViewClients);
 					this->clearFormClients();
 					MessageBox::Show("Usuni阾o klienta");
@@ -3371,12 +3423,12 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	/* providers*/
 
 	private: System::Void buttonShowProviders_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
+		String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE common_data.status = 1";
 		this->bindTable(ManyQuery, this->dataGridViewProviders);
 	}
 
 	private: System::Void buttonSearchProviders_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ ManyQuery = "Select providers.id_providers as id, providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE providers.name LIKE '%" + this->textBoxSearchClients->Text + "%' OR providers.nip LIKE '%" + this->textBoxSearchClients->Text + "%' OR providers.regon LIKE '%" + this->textBoxSearchClients->Text + "%' OR common_data.email LIKE '%" + this->textBoxSearchClients + "%' OR common_data.phone LIKE '%" + this->textBoxSearchClients + "%'";
+		String^ ManyQuery = "Select providers.id_providers as id, providers.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE providers.name LIKE '%" + this->textBoxSearchClients->Text + "%' OR providers.nip LIKE '%" + this->textBoxSearchClients->Text + "%' OR providers.regon LIKE '%" + this->textBoxSearchClients->Text + "%' OR common_data.email LIKE '%" + this->textBoxSearchClients + "%' OR common_data.phone LIKE '%" + this->textBoxSearchClients + "%' AND common_data.status = 1";
 		this->bindTable(ManyQuery, this->dataGridViewProviders);
 	}
 
@@ -3384,7 +3436,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		if (Convert::ToInt32(e->RowIndex) >= 0)
 		{
 			this->rowIdProviders = Convert::ToInt32(dataGridViewProviders->Rows[e->RowIndex]->Cells[0]->Value);
-			String^ query = "Select * from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data where providers.id_providers ='" + this->rowIdProviders + "' LIMIT 1";
+			String^ query = "Select * from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data where providers.id_providers ='" + this->rowIdProviders + "' AND common_data.status = 1 LIMIT 1";
 			dbDriver db;
 			db.selectOne(query);
 
@@ -3465,7 +3517,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 					if (db.getStatus())
 					{
-						String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
+						String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE common_data.status = 1";
 						this->bindTable(ManyQuery, this->dataGridViewProviders);
 						db.closeConnection();
 					}
@@ -3500,7 +3552,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 					String^ squery = "SELECT id_common_data FROM common_data WHERE address='"
 						+ this->textBoxProviderAddress->Text + "'AND phone='"
 						+ this->textBoxProviderPhone->Text + "'AND email='"
-						+ this->textBoxProviderEmail->Text + "'";
+						+ this->textBoxProviderEmail->Text + "' AND common_data.status = 1";
 					dbs.selectOne(squery);
 					if (dbs.getStatus())
 					{
@@ -3515,7 +3567,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 
 						if (dbi.getStatus())
 						{
-							String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
+							String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE common_data.status = 1";
 							this->bindTable(ManyQuery, this->dataGridViewProviders);
 						}
 						else
@@ -3584,14 +3636,14 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		{
 			if (MessageBox::Show("Czy chcesz usun规 dostawce?", "", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 			{
-				String^ query = "DELETE providers, common_data FROM providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE providers.id_providers='" + this->rowIdProviders + "'";
+				String^ query = "UPDATE common_data SET status = 0 FROM common_data INNER JOIN providers ON providers.cdata = common_data.id_common_data WHERE providers.id_providers ='" + this->rowIdProviders + "'";
 				dbDriver db;
-				db.deleteFromSql(query);
+				db.update(query);
 
 				if (db.getStatus())
 				{
 					db.closeConnection();
-					String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
+					String^ ManyQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE common_data.status = 1";
 					this->bindTable(ManyQuery, this->dataGridViewProviders);
 					this->clearFormProviders();
 					MessageBox::Show("Usuni阾o dostawce");
@@ -3624,7 +3676,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 	}
 
 	private: System::Void buttonItemsSearch_Click(System::Object^  sender, System::EventArgs^  e) {
-		String^ ManyQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price from items INNER JOIN producers ON items.id_producers = producers.id_producers WHERE items.name LIKE '%" + this->textBoxItemsSearch->Text + "%' OR items.model LIKE '%" + this->textBoxItemsSearch->Text + "%' OR producers.name LIKE '%" + this->textBoxItemsSearch->Text + "%'";
+		String^ ManyQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers WHERE items.name LIKE '%" + this->textBoxItemsSearch->Text + "%' OR items.model LIKE '%" + this->textBoxItemsSearch->Text + "%' OR producers.name LIKE '%" + this->textBoxItemsSearch->Text + "%'";
 		this->bindTable(ManyQuery, this->dataGridViewItems);
 	}
 
@@ -3634,7 +3686,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		{
 			this->rowIdItems = Convert::ToInt32(this->dataGridViewItems->Rows[e->RowIndex]->Cells[0]->Value);
 			
-			String^ ParamsQuery = "Select features.name as Parametry, products_features.value as Wartosc from features INNER JOIN products_features ON products_features.id_features = features.id_features INNER JOIN items ON products_features.id_items = items.id_items WHERE products_features.id_items='" + this->rowIdItems + "'";
+			String^ ParamsQuery = "Select features.name as Parametr, products_features.value as 'Warto滄' from features INNER JOIN products_features ON products_features.id_features = features.id_features INNER JOIN items ON products_features.id_items = items.id_items WHERE products_features.id_items='" + this->rowIdItems + "'";
 			this->bindTable(ParamsQuery, this->dataGridViewParams);
 
 			String^ ProducersQuery = "Select producers.name as Producenci from producers INNER JOIN items ON items.id_producers = producers.id_producers WHERE items.id_items='" + this->rowIdItems + "'";
@@ -3675,7 +3727,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 				this->textBoxItemParamVal->Text = "";
 				this->buttonItemProducerHelp->Visible = true;
 
-				String^ ParamsQueryToBox = "Select features.name as Parametry, products_features.value as Wartosc from features INNER JOIN products_features ON products_features.id_features = features.id_features INNER JOIN items ON products_features.id_items = items.id_items";
+				String^ ParamsQueryToBox = "Select features.name as Parametry, products_features.value as 'Warto滄' from features INNER JOIN products_features ON products_features.id_features = features.id_features INNER JOIN items ON products_features.id_items = items.id_items";
 				dbDriver db;
 				db.selectOne(ParamsQueryToBox);
 				if (db.getStatus())
@@ -3775,7 +3827,6 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			if (this->textBoxItemName->Text->Length > 255) throw 2;
 			if (this->textBoxItemModel->Text->Length < 2) throw 3;
 			if (this->textBoxItemModel->Text->Length > 255) throw 4;
-			//if (Convert::ToDouble(price) < 0.00) throw 5;
 			
 			if (this->rowIdItems > 0)
 			{
@@ -4112,10 +4163,10 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
 		this->bindTable(ItemsQuery, this->dataGridViewSalesItems);
 
-		String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
+		String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE common_data.status = 1";
 		this->bindTable(ClientsQuery, this->dataGridViewSalesClients);
 
-		String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+		String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE common_data.status = 1";
 		this->bindTable(EmployersQuery, this->dataGridViewSalesEmployers);
 	}
 
@@ -4149,10 +4200,10 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + this->rowIdSales + "'";
 			this->bindTable(ItemsQuery, this->dataGridViewSalesItems);
 
-			String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.id_clients='" + this->dataGridViewSales->Rows[e->RowIndex]->Cells[2]->Value + "'";
+			String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.id_clients='" + this->dataGridViewSales->Rows[e->RowIndex]->Cells[2]->Value + "' AND common_data.status = 1";
 			this->bindTable(ClientsQuery, this->dataGridViewSalesClients);
 
-			String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email, common_data.phone as NrTelefonu from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers = '" + this->dataGridViewSales->Rows[e->RowIndex]->Cells[1]->Value + "'";
+			String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email, common_data.phone as NrTelefonu as NrTelefonu from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers = '" + this->dataGridViewSales->Rows[e->RowIndex]->Cells[1]->Value + "' AND common_data.status = 1";
 			this->bindTable(EmployersQuery, this->dataGridViewSalesEmployers);
 
 			if (Convert::ToInt32(this->dataGridViewSales->Rows[e->RowIndex]->Cells[5]->Value) == 1)
@@ -4399,10 +4450,10 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 						String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
 						this->bindTable(ItemsQuery, this->dataGridViewSalesItems);
 
-						String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data";
+						String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE common_data.status = 1";
 						this->bindTable(ClientsQuery, this->dataGridViewSalesClients);
 
-						String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+						String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE common_data.status = 1";
 						this->bindTable(EmployersQuery, this->dataGridViewSalesEmployers);
 						this->clearFormSales();
 					}
@@ -4472,10 +4523,10 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 		String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
 		this->bindTable(ItemsQuery, this->dataGridViewDeliveryItems);
 
-		String^ ProvidersQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
+		String^ ProvidersQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data  WHERE common_data.status = 1";
 		this->bindTable(ProvidersQuery, this->dataGridViewDeliveryProviders);
 
-		String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
+		String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE common_data.status = 1";
 		this->bindTable(EmployersQuery, this->dataGridViewDeliveryEmployers);
 	}
 
@@ -4509,10 +4560,10 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, provides_items.quantity as Ilosc, items.price * provides_items.quantity as Cena from items INNER JOIN provides_items ON provides_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN provides on provides.id_provides = provides_items.id_provides WHERE provides_items.id_provides='" + rowIdDelivery + "'";
 			this->bindTable(ItemsQuery, this->dataGridViewDeliveryItems);
 
-			String^ ProvidersQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE providers.id_providers='" + this->dataGridViewDelivery->Rows[e->RowIndex]->Cells[2]->Value + "'";
+			String^ ProvidersQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data WHERE providers.id_providers='" + this->dataGridViewDelivery->Rows[e->RowIndex]->Cells[2]->Value + "' AND common_data.status = 1";
 			this->bindTable(ProvidersQuery, this->dataGridViewDeliveryProviders);
 
-			String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email, common_data.phone as NrTelefonu from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers = '" + this->dataGridViewDelivery->Rows[e->RowIndex]->Cells[1]->Value + "'";
+			String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email, common_data.phone as NrTelefonu as NrTelefonu from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers = '" + this->dataGridViewDelivery->Rows[e->RowIndex]->Cells[1]->Value + "' AND common_data.status = 1";
 			this->bindTable(EmployersQuery, this->dataGridViewDeliveryEmployers);
 
 			if (Convert::ToInt32(this->dataGridViewDelivery->Rows[e->RowIndex]->Cells[5]->Value) == 1)
@@ -4758,7 +4809,7 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 						String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, items.quantity as Ilosc, items.price as Cena from items INNER JOIN producers ON items.id_producers = producers.id_producers";
 						this->bindTable(ItemsQuery, this->dataGridViewDeliveryItems);
 
-						String^ ProvidersQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
+						String^ ProvidersQuery = "Select providers.id_providers as id , providers.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from providers INNER JOIN common_data ON providers.cdata = common_data.id_common_data";
 						this->bindTable(ProvidersQuery, this->dataGridViewDeliveryProviders);
 
 						String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data";
