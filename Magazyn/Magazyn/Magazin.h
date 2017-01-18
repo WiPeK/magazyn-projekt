@@ -4200,10 +4200,10 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			String^ ItemsQuery = "Select items.id_items as id , items.name as Nazwa, items.model, producers.name as Producent, sales_items.quantity as Ilosc, items.price * sales_items.quantity as Cena from items INNER JOIN sales_items ON sales_items.id_items = items.id_items INNER JOIN producers ON producers.id_producers = items.id_producers INNER JOIN sales on sales.id_sales = sales_items.id_sales WHERE sales_items.id_sales='" + this->rowIdSales + "'";
 			this->bindTable(ItemsQuery, this->dataGridViewSalesItems);
 
-			String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.id_clients='" + this->dataGridViewSales->Rows[e->RowIndex]->Cells[2]->Value + "' AND common_data.status = 1";
+			String^ ClientsQuery = "Select clients.id_clients as id , clients.name as Nazwa, common_data.email, common_data.phone as NrTelefonu from clients INNER JOIN common_data ON clients.cdata = common_data.id_common_data WHERE clients.id_clients='" + this->dataGridViewSales->Rows[e->RowIndex]->Cells[2]->Value + "' AND common_data.status = 1";
 			this->bindTable(ClientsQuery, this->dataGridViewSalesClients);
 
-			String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email, common_data.phone as NrTelefonu as NrTelefonu from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers = '" + this->dataGridViewSales->Rows[e->RowIndex]->Cells[1]->Value + "' AND common_data.status = 1";
+			String^ EmployersQuery = "Select employers.id_employers as id , employers.login, employers.name as Imie, employers.surname as Nazwisko, common_data.email, common_data.phone as NrTelefonu from employers INNER JOIN common_data ON employers.cdata = common_data.id_common_data WHERE employers.id_employers = '" + this->dataGridViewSales->Rows[e->RowIndex]->Cells[1]->Value + "' AND common_data.status = 1";
 			this->bindTable(EmployersQuery, this->dataGridViewSalesEmployers);
 
 			if (Convert::ToInt32(this->dataGridViewSales->Rows[e->RowIndex]->Cells[5]->Value) == 1)
