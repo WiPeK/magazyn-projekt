@@ -2658,7 +2658,6 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			this->MinimumSize = System::Drawing::Size(979, 569);
 			this->Name = L"Magazin";
 			this->Text = L"Magazyn";
-			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Magazin::Magazin_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &Magazin::Magazin_Load);
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
@@ -3048,19 +3047,6 @@ private: System::Windows::Forms::DataGridView^  dataGridViewDelivery;
 			MessageBox::Show("Nie mo¿na usun¹æ swojego konta lub G³ównego Administratora");
 		}
 		
-	}
-
-	private: System::Void Magazin_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
-		if (MessageBox::Show("Czy na pewno chcesz zamkn¹æ program?", "Magazyn", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
-		{
-			String^ query = "UPDATE employers set last_log_out=now() WHERE id_employers='" + this->userId + "'";
-			dbDriver db;
-			db.update(query);
-			if (!db.getStatus())
-				MessageBox::Show(db.getError());
-			db.closeConnection();
-			this->Close();
-		}
 	}
 
 	private: Void accountSettings()
