@@ -1,0 +1,82 @@
+\hypertarget{classsql_1_1_prepared_statement}{}\section{sql\+:\+:Prepared\+Statement Class Reference}
+\label{classsql_1_1_prepared_statement}\index{sql\+::\+Prepared\+Statement@{sql\+::\+Prepared\+Statement}}
+Inheritance diagram for sql\+:\+:Prepared\+Statement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsql_1_1_prepared_statement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_prepared_statement_ab9cb930a742cd46d3c4f7fb6be0ff4bb}{}\label{classsql_1_1_prepared_statement_ab9cb930a742cd46d3c4f7fb6be0ff4bb} 
+virtual void {\bfseries clear\+Parameters} ()=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a34cf6877fda80d5c1d4298c015d0ea20}{}\label{classsql_1_1_prepared_statement_a34cf6877fda80d5c1d4298c015d0ea20} 
+virtual bool {\bfseries execute} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a51be3d86b9afad27ccad27fbc7cd5c4a}{}\label{classsql_1_1_prepared_statement_a51be3d86b9afad27ccad27fbc7cd5c4a} 
+virtual bool {\bfseries execute} ()=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a56f7e2fd6467bdac7de53eba2a1b0f5f}{}\label{classsql_1_1_prepared_statement_a56f7e2fd6467bdac7de53eba2a1b0f5f} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries execute\+Query} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a27b9ff4716c1272e90871002a69fef50}{}\label{classsql_1_1_prepared_statement_a27b9ff4716c1272e90871002a69fef50} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries execute\+Query} ()=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a1ee399fbb48dcb8993313d6199063af5}{}\label{classsql_1_1_prepared_statement_a1ee399fbb48dcb8993313d6199063af5} 
+virtual int {\bfseries execute\+Update} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a6c2c75f65f9e7a8c26e09e7c65708a36}{}\label{classsql_1_1_prepared_statement_a6c2c75f65f9e7a8c26e09e7c65708a36} 
+virtual int {\bfseries execute\+Update} ()=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_ae8a9446542350e7f8f32765d341be334}{}\label{classsql_1_1_prepared_statement_ae8a9446542350e7f8f32765d341be334} 
+virtual \hyperlink{classsql_1_1_result_set_meta_data}{Result\+Set\+Meta\+Data} $\ast$ {\bfseries get\+Meta\+Data} ()=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a3821a7e45796c1f4c294a79d673c2b1b}{}\label{classsql_1_1_prepared_statement_a3821a7e45796c1f4c294a79d673c2b1b} 
+virtual \hyperlink{classsql_1_1_parameter_meta_data}{Parameter\+Meta\+Data} $\ast$ {\bfseries get\+Parameter\+Meta\+Data} ()=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a97c0111b24e1892cc14f205048f82d3a}{}\label{classsql_1_1_prepared_statement_a97c0111b24e1892cc14f205048f82d3a} 
+virtual bool {\bfseries get\+More\+Results} ()=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a55b817ad2ba6db8f8afbad78877204a8}{}\label{classsql_1_1_prepared_statement_a55b817ad2ba6db8f8afbad78877204a8} 
+virtual void {\bfseries set\+Big\+Int} (unsigned int parameter\+Index, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&value)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a33c8a20a7113c036c17052389d7cf654}{}\label{classsql_1_1_prepared_statement_a33c8a20a7113c036c17052389d7cf654} 
+virtual void {\bfseries set\+Blob} (unsigned int parameter\+Index, std\+::istream $\ast$blob)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_af1a2c45823deccd67986f0ac885bfa53}{}\label{classsql_1_1_prepared_statement_af1a2c45823deccd67986f0ac885bfa53} 
+virtual void {\bfseries set\+Boolean} (unsigned int parameter\+Index, bool value)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_ad560f5e769937f023376092bd4f917ce}{}\label{classsql_1_1_prepared_statement_ad560f5e769937f023376092bd4f917ce} 
+virtual void {\bfseries set\+Date\+Time} (unsigned int parameter\+Index, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&value)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_aaac3aa72e3439a4b190e1e489bf898d9}{}\label{classsql_1_1_prepared_statement_aaac3aa72e3439a4b190e1e489bf898d9} 
+virtual void {\bfseries set\+Double} (unsigned int parameter\+Index, double value)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_ab72e4c67803ef1530636871709d1d5e3}{}\label{classsql_1_1_prepared_statement_ab72e4c67803ef1530636871709d1d5e3} 
+virtual void {\bfseries set\+Int} (unsigned int parameter\+Index, int32\+\_\+t value)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_ad9585903096ec5b87803b8f621d3befb}{}\label{classsql_1_1_prepared_statement_ad9585903096ec5b87803b8f621d3befb} 
+virtual void {\bfseries set\+U\+Int} (unsigned int parameter\+Index, uint32\+\_\+t value)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a9c543a18f0e53d669803aab8e84542bd}{}\label{classsql_1_1_prepared_statement_a9c543a18f0e53d669803aab8e84542bd} 
+virtual void {\bfseries set\+Int64} (unsigned int parameter\+Index, int64\+\_\+t value)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a2199c99e837a43a4f2cea85a534c01dd}{}\label{classsql_1_1_prepared_statement_a2199c99e837a43a4f2cea85a534c01dd} 
+virtual void {\bfseries set\+U\+Int64} (unsigned int parameter\+Index, uint64\+\_\+t value)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a06f86fd4e881a9be4ac5292b095ca61e}{}\label{classsql_1_1_prepared_statement_a06f86fd4e881a9be4ac5292b095ca61e} 
+virtual void {\bfseries set\+Null} (unsigned int parameter\+Index, int sql\+Type)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_a37812d3749ca13254b913f690bc2ec9f}{}\label{classsql_1_1_prepared_statement_a37812d3749ca13254b913f690bc2ec9f} 
+virtual void {\bfseries set\+String} (unsigned int parameter\+Index, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&value)=0
+\item 
+\hypertarget{classsql_1_1_prepared_statement_ab1a76b0a5ffe0c6e4cf380fabad78756}{}\label{classsql_1_1_prepared_statement_ab1a76b0a5ffe0c6e4cf380fabad78756} 
+virtual \hyperlink{classsql_1_1_prepared_statement}{Prepared\+Statement} $\ast$ {\bfseries set\+Result\+Set\+Type} (sql\+::\+Result\+Set\+::enum\+\_\+type type)=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/projekt\+\_\+cpp\+\_\+magazyn/projekt/\+Magazyn/\+Magazyn/\+Magazyn/mysql/include/cppconn/prepared\+\_\+statement.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,114 @@
+\hypertarget{classsql_1_1_s_q_l_string}{}\section{sql\+:\+:S\+Q\+L\+String Class Reference}
+\label{classsql_1_1_s_q_l_string}\index{sql\+::\+S\+Q\+L\+String@{sql\+::\+S\+Q\+L\+String}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_aa13d55ec3b3df1c841f755e24d4e28c9}{}\label{classsql_1_1_s_q_l_string_aa13d55ec3b3df1c841f755e24d4e28c9} 
+{\bfseries S\+Q\+L\+String} (const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \&other)
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a84644c05a801034d354b8bd10d2d8f72}{}\label{classsql_1_1_s_q_l_string_a84644c05a801034d354b8bd10d2d8f72} 
+{\bfseries S\+Q\+L\+String} (const std\+::string \&other)
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a2566ad6c873e9c4c075503c2a850c7e5}{}\label{classsql_1_1_s_q_l_string_a2566ad6c873e9c4c075503c2a850c7e5} 
+{\bfseries S\+Q\+L\+String} (const char other\mbox{[}$\,$\mbox{]})
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_acd5dd85fcb890629c319ef55f445a2ac}{}\label{classsql_1_1_s_q_l_string_acd5dd85fcb890629c319ef55f445a2ac} 
+{\bfseries S\+Q\+L\+String} (const char $\ast$s, size\+\_\+t n)
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_adec7c9d6eec34ef339fc9da6e149b841}{}\label{classsql_1_1_s_q_l_string_adec7c9d6eec34ef339fc9da6e149b841} 
+const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \& {\bfseries operator=} (const char $\ast$s)
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a0a7c0cf3ba73ed9a174408be19ea1024}{}\label{classsql_1_1_s_q_l_string_a0a7c0cf3ba73ed9a174408be19ea1024} 
+const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \& {\bfseries operator=} (const std\+::string \&rhs)
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a40a973cbd4d20c436fbb027515e7acf0}{}\label{classsql_1_1_s_q_l_string_a40a973cbd4d20c436fbb027515e7acf0} 
+const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \& {\bfseries operator=} (const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \&rhs)
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a4d1e10a51df4e9fc9856cfe7671129c1}{}\label{classsql_1_1_s_q_l_string_a4d1e10a51df4e9fc9856cfe7671129c1} 
+{\bfseries operator const std\+::string \&} () const
+\item 
+std\+::string $\ast$ \hyperlink{classsql_1_1_s_q_l_string_a9a73b4b85edeea38025068914fc7c392}{operator-\/$>$} ()
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_abb7aa8481365854f4766a31f80c4f84e}{}\label{classsql_1_1_s_q_l_string_abb7aa8481365854f4766a31f80c4f84e} 
+int {\bfseries compare} (const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \&str) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_af65f75aaac05255a5e58219519ab5049}{}\label{classsql_1_1_s_q_l_string_af65f75aaac05255a5e58219519ab5049} 
+int {\bfseries compare} (const char $\ast$s) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a11fe11219258d1f2390319ab41d156ee}{}\label{classsql_1_1_s_q_l_string_a11fe11219258d1f2390319ab41d156ee} 
+int {\bfseries compare} (size\+\_\+t pos1, size\+\_\+t n1, const char $\ast$s) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a1a5f2c1258e23382a3206933364cfae9}{}\label{classsql_1_1_s_q_l_string_a1a5f2c1258e23382a3206933364cfae9} 
+int {\bfseries case\+Compare} (const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \&s) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a8b737f00858b2fd538e45de7f1c0fc58}{}\label{classsql_1_1_s_q_l_string_a8b737f00858b2fd538e45de7f1c0fc58} 
+int {\bfseries case\+Compare} (const char $\ast$s) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_ae7d0364b1c4bb90a622d369f080deac5}{}\label{classsql_1_1_s_q_l_string_ae7d0364b1c4bb90a622d369f080deac5} 
+int {\bfseries case\+Compare} (size\+\_\+t pos1, size\+\_\+t n1, const char $\ast$s) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a923bf7c325d594d9e72b162f11fa9fd7}{}\label{classsql_1_1_s_q_l_string_a923bf7c325d594d9e72b162f11fa9fd7} 
+const std\+::string \& {\bfseries as\+Std\+String} () const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_aaada0a7bb05515055b99e9f68c91bb78}{}\label{classsql_1_1_s_q_l_string_aaada0a7bb05515055b99e9f68c91bb78} 
+const char $\ast$ {\bfseries c\+\_\+str} () const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a36d8345110c4cc0aa61826116c196025}{}\label{classsql_1_1_s_q_l_string_a36d8345110c4cc0aa61826116c196025} 
+size\+\_\+t {\bfseries length} () const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a6877e186cc021a10a512e3446f67d7c5}{}\label{classsql_1_1_s_q_l_string_a6877e186cc021a10a512e3446f67d7c5} 
+\hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \& {\bfseries append} (const std\+::string \&str)
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a86b717dd5f5ca3b3117d50cd771cdf5d}{}\label{classsql_1_1_s_q_l_string_a86b717dd5f5ca3b3117d50cd771cdf5d} 
+\hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \& {\bfseries append} (const char $\ast$s)
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a20cfdb4b8d6b0750738606ab79619fb6}{}\label{classsql_1_1_s_q_l_string_a20cfdb4b8d6b0750738606ab79619fb6} 
+const char \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t pos) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a6a45c5e478b144a1d7e511d6d4040c07}{}\label{classsql_1_1_s_q_l_string_a6a45c5e478b144a1d7e511d6d4040c07} 
+size\+\_\+t {\bfseries find} (char c, size\+\_\+t pos=0) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_abb1323aa1f298d6550a8541f512b2a0f}{}\label{classsql_1_1_s_q_l_string_abb1323aa1f298d6550a8541f512b2a0f} 
+size\+\_\+t {\bfseries find} (const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \&s, size\+\_\+t pos=0) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a625fc710708a33603cb5705beea957bf}{}\label{classsql_1_1_s_q_l_string_a625fc710708a33603cb5705beea957bf} 
+\hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries substr} (size\+\_\+t pos=0, size\+\_\+t n=npos) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_aa96d107eb08a84bc6eace9a251e76bc1}{}\label{classsql_1_1_s_q_l_string_aa96d107eb08a84bc6eace9a251e76bc1} 
+const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \& {\bfseries replace} (size\+\_\+t pos1, size\+\_\+t n1, const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \&s)
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_ace6b7ff4e733bc4ee3f5572c9a19ee8a}{}\label{classsql_1_1_s_q_l_string_ace6b7ff4e733bc4ee3f5572c9a19ee8a} 
+size\+\_\+t {\bfseries find\+\_\+first\+\_\+of} (char c, size\+\_\+t pos=0) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a9c90aefe9eec15b80b9a1dd40ce83a05}{}\label{classsql_1_1_s_q_l_string_a9c90aefe9eec15b80b9a1dd40ce83a05} 
+size\+\_\+t {\bfseries find\+\_\+last\+\_\+of} (char c, size\+\_\+t pos=npos) const
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_ad6e9824838e50e0b10bae83ead869d11}{}\label{classsql_1_1_s_q_l_string_ad6e9824838e50e0b10bae83ead869d11} 
+const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \& {\bfseries operator+=} (const \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} \&op2)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_ab877913be4071b769350929953825c35}{}\label{classsql_1_1_s_q_l_string_ab877913be4071b769350929953825c35} 
+static const size\+\_\+t {\bfseries npos} = std\+::string\+::npos
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_s_q_l_string_a8210f5235dd913e114d877c0a1ce30aa}{}\label{classsql_1_1_s_q_l_string_a8210f5235dd913e114d877c0a1ce30aa} 
+std\+::string {\bfseries real\+Str}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsql_1_1_s_q_l_string_a9a73b4b85edeea38025068914fc7c392}{}\label{classsql_1_1_s_q_l_string_a9a73b4b85edeea38025068914fc7c392} 
+\index{sql\+::\+S\+Q\+L\+String@{sql\+::\+S\+Q\+L\+String}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!sql\+::\+S\+Q\+L\+String@{sql\+::\+S\+Q\+L\+String}}
+\subsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily std\+::string$\ast$ sql\+::\+S\+Q\+L\+String\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+For access std\+::string methods. Not sure we need it. Makes it look like some smart ptr. possibly operator$\ast$ -\/ will look even more like smart ptr 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/projekt\+\_\+cpp\+\_\+magazyn/projekt/\+Magazyn/\+Magazyn/\+Magazyn/mysql/include/cppconn/sqlstring.\+h\end{DoxyCompactItemize}

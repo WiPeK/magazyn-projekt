@@ -1,0 +1,53 @@
+\hypertarget{classsql_1_1_parameter_meta_data}{}\section{sql\+:\+:Parameter\+Meta\+Data Class Reference}
+\label{classsql_1_1_parameter_meta_data}\index{sql\+::\+Parameter\+Meta\+Data@{sql\+::\+Parameter\+Meta\+Data}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_parameter_meta_data_ae0ffcd0552843910d5b6e0200740805e}{}\label{classsql_1_1_parameter_meta_data_ae0ffcd0552843910d5b6e0200740805e} 
+enum \{ {\bfseries parameter\+Mode\+In}, 
+{\bfseries parameter\+Mode\+In\+Out}, 
+{\bfseries parameter\+Mode\+Out}, 
+{\bfseries parameter\+Mode\+Unknown}
+ \}
+\item 
+\hypertarget{classsql_1_1_parameter_meta_data_aad2c73029b4d51ee6f27890c213ab425}{}\label{classsql_1_1_parameter_meta_data_aad2c73029b4d51ee6f27890c213ab425} 
+enum \{ {\bfseries parameter\+No\+Nulls}, 
+{\bfseries parameter\+Nullable}, 
+{\bfseries parameter\+Nullable\+Unknown}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_parameter_meta_data_a4eac0bdf826073bab398b6c92a53b7fe}{}\label{classsql_1_1_parameter_meta_data_a4eac0bdf826073bab398b6c92a53b7fe} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} {\bfseries get\+Parameter\+Class\+Name} (unsigned int param)=0
+\item 
+\hypertarget{classsql_1_1_parameter_meta_data_a76300959d4703649ea996691ec9ddc70}{}\label{classsql_1_1_parameter_meta_data_a76300959d4703649ea996691ec9ddc70} 
+virtual int {\bfseries get\+Parameter\+Count} ()=0
+\item 
+\hypertarget{classsql_1_1_parameter_meta_data_ab46c3024b12b4b7a75b81d32340bc53b}{}\label{classsql_1_1_parameter_meta_data_ab46c3024b12b4b7a75b81d32340bc53b} 
+virtual int {\bfseries get\+Parameter\+Mode} (unsigned int param)=0
+\item 
+\hypertarget{classsql_1_1_parameter_meta_data_a604aefdf3399674c54548ffd6d09dbd7}{}\label{classsql_1_1_parameter_meta_data_a604aefdf3399674c54548ffd6d09dbd7} 
+virtual int {\bfseries get\+Parameter\+Type} (unsigned int param)=0
+\item 
+\hypertarget{classsql_1_1_parameter_meta_data_ae2dce4bf0b8a3e5194406f7d7d07eb88}{}\label{classsql_1_1_parameter_meta_data_ae2dce4bf0b8a3e5194406f7d7d07eb88} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} {\bfseries get\+Parameter\+Type\+Name} (unsigned int param)=0
+\item 
+\hypertarget{classsql_1_1_parameter_meta_data_a85a283b336695e7518cb35836b81cd6b}{}\label{classsql_1_1_parameter_meta_data_a85a283b336695e7518cb35836b81cd6b} 
+virtual int {\bfseries get\+Precision} (unsigned int param)=0
+\item 
+\hypertarget{classsql_1_1_parameter_meta_data_aea9fa32949a6c4ccf6ef438d0e18fd2c}{}\label{classsql_1_1_parameter_meta_data_aea9fa32949a6c4ccf6ef438d0e18fd2c} 
+virtual int {\bfseries get\+Scale} (unsigned int param)=0
+\item 
+\hypertarget{classsql_1_1_parameter_meta_data_aea4cfff3a14bc4b5a7e51f97ee7f1c56}{}\label{classsql_1_1_parameter_meta_data_aea4cfff3a14bc4b5a7e51f97ee7f1c56} 
+virtual int {\bfseries is\+Nullable} (unsigned int param)=0
+\item 
+\hypertarget{classsql_1_1_parameter_meta_data_a1a6ee69d7780d6747cf8ee873b272f6a}{}\label{classsql_1_1_parameter_meta_data_a1a6ee69d7780d6747cf8ee873b272f6a} 
+virtual bool {\bfseries is\+Signed} (unsigned int param)=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/projekt\+\_\+cpp\+\_\+magazyn/projekt/\+Magazyn/\+Magazyn/\+Magazyn/mysql/include/cppconn/parameter\+\_\+metadata.\+h\end{DoxyCompactItemize}

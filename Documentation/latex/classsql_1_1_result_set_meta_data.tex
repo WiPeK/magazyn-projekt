@@ -1,0 +1,91 @@
+\hypertarget{classsql_1_1_result_set_meta_data}{}\section{sql\+:\+:Result\+Set\+Meta\+Data Class Reference}
+\label{classsql_1_1_result_set_meta_data}\index{sql\+::\+Result\+Set\+Meta\+Data@{sql\+::\+Result\+Set\+Meta\+Data}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a3ee5166923b0a5e92703575ef8fdd336}{}\label{classsql_1_1_result_set_meta_data_a3ee5166923b0a5e92703575ef8fdd336} 
+enum \{ {\bfseries column\+No\+Nulls}, 
+{\bfseries column\+Nullable}, 
+{\bfseries column\+Nullable\+Unknown}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a3745a62f3ab253c6b2db8e3048d61ea6}{}\label{classsql_1_1_result_set_meta_data_a3745a62f3ab253c6b2db8e3048d61ea6} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries get\+Catalog\+Name} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a328edb305a24e1e5dd3e4a697782b82c}{}\label{classsql_1_1_result_set_meta_data_a328edb305a24e1e5dd3e4a697782b82c} 
+virtual unsigned int {\bfseries get\+Column\+Count} ()=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a58a7eb6a9cdaf77a3b5ffe224dba24cb}{}\label{classsql_1_1_result_set_meta_data_a58a7eb6a9cdaf77a3b5ffe224dba24cb} 
+virtual unsigned int {\bfseries get\+Column\+Display\+Size} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a52984c0eacd806dc3437bedfaee65c45}{}\label{classsql_1_1_result_set_meta_data_a52984c0eacd806dc3437bedfaee65c45} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries get\+Column\+Label} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_ac35bf5da5b776feaa75a3cfd02391487}{}\label{classsql_1_1_result_set_meta_data_ac35bf5da5b776feaa75a3cfd02391487} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries get\+Column\+Name} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a6b21f1dde451b034d14af056b113aa44}{}\label{classsql_1_1_result_set_meta_data_a6b21f1dde451b034d14af056b113aa44} 
+virtual int {\bfseries get\+Column\+Type} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_aea3ff7c15f8daba8c33ca3ae0aa48c0d}{}\label{classsql_1_1_result_set_meta_data_aea3ff7c15f8daba8c33ca3ae0aa48c0d} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries get\+Column\+Type\+Name} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a2a21f8576e320d35df12abeb588bb5f8}{}\label{classsql_1_1_result_set_meta_data_a2a21f8576e320d35df12abeb588bb5f8} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries get\+Column\+Charset} (unsigned int column\+Index)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a5413e319ca46d35f0d124a17e7c76f16}{}\label{classsql_1_1_result_set_meta_data_a5413e319ca46d35f0d124a17e7c76f16} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries get\+Column\+Collation} (unsigned int column\+Index)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a3b98280734852f341d945da2bf1b6f08}{}\label{classsql_1_1_result_set_meta_data_a3b98280734852f341d945da2bf1b6f08} 
+virtual unsigned int {\bfseries get\+Precision} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a6829f31b06652989c35a6711d497e977}{}\label{classsql_1_1_result_set_meta_data_a6829f31b06652989c35a6711d497e977} 
+virtual unsigned int {\bfseries get\+Scale} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a248333fa45e0d144e0b022cc101b94b8}{}\label{classsql_1_1_result_set_meta_data_a248333fa45e0d144e0b022cc101b94b8} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries get\+Schema\+Name} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_abed4ba31b56f085e8d819e909f3ca88e}{}\label{classsql_1_1_result_set_meta_data_abed4ba31b56f085e8d819e909f3ca88e} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries get\+Table\+Name} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a72008ce595ed3b8e5b1a7a605e7030a9}{}\label{classsql_1_1_result_set_meta_data_a72008ce595ed3b8e5b1a7a605e7030a9} 
+virtual bool {\bfseries is\+Auto\+Increment} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a4bef38b42e162b47c9b93da6a8bc7243}{}\label{classsql_1_1_result_set_meta_data_a4bef38b42e162b47c9b93da6a8bc7243} 
+virtual bool {\bfseries is\+Case\+Sensitive} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a81edbdc7333d1c81885ffc1aec74d8ae}{}\label{classsql_1_1_result_set_meta_data_a81edbdc7333d1c81885ffc1aec74d8ae} 
+virtual bool {\bfseries is\+Currency} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_acc01892faa78711c218e028515bc0444}{}\label{classsql_1_1_result_set_meta_data_acc01892faa78711c218e028515bc0444} 
+virtual bool {\bfseries is\+Definitely\+Writable} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a6d08fdd9887ee7803a57f0359655e7b3}{}\label{classsql_1_1_result_set_meta_data_a6d08fdd9887ee7803a57f0359655e7b3} 
+virtual int {\bfseries is\+Nullable} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a8cc4778fb6bdf419bc8e79ec5d95e5d9}{}\label{classsql_1_1_result_set_meta_data_a8cc4778fb6bdf419bc8e79ec5d95e5d9} 
+virtual bool {\bfseries is\+Numeric} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a76d96f0a9691c5dfb7f7dc8f111993b2}{}\label{classsql_1_1_result_set_meta_data_a76d96f0a9691c5dfb7f7dc8f111993b2} 
+virtual bool {\bfseries is\+Read\+Only} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a8c22b12cc56b1d63e1d23f99acd076d0}{}\label{classsql_1_1_result_set_meta_data_a8c22b12cc56b1d63e1d23f99acd076d0} 
+virtual bool {\bfseries is\+Searchable} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_a9c1d41a31cfcb83384780c142df35b23}{}\label{classsql_1_1_result_set_meta_data_a9c1d41a31cfcb83384780c142df35b23} 
+virtual bool {\bfseries is\+Signed} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_ab436abcbb29cacc62b6a75e1968d8ed9}{}\label{classsql_1_1_result_set_meta_data_ab436abcbb29cacc62b6a75e1968d8ed9} 
+virtual bool {\bfseries is\+Writable} (unsigned int column)=0
+\item 
+\hypertarget{classsql_1_1_result_set_meta_data_aa10f7fcdc602649a6c7e5f77d34f785c}{}\label{classsql_1_1_result_set_meta_data_aa10f7fcdc602649a6c7e5f77d34f785c} 
+virtual bool {\bfseries is\+Zerofill} (unsigned int column)=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/projekt\+\_\+cpp\+\_\+magazyn/projekt/\+Magazyn/\+Magazyn/\+Magazyn/mysql/include/cppconn/resultset\+\_\+metadata.\+h\end{DoxyCompactItemize}

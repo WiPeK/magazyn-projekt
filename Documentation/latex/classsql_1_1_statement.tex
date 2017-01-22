@@ -1,0 +1,85 @@
+\hypertarget{classsql_1_1_statement}{}\section{sql\+:\+:Statement Class Reference}
+\label{classsql_1_1_statement}\index{sql\+::\+Statement@{sql\+::\+Statement}}
+Inheritance diagram for sql\+:\+:Statement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsql_1_1_statement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_statement_a2c3085011600e4208f94ec8d2f7707c3}{}\label{classsql_1_1_statement_a2c3085011600e4208f94ec8d2f7707c3} 
+virtual \hyperlink{classsql_1_1_connection}{Connection} $\ast$ {\bfseries get\+Connection} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_afb9b8908e2d2a7f30c760e307feeb857}{}\label{classsql_1_1_statement_afb9b8908e2d2a7f30c760e307feeb857} 
+virtual void {\bfseries cancel} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_a254f97d835d62d9a2e7400409e48ea34}{}\label{classsql_1_1_statement_a254f97d835d62d9a2e7400409e48ea34} 
+virtual void {\bfseries clear\+Warnings} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_ae781a85fe88efb3cf35cd5e0310bb4ed}{}\label{classsql_1_1_statement_ae781a85fe88efb3cf35cd5e0310bb4ed} 
+virtual void {\bfseries close} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_aa5a54d7d71c8d622d8acf578cbbe6f16}{}\label{classsql_1_1_statement_aa5a54d7d71c8d622d8acf578cbbe6f16} 
+virtual bool {\bfseries execute} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql)=0
+\item 
+\hypertarget{classsql_1_1_statement_ae3afe5ea2a8bf0cc7d5eac917da7bd19}{}\label{classsql_1_1_statement_ae3afe5ea2a8bf0cc7d5eac917da7bd19} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries execute\+Query} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql)=0
+\item 
+\hypertarget{classsql_1_1_statement_a178c0510e1ea9e906e1bfd6638c7f6ca}{}\label{classsql_1_1_statement_a178c0510e1ea9e906e1bfd6638c7f6ca} 
+virtual int {\bfseries execute\+Update} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql)=0
+\item 
+\hypertarget{classsql_1_1_statement_a20a95dacaaf567d49e70af4522a7b64b}{}\label{classsql_1_1_statement_a20a95dacaaf567d49e70af4522a7b64b} 
+virtual size\+\_\+t {\bfseries get\+Fetch\+Size} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_a0f823e05b313b634b0cd0861f3b1d416}{}\label{classsql_1_1_statement_a0f823e05b313b634b0cd0861f3b1d416} 
+virtual unsigned int {\bfseries get\+Max\+Field\+Size} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_a2ca642c012e84b14191eecc3191466b3}{}\label{classsql_1_1_statement_a2ca642c012e84b14191eecc3191466b3} 
+virtual uint64\+\_\+t {\bfseries get\+Max\+Rows} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_a1cc03f400cb79ac740bb99f25a31d4d8}{}\label{classsql_1_1_statement_a1cc03f400cb79ac740bb99f25a31d4d8} 
+virtual bool {\bfseries get\+More\+Results} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_a4137a49581baaf8524131f686fd52f4f}{}\label{classsql_1_1_statement_a4137a49581baaf8524131f686fd52f4f} 
+virtual unsigned int {\bfseries get\+Query\+Timeout} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_ae1ea6eb2fd4de2a7716711f94aded8e0}{}\label{classsql_1_1_statement_ae1ea6eb2fd4de2a7716711f94aded8e0} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Result\+Set} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_a8a00e6dc42f8c9c1171cf7f8a275b62b}{}\label{classsql_1_1_statement_a8a00e6dc42f8c9c1171cf7f8a275b62b} 
+virtual sql\+::\+Result\+Set\+::enum\+\_\+type {\bfseries get\+Result\+Set\+Type} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_a67326fb97e261aa919c73ce35fdf8784}{}\label{classsql_1_1_statement_a67326fb97e261aa919c73ce35fdf8784} 
+virtual uint64\+\_\+t {\bfseries get\+Update\+Count} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_ac05bc0fb234b66d58d9446837dd25c14}{}\label{classsql_1_1_statement_ac05bc0fb234b66d58d9446837dd25c14} 
+virtual const \hyperlink{classsql_1_1_s_q_l_warning}{S\+Q\+L\+Warning} $\ast$ {\bfseries get\+Warnings} ()=0
+\item 
+\hypertarget{classsql_1_1_statement_a47125e21ac06a5fd48d45787dffa3459}{}\label{classsql_1_1_statement_a47125e21ac06a5fd48d45787dffa3459} 
+virtual void {\bfseries set\+Cursor\+Name} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&name)=0
+\item 
+\hypertarget{classsql_1_1_statement_a575bc70969296498ba409d2dcd8cc062}{}\label{classsql_1_1_statement_a575bc70969296498ba409d2dcd8cc062} 
+virtual void {\bfseries set\+Escape\+Processing} (bool enable)=0
+\item 
+\hypertarget{classsql_1_1_statement_a8c8deb69ffd64a711d2b2b6d65747052}{}\label{classsql_1_1_statement_a8c8deb69ffd64a711d2b2b6d65747052} 
+virtual void {\bfseries set\+Fetch\+Size} (size\+\_\+t rows)=0
+\item 
+\hypertarget{classsql_1_1_statement_a4cbc05f0c9dbc97237c6245fa5bfc46c}{}\label{classsql_1_1_statement_a4cbc05f0c9dbc97237c6245fa5bfc46c} 
+virtual void {\bfseries set\+Max\+Field\+Size} (unsigned int max)=0
+\item 
+\hypertarget{classsql_1_1_statement_ad52108d248bd1272e8f80b53a549e51d}{}\label{classsql_1_1_statement_ad52108d248bd1272e8f80b53a549e51d} 
+virtual void {\bfseries set\+Max\+Rows} (unsigned int max)=0
+\item 
+\hypertarget{classsql_1_1_statement_af3367d2f09798ad17d2e0605bc768a4f}{}\label{classsql_1_1_statement_af3367d2f09798ad17d2e0605bc768a4f} 
+virtual void {\bfseries set\+Query\+Timeout} (unsigned int seconds)=0
+\item 
+\hypertarget{classsql_1_1_statement_a6d25bd789114a649f22af3aa940ef735}{}\label{classsql_1_1_statement_a6d25bd789114a649f22af3aa940ef735} 
+virtual \hyperlink{classsql_1_1_statement}{Statement} $\ast$ {\bfseries set\+Result\+Set\+Type} (sql\+::\+Result\+Set\+::enum\+\_\+type type)=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/projekt\+\_\+cpp\+\_\+magazyn/projekt/\+Magazyn/\+Magazyn/\+Magazyn/mysql/include/cppconn/statement.\+h\end{DoxyCompactItemize}

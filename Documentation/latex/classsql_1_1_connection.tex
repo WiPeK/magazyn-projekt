@@ -1,0 +1,139 @@
+\hypertarget{classsql_1_1_connection}{}\section{sql\+:\+:Connection Class Reference}
+\label{classsql_1_1_connection}\index{sql\+::\+Connection@{sql\+::\+Connection}}
+Inheritance diagram for sql\+:\+:Connection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsql_1_1_connection}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_connection_adc7b9f8ebed556481f207cb251bfeb06}{}\label{classsql_1_1_connection_adc7b9f8ebed556481f207cb251bfeb06} 
+virtual void {\bfseries clear\+Warnings} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_aa233877114405e5392ea2d2361e0a15c}{}\label{classsql_1_1_connection_aa233877114405e5392ea2d2361e0a15c} 
+virtual \hyperlink{classsql_1_1_statement}{Statement} $\ast$ {\bfseries create\+Statement} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_ad2c949835acad775c52e35f3a4fc5c13}{}\label{classsql_1_1_connection_ad2c949835acad775c52e35f3a4fc5c13} 
+virtual void {\bfseries close} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_a6bea21812167998e6f492f8471e19003}{}\label{classsql_1_1_connection_a6bea21812167998e6f492f8471e19003} 
+virtual void {\bfseries commit} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_a0e5f22278356c25f85e4d3d18f6e2493}{}\label{classsql_1_1_connection_a0e5f22278356c25f85e4d3d18f6e2493} 
+virtual bool {\bfseries get\+Auto\+Commit} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_a55ecebee6958e648bdb2362f80f2e7ea}{}\label{classsql_1_1_connection_a55ecebee6958e648bdb2362f80f2e7ea} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} {\bfseries get\+Catalog} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_a7556b7f419baca4d3376382cd1257903}{}\label{classsql_1_1_connection_a7556b7f419baca4d3376382cd1257903} 
+virtual \hyperlink{classsql_1_1_driver}{Driver} $\ast$ {\bfseries get\+Driver} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_a74640969453950f6f616fe3761507609}{}\label{classsql_1_1_connection_a74640969453950f6f616fe3761507609} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} {\bfseries get\+Schema} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_a0d4a70af09c4bf98409da46bc2e774d3}{}\label{classsql_1_1_connection_a0d4a70af09c4bf98409da46bc2e774d3} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} {\bfseries get\+Client\+Info} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_af229eaaf1cbccba5c5adff81bafc7490}{}\label{classsql_1_1_connection_af229eaaf1cbccba5c5adff81bafc7490} 
+virtual void {\bfseries get\+Client\+Option} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&option\+Name, void $\ast$option\+Value)=0
+\item 
+\hypertarget{classsql_1_1_connection_a8410abb35dd37eafece37963723b8dc9}{}\label{classsql_1_1_connection_a8410abb35dd37eafece37963723b8dc9} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} {\bfseries get\+Client\+Option} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&option\+Name)=0
+\item 
+\hypertarget{classsql_1_1_connection_a3c17f434b69575d3bd1be3583cff939a}{}\label{classsql_1_1_connection_a3c17f434b69575d3bd1be3583cff939a} 
+virtual \hyperlink{classsql_1_1_database_meta_data}{Database\+Meta\+Data} $\ast$ {\bfseries get\+Meta\+Data} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_ab52859926b376d2ec4aafe651e4f8e04}{}\label{classsql_1_1_connection_ab52859926b376d2ec4aafe651e4f8e04} 
+virtual enum\+\_\+transaction\+\_\+isolation {\bfseries get\+Transaction\+Isolation} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_a128d3eb822a93a88175ec51ca55380aa}{}\label{classsql_1_1_connection_a128d3eb822a93a88175ec51ca55380aa} 
+virtual const \hyperlink{classsql_1_1_s_q_l_warning}{S\+Q\+L\+Warning} $\ast$ {\bfseries get\+Warnings} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_aef81ff1a57e0fb723287d07706037882}{}\label{classsql_1_1_connection_aef81ff1a57e0fb723287d07706037882} 
+virtual bool {\bfseries is\+Closed} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_a3c0ff46c15fe16f2f18db2621f4b7b15}{}\label{classsql_1_1_connection_a3c0ff46c15fe16f2f18db2621f4b7b15} 
+virtual bool {\bfseries is\+Read\+Only} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_ac5d7d99c0b079b8e787f94181ca08ccb}{}\label{classsql_1_1_connection_ac5d7d99c0b079b8e787f94181ca08ccb} 
+virtual bool {\bfseries is\+Valid} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_af5c9506f3ee5ee20dd56857dbc58eb13}{}\label{classsql_1_1_connection_af5c9506f3ee5ee20dd56857dbc58eb13} 
+virtual bool {\bfseries reconnect} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_a99da5ede96a8c9f2e374a3d6fad8cb51}{}\label{classsql_1_1_connection_a99da5ede96a8c9f2e374a3d6fad8cb51} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} {\bfseries native\+S\+QL} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql)=0
+\item 
+\hypertarget{classsql_1_1_connection_ad30808d0dffd8cfc6046ed2b688a2d75}{}\label{classsql_1_1_connection_ad30808d0dffd8cfc6046ed2b688a2d75} 
+virtual \hyperlink{classsql_1_1_prepared_statement}{Prepared\+Statement} $\ast$ {\bfseries prepare\+Statement} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql)=0
+\item 
+\hypertarget{classsql_1_1_connection_aafe50678f73e87ad3f59e9700f9247cd}{}\label{classsql_1_1_connection_aafe50678f73e87ad3f59e9700f9247cd} 
+virtual \hyperlink{classsql_1_1_prepared_statement}{Prepared\+Statement} $\ast$ {\bfseries prepare\+Statement} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql, int auto\+Generated\+Keys)=0
+\item 
+\hypertarget{classsql_1_1_connection_a449be4e4c10b0702d14afa481a63b838}{}\label{classsql_1_1_connection_a449be4e4c10b0702d14afa481a63b838} 
+virtual \hyperlink{classsql_1_1_prepared_statement}{Prepared\+Statement} $\ast$ {\bfseries prepare\+Statement} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql, int $\ast$column\+Indexes)=0
+\item 
+\hypertarget{classsql_1_1_connection_aa79514a7f216651ea19698ab2ca9521e}{}\label{classsql_1_1_connection_aa79514a7f216651ea19698ab2ca9521e} 
+virtual \hyperlink{classsql_1_1_prepared_statement}{Prepared\+Statement} $\ast$ {\bfseries prepare\+Statement} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql, int result\+Set\+Type, int result\+Set\+Concurrency)=0
+\item 
+\hypertarget{classsql_1_1_connection_a76955dcf34e7bfa21b57a58f468d401a}{}\label{classsql_1_1_connection_a76955dcf34e7bfa21b57a58f468d401a} 
+virtual \hyperlink{classsql_1_1_prepared_statement}{Prepared\+Statement} $\ast$ {\bfseries prepare\+Statement} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql, int result\+Set\+Type, int result\+Set\+Concurrency, int result\+Set\+Holdability)=0
+\item 
+\hypertarget{classsql_1_1_connection_a242367d9e97f36cfa8aef7df4ab78c0b}{}\label{classsql_1_1_connection_a242367d9e97f36cfa8aef7df4ab78c0b} 
+virtual \hyperlink{classsql_1_1_prepared_statement}{Prepared\+Statement} $\ast$ {\bfseries prepare\+Statement} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&sql, \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} column\+Names\mbox{[}$\,$\mbox{]})=0
+\item 
+\hypertarget{classsql_1_1_connection_af63b6bf5ad113035594c5cf2a7e50493}{}\label{classsql_1_1_connection_af63b6bf5ad113035594c5cf2a7e50493} 
+virtual void {\bfseries release\+Savepoint} (\hyperlink{classsql_1_1_savepoint}{Savepoint} $\ast$savepoint)=0
+\item 
+\hypertarget{classsql_1_1_connection_a46e4986f74a1f4055f6dfe4ccbf6b472}{}\label{classsql_1_1_connection_a46e4986f74a1f4055f6dfe4ccbf6b472} 
+virtual void {\bfseries rollback} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_aab86022062e265e1d4a9a7c44c2ca354}{}\label{classsql_1_1_connection_aab86022062e265e1d4a9a7c44c2ca354} 
+virtual void {\bfseries rollback} (\hyperlink{classsql_1_1_savepoint}{Savepoint} $\ast$savepoint)=0
+\item 
+\hypertarget{classsql_1_1_connection_a26fc98c84ea562b77992d0995a2808e5}{}\label{classsql_1_1_connection_a26fc98c84ea562b77992d0995a2808e5} 
+virtual void {\bfseries set\+Auto\+Commit} (bool auto\+Commit)=0
+\item 
+\hypertarget{classsql_1_1_connection_ad0ebcbb493f92eaaaa6eabafc3067b7e}{}\label{classsql_1_1_connection_ad0ebcbb493f92eaaaa6eabafc3067b7e} 
+virtual void {\bfseries set\+Catalog} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog)=0
+\item 
+\hypertarget{classsql_1_1_connection_a5e633c562d8e057c0809d3024ec55788}{}\label{classsql_1_1_connection_a5e633c562d8e057c0809d3024ec55788} 
+virtual void {\bfseries set\+Schema} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog)=0
+\item 
+\hypertarget{classsql_1_1_connection_a971ffff0d1742cb7f9ed76fa2f3b0eb3}{}\label{classsql_1_1_connection_a971ffff0d1742cb7f9ed76fa2f3b0eb3} 
+virtual \hyperlink{classsql_1_1_connection}{sql\+::\+Connection} $\ast$ {\bfseries set\+Client\+Option} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&option\+Name, const void $\ast$option\+Value)=0
+\item 
+\hypertarget{classsql_1_1_connection_ae648a3fa3a755ccd9613d9fbd6980afe}{}\label{classsql_1_1_connection_ae648a3fa3a755ccd9613d9fbd6980afe} 
+virtual \hyperlink{classsql_1_1_connection}{sql\+::\+Connection} $\ast$ {\bfseries set\+Client\+Option} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&option\+Name, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&option\+Value)=0
+\item 
+\hypertarget{classsql_1_1_connection_a40ad3e1eb922007b79734e87b5dd428b}{}\label{classsql_1_1_connection_a40ad3e1eb922007b79734e87b5dd428b} 
+virtual void {\bfseries set\+Holdability} (int holdability)=0
+\item 
+\hypertarget{classsql_1_1_connection_aaaa23e9c88ec232e3bcdbbf56e81184e}{}\label{classsql_1_1_connection_aaaa23e9c88ec232e3bcdbbf56e81184e} 
+virtual void {\bfseries set\+Read\+Only} (bool read\+Only)=0
+\item 
+\hypertarget{classsql_1_1_connection_aa9f59b2b67db3783f9669a458e74654b}{}\label{classsql_1_1_connection_aa9f59b2b67db3783f9669a458e74654b} 
+virtual \hyperlink{classsql_1_1_savepoint}{Savepoint} $\ast$ {\bfseries set\+Savepoint} ()=0
+\item 
+\hypertarget{classsql_1_1_connection_ae1b5ee8edc062cb3c510eea6be7d6bdc}{}\label{classsql_1_1_connection_ae1b5ee8edc062cb3c510eea6be7d6bdc} 
+virtual \hyperlink{classsql_1_1_savepoint}{Savepoint} $\ast$ {\bfseries set\+Savepoint} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&name)=0
+\item 
+\hypertarget{classsql_1_1_connection_ac9d4593132f11fc701398c68d4baef5f}{}\label{classsql_1_1_connection_ac9d4593132f11fc701398c68d4baef5f} 
+virtual void {\bfseries set\+Transaction\+Isolation} (enum\+\_\+transaction\+\_\+isolation level)=0
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_connection_a0ca42318e5b1a908c53fec07ac33c21a}{}\label{classsql_1_1_connection_a0ca42318e5b1a908c53fec07ac33c21a} 
+{\bfseries Connection} (const \hyperlink{classsql_1_1_connection}{Connection} \&)
+\item 
+\hypertarget{classsql_1_1_connection_a02c6d4b13305ddab8e88a6d426bd7718}{}\label{classsql_1_1_connection_a02c6d4b13305ddab8e88a6d426bd7718} 
+void {\bfseries operator=} (\hyperlink{classsql_1_1_connection}{Connection} \&)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/projekt\+\_\+cpp\+\_\+magazyn/projekt/\+Magazyn/\+Magazyn/\+Magazyn/mysql/include/cppconn/connection.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,624 @@
+\hypertarget{classsql_1_1_database_meta_data}{}\section{sql\+:\+:Database\+Meta\+Data Class Reference}
+\label{classsql_1_1_database_meta_data}\index{sql\+::\+Database\+Meta\+Data@{sql\+::\+Database\+Meta\+Data}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a0dc3e909654e4349e96328e05c8ab4ea}{}\label{classsql_1_1_database_meta_data_a0dc3e909654e4349e96328e05c8ab4ea} 
+enum \{ {\bfseries attribute\+No\+Nulls} = 0, 
+{\bfseries attribute\+Nullable}, 
+{\bfseries attribute\+Nullable\+Unknown}
+ \}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ab6ff2a77908ae0a44576dce6e7fa9bd5}{}\label{classsql_1_1_database_meta_data_ab6ff2a77908ae0a44576dce6e7fa9bd5} 
+enum \{ {\bfseries best\+Row\+Temporary} = 0, 
+{\bfseries best\+Row\+Transaction}, 
+{\bfseries best\+Row\+Session}
+ \}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a4620f13047275aaf7de6a909ccae16c5}{}\label{classsql_1_1_database_meta_data_a4620f13047275aaf7de6a909ccae16c5} 
+enum \{ {\bfseries best\+Row\+Unknown} = 0, 
+{\bfseries best\+Row\+Not\+Pseudo}, 
+{\bfseries best\+Row\+Pseudo}
+ \}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a69dd286c919dd6dda0a44cd31c36eac5}{}\label{classsql_1_1_database_meta_data_a69dd286c919dd6dda0a44cd31c36eac5} 
+enum \{ {\bfseries column\+No\+Nulls} = 0, 
+{\bfseries column\+Nullable}, 
+{\bfseries column\+Nullable\+Unknown}
+ \}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a93220e60b60ae6ccdaffda65ff90988d}{}\label{classsql_1_1_database_meta_data_a93220e60b60ae6ccdaffda65ff90988d} 
+enum \{ \newline
+{\bfseries imported\+Key\+Cascade} = 0, 
+{\bfseries imported\+Key\+Initially\+Deferred}, 
+{\bfseries imported\+Key\+Initially\+Immediate}, 
+{\bfseries imported\+Key\+No\+Action}, 
+\newline
+{\bfseries imported\+Key\+Not\+Deferrable}, 
+{\bfseries imported\+Key\+Restrict}, 
+{\bfseries imported\+Key\+Set\+Default}, 
+{\bfseries imported\+Key\+Set\+Null}
+ \}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a01e82d85f8940a6f7de5f1330ed17516}{}\label{classsql_1_1_database_meta_data_a01e82d85f8940a6f7de5f1330ed17516} 
+enum \{ \newline
+{\bfseries procedure\+Column\+In} = 0, 
+{\bfseries procedure\+Column\+In\+Out}, 
+{\bfseries procedure\+Column\+Out}, 
+{\bfseries procedure\+Column\+Result}, 
+\newline
+{\bfseries procedure\+Column\+Return}, 
+{\bfseries procedure\+Column\+Unknown}, 
+{\bfseries procedure\+No\+Nulls}, 
+{\bfseries procedure\+No\+Result}, 
+\newline
+{\bfseries procedure\+Nullable}, 
+{\bfseries procedure\+Nullable\+Unknown}, 
+{\bfseries procedure\+Result\+Unknown}, 
+{\bfseries procedure\+Returns\+Result}
+ \}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aad24aedab12fce271e473fdd723bbe86}{}\label{classsql_1_1_database_meta_data_aad24aedab12fce271e473fdd723bbe86} 
+enum \{ {\bfseries sql\+State\+S\+Q\+L99} = 0, 
+{\bfseries sql\+State\+X\+Open}
+ \}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a61b9d896dcca26b2297a581e4f952efc}{}\label{classsql_1_1_database_meta_data_a61b9d896dcca26b2297a581e4f952efc} 
+enum \{ {\bfseries table\+Index\+Clustered} = 0, 
+{\bfseries table\+Index\+Hashed}, 
+{\bfseries table\+Index\+Other}, 
+{\bfseries table\+Index\+Statistic}
+ \}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ac1be8c81bf9636c23197cf44ebc03012}{}\label{classsql_1_1_database_meta_data_ac1be8c81bf9636c23197cf44ebc03012} 
+enum \{ {\bfseries version\+Column\+Unknown} = 0, 
+{\bfseries version\+Column\+Not\+Pseudo} = 1, 
+{\bfseries version\+Column\+Pseudo} = 2
+ \}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a84ba71d4c78795c60e9ae7e391b09b88}{}\label{classsql_1_1_database_meta_data_a84ba71d4c78795c60e9ae7e391b09b88} 
+enum \{ {\bfseries type\+No\+Nulls} = 0, 
+{\bfseries type\+Nullable} = 1, 
+{\bfseries type\+Nullable\+Unknown} = 2
+ \}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a8201bbaaed4571db1fef210376f87b11}{}\label{classsql_1_1_database_meta_data_a8201bbaaed4571db1fef210376f87b11} 
+enum \{ {\bfseries type\+Pred\+None} = 0, 
+{\bfseries type\+Pred\+Char} = 1, 
+{\bfseries type\+Pred\+Basic} = 2, 
+{\bfseries type\+Searchable} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a0fcfa43f51cbe1bf0d25bae69fbb39ac}{}\label{classsql_1_1_database_meta_data_a0fcfa43f51cbe1bf0d25bae69fbb39ac} 
+virtual bool {\bfseries all\+Procedures\+Are\+Callable} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a087fca0afb7cace4db77c16490821acc}{}\label{classsql_1_1_database_meta_data_a087fca0afb7cace4db77c16490821acc} 
+virtual bool {\bfseries all\+Tables\+Are\+Selectable} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a8307e470f11b1136fb30b0f85031d2da}{}\label{classsql_1_1_database_meta_data_a8307e470f11b1136fb30b0f85031d2da} 
+virtual bool {\bfseries data\+Definition\+Causes\+Transaction\+Commit} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a6d0ab535bca802cba072bb2ac3cb1c95}{}\label{classsql_1_1_database_meta_data_a6d0ab535bca802cba072bb2ac3cb1c95} 
+virtual bool {\bfseries data\+Definition\+Ignored\+In\+Transactions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a0ff634280a6fd1054e7808f8a6da2d0f}{}\label{classsql_1_1_database_meta_data_a0ff634280a6fd1054e7808f8a6da2d0f} 
+virtual bool {\bfseries deletes\+Are\+Detected} (int type)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a5928f3cd90d2880bf49689b5f696e8a2}{}\label{classsql_1_1_database_meta_data_a5928f3cd90d2880bf49689b5f696e8a2} 
+virtual bool {\bfseries does\+Max\+Row\+Size\+Include\+Blobs} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a8c95252297cfa93887646dfab1e930ae}{}\label{classsql_1_1_database_meta_data_a8c95252297cfa93887646dfab1e930ae} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Attributes} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&type\+Name\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&attribute\+Name\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a3914f9fec48b670034357dceedbce42a}{}\label{classsql_1_1_database_meta_data_a3914f9fec48b670034357dceedbce42a} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Best\+Row\+Identifier} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table, int scope, bool nullable)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a5ca54dbc2f5dae656544e77f71312036}{}\label{classsql_1_1_database_meta_data_a5ca54dbc2f5dae656544e77f71312036} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Catalogs} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a191861504f93a4619c2dc0cffa4b17e7}{}\label{classsql_1_1_database_meta_data_a191861504f93a4619c2dc0cffa4b17e7} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Catalog\+Separator} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a8a69bb04c9251af8fc6aa704434f39f1}{}\label{classsql_1_1_database_meta_data_a8a69bb04c9251af8fc6aa704434f39f1} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Catalog\+Term} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ae5846ef8fe9f6898d0d5d4c621b6480d}{}\label{classsql_1_1_database_meta_data_ae5846ef8fe9f6898d0d5d4c621b6480d} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Column\+Privileges} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&column\+Name\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a6335f2fdd25a724510fdcea2117f8df7}{}\label{classsql_1_1_database_meta_data_a6335f2fdd25a724510fdcea2117f8df7} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Columns} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table\+Name\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&column\+Name\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a3a552c4e9a9f1cdea2bde0336cd3806f}{}\label{classsql_1_1_database_meta_data_a3a552c4e9a9f1cdea2bde0336cd3806f} 
+virtual \hyperlink{classsql_1_1_connection}{Connection} $\ast$ {\bfseries get\+Connection} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ab570b099e665fd49254f708bd8ba30c8}{}\label{classsql_1_1_database_meta_data_ab570b099e665fd49254f708bd8ba30c8} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Cross\+Reference} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&primary\+Catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&primary\+Schema, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&primary\+Table, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&foreign\+Catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&foreign\+Schema, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&foreign\+Table)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a5833613db9575c1fb36c777787c04c87}{}\label{classsql_1_1_database_meta_data_a5833613db9575c1fb36c777787c04c87} 
+virtual unsigned int {\bfseries get\+Database\+Major\+Version} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_affe64c548dab5cbcdbc61eb02c3789d9}{}\label{classsql_1_1_database_meta_data_affe64c548dab5cbcdbc61eb02c3789d9} 
+virtual unsigned int {\bfseries get\+Database\+Minor\+Version} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aa9b5db63d73ea348c3c911358388a934}{}\label{classsql_1_1_database_meta_data_aa9b5db63d73ea348c3c911358388a934} 
+virtual unsigned int {\bfseries get\+Database\+Patch\+Version} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aada5735541b87d374d08b96a97665f68}{}\label{classsql_1_1_database_meta_data_aada5735541b87d374d08b96a97665f68} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Database\+Product\+Name} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a3bee431aa9a025dc089e7a43a6c33254}{}\label{classsql_1_1_database_meta_data_a3bee431aa9a025dc089e7a43a6c33254} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries get\+Database\+Product\+Version} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ae9b4fc386b1fcef9bfc0f32770c1d915}{}\label{classsql_1_1_database_meta_data_ae9b4fc386b1fcef9bfc0f32770c1d915} 
+virtual int {\bfseries get\+Default\+Transaction\+Isolation} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_adf24b72cd1494ea9d0eac347b9d27eeb}{}\label{classsql_1_1_database_meta_data_adf24b72cd1494ea9d0eac347b9d27eeb} 
+virtual unsigned int {\bfseries get\+Driver\+Major\+Version} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a0aca6126dccab168a8f80a37ee981572}{}\label{classsql_1_1_database_meta_data_a0aca6126dccab168a8f80a37ee981572} 
+virtual unsigned int {\bfseries get\+Driver\+Minor\+Version} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a61bd3f4abd44b3881298d134a5eb3e23}{}\label{classsql_1_1_database_meta_data_a61bd3f4abd44b3881298d134a5eb3e23} 
+virtual unsigned int {\bfseries get\+Driver\+Patch\+Version} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_af4ca8e69a8eeb1d8c1e8e7ddf9c4275b}{}\label{classsql_1_1_database_meta_data_af4ca8e69a8eeb1d8c1e8e7ddf9c4275b} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Driver\+Name} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a62c128d6c9518f3d4d72cb428b08f915}{}\label{classsql_1_1_database_meta_data_a62c128d6c9518f3d4d72cb428b08f915} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Driver\+Version} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aa3c0a69a0cdaf26d9aec3e8e9353660b}{}\label{classsql_1_1_database_meta_data_aa3c0a69a0cdaf26d9aec3e8e9353660b} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Exported\+Keys} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ad69fbdc5f394fdcc273478918733d773}{}\label{classsql_1_1_database_meta_data_ad69fbdc5f394fdcc273478918733d773} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Extra\+Name\+Characters} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_af7346d0eb62559c73c3f10610b662b29}{}\label{classsql_1_1_database_meta_data_af7346d0eb62559c73c3f10610b662b29} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Identifier\+Quote\+String} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a3ac26171c59a06c53208a63168b4cf61}{}\label{classsql_1_1_database_meta_data_a3ac26171c59a06c53208a63168b4cf61} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Imported\+Keys} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a09f632ada5648652bf48d2a2b6896a82}{}\label{classsql_1_1_database_meta_data_a09f632ada5648652bf48d2a2b6896a82} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Index\+Info} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table, bool unique, bool approximate)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a6e6846d4a1438825ceffb9f18293260a}{}\label{classsql_1_1_database_meta_data_a6e6846d4a1438825ceffb9f18293260a} 
+virtual unsigned int {\bfseries get\+C\+D\+B\+C\+Major\+Version} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a16a975c983b124f831ec843cb50b1932}{}\label{classsql_1_1_database_meta_data_a16a975c983b124f831ec843cb50b1932} 
+virtual unsigned int {\bfseries get\+C\+D\+B\+C\+Minor\+Version} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a397f14bc6f3b2194b0eec3e23d205bea}{}\label{classsql_1_1_database_meta_data_a397f14bc6f3b2194b0eec3e23d205bea} 
+virtual unsigned int {\bfseries get\+Max\+Binary\+Literal\+Length} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a44cda683cedda5a2ce0bc94b93b39803}{}\label{classsql_1_1_database_meta_data_a44cda683cedda5a2ce0bc94b93b39803} 
+virtual unsigned int {\bfseries get\+Max\+Catalog\+Name\+Length} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a82ff0807ddf8c7cf18043b12831d3af1}{}\label{classsql_1_1_database_meta_data_a82ff0807ddf8c7cf18043b12831d3af1} 
+virtual unsigned int {\bfseries get\+Max\+Char\+Literal\+Length} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_abac3fba335d07e951ef4b3ca9e8ece54}{}\label{classsql_1_1_database_meta_data_abac3fba335d07e951ef4b3ca9e8ece54} 
+virtual unsigned int {\bfseries get\+Max\+Column\+Name\+Length} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_adbfe2f668577edb968a0fc1437b322df}{}\label{classsql_1_1_database_meta_data_adbfe2f668577edb968a0fc1437b322df} 
+virtual unsigned int {\bfseries get\+Max\+Columns\+In\+Group\+By} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a4e797622f6accf276b8b2e4bdf6e1fe6}{}\label{classsql_1_1_database_meta_data_a4e797622f6accf276b8b2e4bdf6e1fe6} 
+virtual unsigned int {\bfseries get\+Max\+Columns\+In\+Index} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_affe2aa7ee1752d02ad509bb83b48b414}{}\label{classsql_1_1_database_meta_data_affe2aa7ee1752d02ad509bb83b48b414} 
+virtual unsigned int {\bfseries get\+Max\+Columns\+In\+Order\+By} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a172e91cb97d54c28ab41ceb919ecccd9}{}\label{classsql_1_1_database_meta_data_a172e91cb97d54c28ab41ceb919ecccd9} 
+virtual unsigned int {\bfseries get\+Max\+Columns\+In\+Select} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a6a9ebc216dc3ef347461324f80dd76a6}{}\label{classsql_1_1_database_meta_data_a6a9ebc216dc3ef347461324f80dd76a6} 
+virtual unsigned int {\bfseries get\+Max\+Columns\+In\+Table} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a636a1d77f36dca5db32c8fb4138b31d0}{}\label{classsql_1_1_database_meta_data_a636a1d77f36dca5db32c8fb4138b31d0} 
+virtual unsigned int {\bfseries get\+Max\+Connections} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aff35039d257d98d53b8dc57cb89c734d}{}\label{classsql_1_1_database_meta_data_aff35039d257d98d53b8dc57cb89c734d} 
+virtual unsigned int {\bfseries get\+Max\+Cursor\+Name\+Length} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ab2d270d2248a05a9730966a60538d4e8}{}\label{classsql_1_1_database_meta_data_ab2d270d2248a05a9730966a60538d4e8} 
+virtual unsigned int {\bfseries get\+Max\+Index\+Length} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a198de22c6dc79910e334c636ef436d4f}{}\label{classsql_1_1_database_meta_data_a198de22c6dc79910e334c636ef436d4f} 
+virtual unsigned int {\bfseries get\+Max\+Procedure\+Name\+Length} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ad3969ced5c3588235ea1b1d0abb2f54e}{}\label{classsql_1_1_database_meta_data_ad3969ced5c3588235ea1b1d0abb2f54e} 
+virtual unsigned int {\bfseries get\+Max\+Row\+Size} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a6402d54f7ab4aab9fb6a0fb0f4f789f9}{}\label{classsql_1_1_database_meta_data_a6402d54f7ab4aab9fb6a0fb0f4f789f9} 
+virtual unsigned int {\bfseries get\+Max\+Schema\+Name\+Length} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a03e2eeff7cb8ba131f883001ebfc28e4}{}\label{classsql_1_1_database_meta_data_a03e2eeff7cb8ba131f883001ebfc28e4} 
+virtual unsigned int {\bfseries get\+Max\+Statement\+Length} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ac70729ade189e82f16d14ab816eb0c68}{}\label{classsql_1_1_database_meta_data_ac70729ade189e82f16d14ab816eb0c68} 
+virtual unsigned int {\bfseries get\+Max\+Statements} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a0de009aca4a8c89a424e04c84598f5c1}{}\label{classsql_1_1_database_meta_data_a0de009aca4a8c89a424e04c84598f5c1} 
+virtual unsigned int {\bfseries get\+Max\+Table\+Name\+Length} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a3b0131ea0ae4bb88c484555b4b02a305}{}\label{classsql_1_1_database_meta_data_a3b0131ea0ae4bb88c484555b4b02a305} 
+virtual unsigned int {\bfseries get\+Max\+Tables\+In\+Select} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ac53ea52db09abf98b0ef4334a5854ff1}{}\label{classsql_1_1_database_meta_data_ac53ea52db09abf98b0ef4334a5854ff1} 
+virtual unsigned int {\bfseries get\+Max\+User\+Name\+Length} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a14b53a06afac6626f0b1bfce43109df7}{}\label{classsql_1_1_database_meta_data_a14b53a06afac6626f0b1bfce43109df7} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Numeric\+Functions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_add967db3b1fe2defafbdbc26bf3bd35a}{}\label{classsql_1_1_database_meta_data_add967db3b1fe2defafbdbc26bf3bd35a} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Primary\+Keys} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_acc5d42453f7ab2e1314b97e29051cd2e}{}\label{classsql_1_1_database_meta_data_acc5d42453f7ab2e1314b97e29051cd2e} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Procedure\+Columns} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&procedure\+Name\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&column\+Name\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ac27e60d74934641fe7fcbefae4842835}{}\label{classsql_1_1_database_meta_data_ac27e60d74934641fe7fcbefae4842835} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Procedures} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&procedure\+Name\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a64ffac3e5ce785a9f530b6debf79e8dc}{}\label{classsql_1_1_database_meta_data_a64ffac3e5ce785a9f530b6debf79e8dc} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Procedure\+Term} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aa99ad098ea64c9aaf216688bc9bbe2b7}{}\label{classsql_1_1_database_meta_data_aa99ad098ea64c9aaf216688bc9bbe2b7} 
+virtual int {\bfseries get\+Result\+Set\+Holdability} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aa84ae70b639eb3584b7fa110b4cb4e11}{}\label{classsql_1_1_database_meta_data_aa84ae70b639eb3584b7fa110b4cb4e11} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Schemas} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ae84cd0fe174b1ee8c10c3088772f0a43}{}\label{classsql_1_1_database_meta_data_ae84cd0fe174b1ee8c10c3088772f0a43} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Schema\+Term} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a1db2eebd3ecf4afeab01f8c4079d9e6d}{}\label{classsql_1_1_database_meta_data_a1db2eebd3ecf4afeab01f8c4079d9e6d} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Schema\+Collation} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a0c964a17b067027d7bc09404044df70b}{}\label{classsql_1_1_database_meta_data_a0c964a17b067027d7bc09404044df70b} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Schema\+Charset} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a217547c050e085b3acf1ba9c6e90781a}{}\label{classsql_1_1_database_meta_data_a217547c050e085b3acf1ba9c6e90781a} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Search\+String\+Escape} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a36233c7037dc74685e328caaa871adbe}{}\label{classsql_1_1_database_meta_data_a36233c7037dc74685e328caaa871adbe} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+S\+Q\+L\+Keywords} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ac8b7d169651ffebd35eabaae3291af98}{}\label{classsql_1_1_database_meta_data_ac8b7d169651ffebd35eabaae3291af98} 
+virtual int {\bfseries get\+S\+Q\+L\+State\+Type} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a7557b51ae3bad4909a00c84ab23cc8f0}{}\label{classsql_1_1_database_meta_data_a7557b51ae3bad4909a00c84ab23cc8f0} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+String\+Functions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a8fdb620034349c10b330b891361d5d3e}{}\label{classsql_1_1_database_meta_data_a8fdb620034349c10b330b891361d5d3e} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Super\+Tables} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table\+Name\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aeb74890167a860e207a0babe0c5414c0}{}\label{classsql_1_1_database_meta_data_aeb74890167a860e207a0babe0c5414c0} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Super\+Types} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&type\+Name\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_af1d38d4907354e79b65dff8f39b6b58c}{}\label{classsql_1_1_database_meta_data_af1d38d4907354e79b65dff8f39b6b58c} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+System\+Functions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_af79b09cf6116f630f2040d9f5e328ede}{}\label{classsql_1_1_database_meta_data_af79b09cf6116f630f2040d9f5e328ede} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Table\+Privileges} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table\+Name\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a4f5e31c5487e52d4d8cac5834b8b717e}{}\label{classsql_1_1_database_meta_data_a4f5e31c5487e52d4d8cac5834b8b717e} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Tables} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table\+Name\+Pattern, std\+::list$<$ \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} $>$ \&types)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ac131128f2863420bba3bcb75ee4f76e1}{}\label{classsql_1_1_database_meta_data_ac131128f2863420bba3bcb75ee4f76e1} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Table\+Types} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ac9a86a8540d7f314a5f83b6a06e610d9}{}\label{classsql_1_1_database_meta_data_ac9a86a8540d7f314a5f83b6a06e610d9} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Table\+Collation} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table\+Name\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aec136e1a062d248cb1c306965b2c70cf}{}\label{classsql_1_1_database_meta_data_aec136e1a062d248cb1c306965b2c70cf} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Table\+Charset} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table\+Name\+Pattern)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ace7a16a15c96196290fa85198a00cfdb}{}\label{classsql_1_1_database_meta_data_ace7a16a15c96196290fa85198a00cfdb} 
+virtual const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \& {\bfseries get\+Time\+Date\+Functions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_acf8340fcb22c308f2f1a7cb65519562a}{}\label{classsql_1_1_database_meta_data_acf8340fcb22c308f2f1a7cb65519562a} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Type\+Info} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a35017d040f6af3cf706f7a7ba5d11998}{}\label{classsql_1_1_database_meta_data_a35017d040f6af3cf706f7a7ba5d11998} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+U\+D\+Ts} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Pattern, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&type\+Name\+Pattern, std\+::list$<$ int $>$ \&types)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a90b95eca91e938bd6242a7b93c217633}{}\label{classsql_1_1_database_meta_data_a90b95eca91e938bd6242a7b93c217633} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries get\+U\+RL} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a9fe385fcc9618981b70cd5f2ae4163ba}{}\label{classsql_1_1_database_meta_data_a9fe385fcc9618981b70cd5f2ae4163ba} 
+virtual \hyperlink{classsql_1_1_s_q_l_string}{S\+Q\+L\+String} {\bfseries get\+User\+Name} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a0217b3964e564039c9e616ace17ed9fa}{}\label{classsql_1_1_database_meta_data_a0217b3964e564039c9e616ace17ed9fa} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Version\+Columns} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&table)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a21d652b192599e0574361b0acdb1def8}{}\label{classsql_1_1_database_meta_data_a21d652b192599e0574361b0acdb1def8} 
+virtual bool {\bfseries inserts\+Are\+Detected} (int type)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a883835fd1bab9b119c4f597e56828687}{}\label{classsql_1_1_database_meta_data_a883835fd1bab9b119c4f597e56828687} 
+virtual bool {\bfseries is\+Catalog\+At\+Start} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a3b49f4c71b9589c73d1c73fc05ccedea}{}\label{classsql_1_1_database_meta_data_a3b49f4c71b9589c73d1c73fc05ccedea} 
+virtual bool {\bfseries is\+Read\+Only} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a3d99b0398c99d00af3ee7866e24b5287}{}\label{classsql_1_1_database_meta_data_a3d99b0398c99d00af3ee7866e24b5287} 
+virtual bool {\bfseries locators\+Update\+Copy} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a92cce4e529c70dc4108da4a862fbc813}{}\label{classsql_1_1_database_meta_data_a92cce4e529c70dc4108da4a862fbc813} 
+virtual bool {\bfseries null\+Plus\+Non\+Null\+Is\+Null} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a9eddeb9a9624aaf08add52b25fed99e2}{}\label{classsql_1_1_database_meta_data_a9eddeb9a9624aaf08add52b25fed99e2} 
+virtual bool {\bfseries nulls\+Are\+Sorted\+At\+End} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a14804cc7855e536d06e6e4e958638745}{}\label{classsql_1_1_database_meta_data_a14804cc7855e536d06e6e4e958638745} 
+virtual bool {\bfseries nulls\+Are\+Sorted\+At\+Start} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a71e0e231ef14252538014a37779b1bef}{}\label{classsql_1_1_database_meta_data_a71e0e231ef14252538014a37779b1bef} 
+virtual bool {\bfseries nulls\+Are\+Sorted\+High} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a4043cd2e87dff21d4a235115bddfa675}{}\label{classsql_1_1_database_meta_data_a4043cd2e87dff21d4a235115bddfa675} 
+virtual bool {\bfseries nulls\+Are\+Sorted\+Low} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a718aadd6d991022955fcf709a7015b01}{}\label{classsql_1_1_database_meta_data_a718aadd6d991022955fcf709a7015b01} 
+virtual bool {\bfseries others\+Deletes\+Are\+Visible} (int type)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a66e81bddf81337cec0f369bad21f1f3a}{}\label{classsql_1_1_database_meta_data_a66e81bddf81337cec0f369bad21f1f3a} 
+virtual bool {\bfseries others\+Inserts\+Are\+Visible} (int type)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ae90d5439f0ad75666318a9a996c9491d}{}\label{classsql_1_1_database_meta_data_ae90d5439f0ad75666318a9a996c9491d} 
+virtual bool {\bfseries others\+Updates\+Are\+Visible} (int type)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a269fab010a5d2b309e7bbdc13f0702c8}{}\label{classsql_1_1_database_meta_data_a269fab010a5d2b309e7bbdc13f0702c8} 
+virtual bool {\bfseries own\+Deletes\+Are\+Visible} (int type)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ae703402e31eeca2a7befaec316447c0c}{}\label{classsql_1_1_database_meta_data_ae703402e31eeca2a7befaec316447c0c} 
+virtual bool {\bfseries own\+Inserts\+Are\+Visible} (int type)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a6f7a7ef19729070d56949266a8071acb}{}\label{classsql_1_1_database_meta_data_a6f7a7ef19729070d56949266a8071acb} 
+virtual bool {\bfseries own\+Updates\+Are\+Visible} (int type)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a124ce82691fef8f4818686d96dca1d11}{}\label{classsql_1_1_database_meta_data_a124ce82691fef8f4818686d96dca1d11} 
+virtual bool {\bfseries stores\+Lower\+Case\+Identifiers} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ae3b3c87912943b27c2944645e69dfb1a}{}\label{classsql_1_1_database_meta_data_ae3b3c87912943b27c2944645e69dfb1a} 
+virtual bool {\bfseries stores\+Lower\+Case\+Quoted\+Identifiers} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ac3201371230616a24eae3bc48e908c6a}{}\label{classsql_1_1_database_meta_data_ac3201371230616a24eae3bc48e908c6a} 
+virtual bool {\bfseries stores\+Mixed\+Case\+Identifiers} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a8681a718baac0dd170e708d785148ffa}{}\label{classsql_1_1_database_meta_data_a8681a718baac0dd170e708d785148ffa} 
+virtual bool {\bfseries stores\+Mixed\+Case\+Quoted\+Identifiers} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aca12603a6c30703aebc4f85367f5d00b}{}\label{classsql_1_1_database_meta_data_aca12603a6c30703aebc4f85367f5d00b} 
+virtual bool {\bfseries stores\+Upper\+Case\+Identifiers} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ae3084c4785756d127b79b3f55a040d83}{}\label{classsql_1_1_database_meta_data_ae3084c4785756d127b79b3f55a040d83} 
+virtual bool {\bfseries stores\+Upper\+Case\+Quoted\+Identifiers} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_af629758d77199659eb741eaa2dbd2f00}{}\label{classsql_1_1_database_meta_data_af629758d77199659eb741eaa2dbd2f00} 
+virtual bool {\bfseries supports\+Alter\+Table\+With\+Add\+Column} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a2b1fe11f381cb042d5cb1e7d1671b0e5}{}\label{classsql_1_1_database_meta_data_a2b1fe11f381cb042d5cb1e7d1671b0e5} 
+virtual bool {\bfseries supports\+Alter\+Table\+With\+Drop\+Column} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a3cd94100601bb286395fb1e35de438ab}{}\label{classsql_1_1_database_meta_data_a3cd94100601bb286395fb1e35de438ab} 
+virtual bool {\bfseries supports\+A\+N\+S\+I92\+Entry\+Level\+S\+QL} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aae31fcb9ecfcc432a002e0d5d4462d43}{}\label{classsql_1_1_database_meta_data_aae31fcb9ecfcc432a002e0d5d4462d43} 
+virtual bool {\bfseries supports\+A\+N\+S\+I92\+Full\+S\+QL} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_abee8682cc4a7c7f8ec20a14eea39cfc7}{}\label{classsql_1_1_database_meta_data_abee8682cc4a7c7f8ec20a14eea39cfc7} 
+virtual bool {\bfseries supports\+A\+N\+S\+I92\+Intermediate\+S\+QL} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a7244db5f0b9c11343ea6487e98706266}{}\label{classsql_1_1_database_meta_data_a7244db5f0b9c11343ea6487e98706266} 
+virtual bool {\bfseries supports\+Batch\+Updates} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ab6f2b1195050df3442175dd2d3ab63bb}{}\label{classsql_1_1_database_meta_data_ab6f2b1195050df3442175dd2d3ab63bb} 
+virtual bool {\bfseries supports\+Catalogs\+In\+Data\+Manipulation} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a633a5f9296918b45f0f77f62608e2c4a}{}\label{classsql_1_1_database_meta_data_a633a5f9296918b45f0f77f62608e2c4a} 
+virtual bool {\bfseries supports\+Catalogs\+In\+Index\+Definitions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a7f142b8db933b27fef57cf62c318941a}{}\label{classsql_1_1_database_meta_data_a7f142b8db933b27fef57cf62c318941a} 
+virtual bool {\bfseries supports\+Catalogs\+In\+Privilege\+Definitions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a2ea724300ba9c7ef54de175e6acb0f87}{}\label{classsql_1_1_database_meta_data_a2ea724300ba9c7ef54de175e6acb0f87} 
+virtual bool {\bfseries supports\+Catalogs\+In\+Procedure\+Calls} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_acf0b9704c41f31cb568e821ffa61cb0b}{}\label{classsql_1_1_database_meta_data_acf0b9704c41f31cb568e821ffa61cb0b} 
+virtual bool {\bfseries supports\+Catalogs\+In\+Table\+Definitions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_acc7cc7e78d82c0628ca54bf3bff0c7bb}{}\label{classsql_1_1_database_meta_data_acc7cc7e78d82c0628ca54bf3bff0c7bb} 
+virtual bool {\bfseries supports\+Column\+Aliasing} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a5f9303aad8e0ccf7270f912a6b336360}{}\label{classsql_1_1_database_meta_data_a5f9303aad8e0ccf7270f912a6b336360} 
+virtual bool {\bfseries supports\+Convert} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a85bc3e81d60d333a4ab22365033d7153}{}\label{classsql_1_1_database_meta_data_a85bc3e81d60d333a4ab22365033d7153} 
+virtual bool {\bfseries supports\+Convert} (int from\+Type, int to\+Type)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ad0c6c7c01fc06ecb5647e14e2eaa84f0}{}\label{classsql_1_1_database_meta_data_ad0c6c7c01fc06ecb5647e14e2eaa84f0} 
+virtual bool {\bfseries supports\+Core\+S\+Q\+L\+Grammar} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a17e0cd15f34f7bbda13db4d784578a7f}{}\label{classsql_1_1_database_meta_data_a17e0cd15f34f7bbda13db4d784578a7f} 
+virtual bool {\bfseries supports\+Correlated\+Subqueries} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a75cfacc7f6d6c616c6c546e5ee73c1d1}{}\label{classsql_1_1_database_meta_data_a75cfacc7f6d6c616c6c546e5ee73c1d1} 
+virtual bool {\bfseries supports\+Data\+Definition\+And\+Data\+Manipulation\+Transactions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aaddb568051ab1ebae1c20f4eebb0cc0b}{}\label{classsql_1_1_database_meta_data_aaddb568051ab1ebae1c20f4eebb0cc0b} 
+virtual bool {\bfseries supports\+Data\+Manipulation\+Transactions\+Only} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a8508ed908bd70fc61338faca963bc5ba}{}\label{classsql_1_1_database_meta_data_a8508ed908bd70fc61338faca963bc5ba} 
+virtual bool {\bfseries supports\+Different\+Table\+Correlation\+Names} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a48ee822065d1caeaffd694f34a902789}{}\label{classsql_1_1_database_meta_data_a48ee822065d1caeaffd694f34a902789} 
+virtual bool {\bfseries supports\+Expressions\+In\+Order\+By} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a6dc4b1072c868a0e935711967b5fb01f}{}\label{classsql_1_1_database_meta_data_a6dc4b1072c868a0e935711967b5fb01f} 
+virtual bool {\bfseries supports\+Extended\+S\+Q\+L\+Grammar} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a8f938da3105227952c3ae84f843d81ff}{}\label{classsql_1_1_database_meta_data_a8f938da3105227952c3ae84f843d81ff} 
+virtual bool {\bfseries supports\+Full\+Outer\+Joins} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ab8b406cb6d1f9be7b4df619db3aac8d5}{}\label{classsql_1_1_database_meta_data_ab8b406cb6d1f9be7b4df619db3aac8d5} 
+virtual bool {\bfseries supports\+Get\+Generated\+Keys} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ae56e6e899dde5e736b9ff302ac3cf8ea}{}\label{classsql_1_1_database_meta_data_ae56e6e899dde5e736b9ff302ac3cf8ea} 
+virtual bool {\bfseries supports\+Group\+By} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ab82cd5565bda8aebd3f08af4f1062430}{}\label{classsql_1_1_database_meta_data_ab82cd5565bda8aebd3f08af4f1062430} 
+virtual bool {\bfseries supports\+Group\+By\+Beyond\+Select} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a86d11d861fe907f7bb6bd18224843329}{}\label{classsql_1_1_database_meta_data_a86d11d861fe907f7bb6bd18224843329} 
+virtual bool {\bfseries supports\+Group\+By\+Unrelated} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aedf724b78511a55fd166dc2a24ba049f}{}\label{classsql_1_1_database_meta_data_aedf724b78511a55fd166dc2a24ba049f} 
+virtual bool {\bfseries supports\+Integrity\+Enhancement\+Facility} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_afa66ae9c821e4cc646761829e244e88b}{}\label{classsql_1_1_database_meta_data_afa66ae9c821e4cc646761829e244e88b} 
+virtual bool {\bfseries supports\+Like\+Escape\+Clause} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a51e12279f9730dc4d0c122e404c3e391}{}\label{classsql_1_1_database_meta_data_a51e12279f9730dc4d0c122e404c3e391} 
+virtual bool {\bfseries supports\+Limited\+Outer\+Joins} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a653b7d0458e2f1b373690ebd507c551b}{}\label{classsql_1_1_database_meta_data_a653b7d0458e2f1b373690ebd507c551b} 
+virtual bool {\bfseries supports\+Minimum\+S\+Q\+L\+Grammar} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_acbcd48e99ceacffde58b6260d65113f7}{}\label{classsql_1_1_database_meta_data_acbcd48e99ceacffde58b6260d65113f7} 
+virtual bool {\bfseries supports\+Mixed\+Case\+Identifiers} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_acb22ff50b93fe8b5eff5558010389060}{}\label{classsql_1_1_database_meta_data_acb22ff50b93fe8b5eff5558010389060} 
+virtual bool {\bfseries supports\+Mixed\+Case\+Quoted\+Identifiers} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_af6fbf8b68fafede0188f19ccfb30bcf2}{}\label{classsql_1_1_database_meta_data_af6fbf8b68fafede0188f19ccfb30bcf2} 
+virtual bool {\bfseries supports\+Multiple\+Open\+Results} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a141976e4d54b6e15e66f7d66c4842de0}{}\label{classsql_1_1_database_meta_data_a141976e4d54b6e15e66f7d66c4842de0} 
+virtual bool {\bfseries supports\+Multiple\+Result\+Sets} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_acfa70abea67ad72206a042d007a4adbc}{}\label{classsql_1_1_database_meta_data_acfa70abea67ad72206a042d007a4adbc} 
+virtual bool {\bfseries supports\+Multiple\+Transactions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a17df07b5807e6b086be00ea3c3ed0877}{}\label{classsql_1_1_database_meta_data_a17df07b5807e6b086be00ea3c3ed0877} 
+virtual bool {\bfseries supports\+Named\+Parameters} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_acfbff0416be9d701c6fb83b353316309}{}\label{classsql_1_1_database_meta_data_acfbff0416be9d701c6fb83b353316309} 
+virtual bool {\bfseries supports\+Non\+Nullable\+Columns} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ab0f7fdfc34ad55dea2a1b545dcbc478c}{}\label{classsql_1_1_database_meta_data_ab0f7fdfc34ad55dea2a1b545dcbc478c} 
+virtual bool {\bfseries supports\+Open\+Cursors\+Across\+Commit} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a6e40bb737eb74cb517b2233fed422453}{}\label{classsql_1_1_database_meta_data_a6e40bb737eb74cb517b2233fed422453} 
+virtual bool {\bfseries supports\+Open\+Cursors\+Across\+Rollback} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aac6a9390821193b47313fadf74bbcf8b}{}\label{classsql_1_1_database_meta_data_aac6a9390821193b47313fadf74bbcf8b} 
+virtual bool {\bfseries supports\+Open\+Statements\+Across\+Commit} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_af0afa123597ea0fe9bd125d013928d7d}{}\label{classsql_1_1_database_meta_data_af0afa123597ea0fe9bd125d013928d7d} 
+virtual bool {\bfseries supports\+Open\+Statements\+Across\+Rollback} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a4d53f10472738a68db148222c2c7cc6b}{}\label{classsql_1_1_database_meta_data_a4d53f10472738a68db148222c2c7cc6b} 
+virtual bool {\bfseries supports\+Order\+By\+Unrelated} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a431ddcfa6b9bf00d993015887f691892}{}\label{classsql_1_1_database_meta_data_a431ddcfa6b9bf00d993015887f691892} 
+virtual bool {\bfseries supports\+Outer\+Joins} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a2312feb6b6b34bc9140d0947f3875251}{}\label{classsql_1_1_database_meta_data_a2312feb6b6b34bc9140d0947f3875251} 
+virtual bool {\bfseries supports\+Positioned\+Delete} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a7bb818cbbbe9c034892d37977eba64cb}{}\label{classsql_1_1_database_meta_data_a7bb818cbbbe9c034892d37977eba64cb} 
+virtual bool {\bfseries supports\+Positioned\+Update} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a512f7201ae80f4f49d689cc471fd7b30}{}\label{classsql_1_1_database_meta_data_a512f7201ae80f4f49d689cc471fd7b30} 
+virtual bool {\bfseries supports\+Result\+Set\+Concurrency} (int type, int concurrency)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a6628231053f4e28e641d916f1d40fd4f}{}\label{classsql_1_1_database_meta_data_a6628231053f4e28e641d916f1d40fd4f} 
+virtual bool {\bfseries supports\+Result\+Set\+Holdability} (int holdability)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a42161de14a12a9fb7eefa4e694fea547}{}\label{classsql_1_1_database_meta_data_a42161de14a12a9fb7eefa4e694fea547} 
+virtual bool {\bfseries supports\+Result\+Set\+Type} (int type)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a908aedb30e4f39f8a26fc0501de64d37}{}\label{classsql_1_1_database_meta_data_a908aedb30e4f39f8a26fc0501de64d37} 
+virtual bool {\bfseries supports\+Savepoints} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ac8e5c8986cb2c03c29fdda9b64a35909}{}\label{classsql_1_1_database_meta_data_ac8e5c8986cb2c03c29fdda9b64a35909} 
+virtual bool {\bfseries supports\+Schemas\+In\+Data\+Manipulation} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a696fcce24ee795daaaf3895518b40d9b}{}\label{classsql_1_1_database_meta_data_a696fcce24ee795daaaf3895518b40d9b} 
+virtual bool {\bfseries supports\+Schemas\+In\+Index\+Definitions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a111d525ae0e0f94bb846adfca24aa422}{}\label{classsql_1_1_database_meta_data_a111d525ae0e0f94bb846adfca24aa422} 
+virtual bool {\bfseries supports\+Schemas\+In\+Privilege\+Definitions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a6053c9a5d7f7f88e42846b7f70d0469b}{}\label{classsql_1_1_database_meta_data_a6053c9a5d7f7f88e42846b7f70d0469b} 
+virtual bool {\bfseries supports\+Schemas\+In\+Procedure\+Calls} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a3419607425db243a55b3f478e955f51d}{}\label{classsql_1_1_database_meta_data_a3419607425db243a55b3f478e955f51d} 
+virtual bool {\bfseries supports\+Schemas\+In\+Table\+Definitions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aef22fdd259eb499648a27646fa936606}{}\label{classsql_1_1_database_meta_data_aef22fdd259eb499648a27646fa936606} 
+virtual bool {\bfseries supports\+Select\+For\+Update} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a918e4b10684e98660642d079089a9892}{}\label{classsql_1_1_database_meta_data_a918e4b10684e98660642d079089a9892} 
+virtual bool {\bfseries supports\+Statement\+Pooling} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a90ecb0d24932c62de607adaa7ce77a2b}{}\label{classsql_1_1_database_meta_data_a90ecb0d24932c62de607adaa7ce77a2b} 
+virtual bool {\bfseries supports\+Stored\+Procedures} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a5aece699807876a7031f8992831c09a5}{}\label{classsql_1_1_database_meta_data_a5aece699807876a7031f8992831c09a5} 
+virtual bool {\bfseries supports\+Subqueries\+In\+Comparisons} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_afaf31532b7f8fa83622b59de70e1a81f}{}\label{classsql_1_1_database_meta_data_afaf31532b7f8fa83622b59de70e1a81f} 
+virtual bool {\bfseries supports\+Subqueries\+In\+Exists} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_adcc66e2724e3719a25b7f21a9e53273f}{}\label{classsql_1_1_database_meta_data_adcc66e2724e3719a25b7f21a9e53273f} 
+virtual bool {\bfseries supports\+Subqueries\+In\+Ins} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a761c62ade45b12afcce9f28f0cd1eeed}{}\label{classsql_1_1_database_meta_data_a761c62ade45b12afcce9f28f0cd1eeed} 
+virtual bool {\bfseries supports\+Subqueries\+In\+Quantifieds} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ad3d6af280682dc7652c9920f0714cf97}{}\label{classsql_1_1_database_meta_data_ad3d6af280682dc7652c9920f0714cf97} 
+virtual bool {\bfseries supports\+Table\+Correlation\+Names} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a49e4c63665f58a537238b1f02dd7b0e0}{}\label{classsql_1_1_database_meta_data_a49e4c63665f58a537238b1f02dd7b0e0} 
+virtual bool {\bfseries supports\+Transaction\+Isolation\+Level} (int level)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ae79ec1a681e19b8c0765a759783f4c67}{}\label{classsql_1_1_database_meta_data_ae79ec1a681e19b8c0765a759783f4c67} 
+virtual bool {\bfseries supports\+Transactions} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ac26276d6d239a331403d53250157879e}{}\label{classsql_1_1_database_meta_data_ac26276d6d239a331403d53250157879e} 
+virtual bool {\bfseries supports\+Type\+Conversion} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a1f43c1150ca7d0589d6ef0de988001bb}{}\label{classsql_1_1_database_meta_data_a1f43c1150ca7d0589d6ef0de988001bb} 
+virtual bool {\bfseries supports\+Union} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_aa924352f06cb349eb7b6b7a33feef233}{}\label{classsql_1_1_database_meta_data_aa924352f06cb349eb7b6b7a33feef233} 
+virtual bool {\bfseries supports\+Union\+All} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_a0d2f2067302df8b875f24876d4fb5f5f}{}\label{classsql_1_1_database_meta_data_a0d2f2067302df8b875f24876d4fb5f5f} 
+virtual bool {\bfseries updates\+Are\+Detected} (int type)=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_abc7af647167483362444effa2ca35ad7}{}\label{classsql_1_1_database_meta_data_abc7af647167483362444effa2ca35ad7} 
+virtual bool {\bfseries uses\+Local\+File\+Per\+Table} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ad974dedf8ef47609adba050e6c03861e}{}\label{classsql_1_1_database_meta_data_ad974dedf8ef47609adba050e6c03861e} 
+virtual bool {\bfseries uses\+Local\+Files} ()=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ab834b634719330f6d6c5352f388cf138}{}\label{classsql_1_1_database_meta_data_ab834b634719330f6d6c5352f388cf138} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Schemata} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog\+Name=\char`\"{}\char`\"{})=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_ab8914537accd737529fa4b47858d4b37}{}\label{classsql_1_1_database_meta_data_ab8914537accd737529fa4b47858d4b37} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Schema\+Objects} (const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&catalog\+Name=\char`\"{}\char`\"{}, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&schema\+Name=\char`\"{}\char`\"{}, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&object\+Type=\char`\"{}\char`\"{}, bool including\+Ddl=true, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&object\+Name=\char`\"{}\char`\"{}, const \hyperlink{classsql_1_1_s_q_l_string}{sql\+::\+S\+Q\+L\+String} \&context\+Table\+Name=\char`\"{}\char`\"{})=0
+\item 
+\hypertarget{classsql_1_1_database_meta_data_acd8dc4886238099d69036185be9f1e47}{}\label{classsql_1_1_database_meta_data_acd8dc4886238099d69036185be9f1e47} 
+virtual \hyperlink{classsql_1_1_result_set}{Result\+Set} $\ast$ {\bfseries get\+Schema\+Object\+Types} ()=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/projekt\+\_\+cpp\+\_\+magazyn/projekt/\+Magazyn/\+Magazyn/\+Magazyn/mysql/include/cppconn/metadata.\+h\end{DoxyCompactItemize}

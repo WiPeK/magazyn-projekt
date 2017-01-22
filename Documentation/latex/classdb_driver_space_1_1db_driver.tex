@@ -1,0 +1,76 @@
+\hypertarget{classdb_driver_space_1_1db_driver}{}\section{db\+Driver\+Space\+:\+:db\+Driver Class Reference}
+\label{classdb_driver_space_1_1db_driver}\index{db\+Driver\+Space\+::db\+Driver@{db\+Driver\+Space\+::db\+Driver}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a2cb792a0be8256967a78ec087d159143}{}\label{classdb_driver_space_1_1db_driver_a2cb792a0be8256967a78ec087d159143} 
+bool {\bfseries get\+Status} ()
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a7bac0a4c54ff6cee6b48762873677a89}{}\label{classdb_driver_space_1_1db_driver_a7bac0a4c54ff6cee6b48762873677a89} 
+String {\bfseries get\+Error} ()
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_afae1bef30765720b5bc0d6007886322a}{}\label{classdb_driver_space_1_1db_driver_afae1bef30765720b5bc0d6007886322a} 
+void {\bfseries close\+Connection} ()
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_aee1e80b0a84904a08d325b3edf3abfaa}{}\label{classdb_driver_space_1_1db_driver_aee1e80b0a84904a08d325b3edf3abfaa} 
+void {\bfseries select\+One} (String$^\wedge$ qry)
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_afad2858516c2379248368c4fbb240a93}{}\label{classdb_driver_space_1_1db_driver_afad2858516c2379248368c4fbb240a93} 
+void {\bfseries select\+Many} (String$^\wedge$ qry)
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a8adc1ac03e86d52c0de7bd53cb52dbae}{}\label{classdb_driver_space_1_1db_driver_a8adc1ac03e86d52c0de7bd53cb52dbae} 
+void {\bfseries update} (String$^\wedge$ qry)
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_ada16225ebb43a44e70d71391ff36a7af}{}\label{classdb_driver_space_1_1db_driver_ada16225ebb43a44e70d71391ff36a7af} 
+void {\bfseries insert} (String$^\wedge$ qry)
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_acaf9ea007395cfb74bceda2073f47f27}{}\label{classdb_driver_space_1_1db_driver_acaf9ea007395cfb74bceda2073f47f27} 
+void {\bfseries delete\+From\+Sql} (String$^\wedge$ qry)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a81dd7d38b0c50b20fdcce123e436dbfd}{}\label{classdb_driver_space_1_1db_driver_a81dd7d38b0c50b20fdcce123e436dbfd} 
+My\+Sql\+Data\+Reader {\bfseries result}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a42273f46c99c87e75b538c01d304c874}{}\label{classdb_driver_space_1_1db_driver_a42273f46c99c87e75b538c01d304c874} 
+My\+Sql\+Data\+Adapter {\bfseries result\+Many}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a56922dbb2f65beb6ff1274c68c987186}{}\label{classdb_driver_space_1_1db_driver_a56922dbb2f65beb6ff1274c68c987186} 
+void {\bfseries get\+Config} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a791089a7a18aa1992a7edc96758105ea}{}\label{classdb_driver_space_1_1db_driver_a791089a7a18aa1992a7edc96758105ea} 
+My\+Sql\+Connection {\bfseries connect}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a3e98d796450119a6ec294159d45b5054}{}\label{classdb_driver_space_1_1db_driver_a3e98d796450119a6ec294159d45b5054} 
+bool {\bfseries status}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a88fe0898d55c8c4b629b099687a67709}{}\label{classdb_driver_space_1_1db_driver_a88fe0898d55c8c4b629b099687a67709} 
+String {\bfseries error}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a8ebd44c4291bd23df3e81c322e9d9d24}{}\label{classdb_driver_space_1_1db_driver_a8ebd44c4291bd23df3e81c322e9d9d24} 
+String {\bfseries datasource}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a36f4674116485c54bcff7ef5ea7532da}{}\label{classdb_driver_space_1_1db_driver_a36f4674116485c54bcff7ef5ea7532da} 
+String {\bfseries port}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a14ad4269edc3b3c24d8397681b0e01ba}{}\label{classdb_driver_space_1_1db_driver_a14ad4269edc3b3c24d8397681b0e01ba} 
+String {\bfseries username}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_a193fc0b5ef52446b1b2712bb10745a97}{}\label{classdb_driver_space_1_1db_driver_a193fc0b5ef52446b1b2712bb10745a97} 
+String {\bfseries password}
+\item 
+\hypertarget{classdb_driver_space_1_1db_driver_aa7c752b216a76026a99b8bc871a17c84}{}\label{classdb_driver_space_1_1db_driver_aa7c752b216a76026a99b8bc871a17c84} 
+String {\bfseries database}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/projekt\+\_\+cpp\+\_\+magazyn/projekt/\+Magazyn/\+Magazyn/\+Magazyn/database\+Driver.\+h\end{DoxyCompactItemize}
